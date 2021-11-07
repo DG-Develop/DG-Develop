@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.ts',
     mode: 'development',
     devtool: 'source-map',
     output: {
@@ -13,7 +13,7 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.js', '.jsx'],
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
         alias: {
             '@actions': path.resolve(__dirname, 'src/actions'),
             '@assetComponent': path.resolve(__dirname, 'src/assets/components'),
@@ -37,7 +37,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader'
