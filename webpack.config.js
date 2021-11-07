@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const Dotenv = require('dotenv-webpack')
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: './src/index.tsx',
     mode: 'development',
     devtool: 'source-map',
     output: {

@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "noImplicitAny": true,
+    "baseUrl": "./",
+    "sourceMap": true,
+    "target": "ESNext",                                     
+    "module": "ESNext",      
+    "jsx": "react",     
+    "allowJs": true,
+    "noEmit": true,       
+    "noImplicitThis": true,
+    "strictNullChecks": true,              
+    "esModuleInterop": true,                            
+    "forceConsistentCasingInFileNames": true,           
+    "strict": true,
+    "lib": ["ES6", "DOM"]                                      
+  }
+}

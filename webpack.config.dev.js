@@ -1,10 +1,10 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const Dotenv = require('dotenv-webpack')
+/* const Dotenv = require('dotenv-webpack') */
 
 module.exports = {
-    entry: './src/index.ts',
+    entry: './src/index.tsx',
     mode: 'development',
     devtool: 'source-map',
     output: {
@@ -13,16 +13,7 @@ module.exports = {
         publicPath: '/'
     },
     resolve: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-        alias: {
-            '@actions': path.resolve(__dirname, 'src/actions'),
-            '@assetComponent': path.resolve(__dirname, 'src/assets/components'),
-            '@assetContainer': path.resolve(__dirname, 'src/assets/containers'),
-            '@static': path.resolve(__dirname, 'src/assets/static'),
-            '@components': path.resolve(__dirname, 'src/components'),
-            '@containers': path.resolve(__dirname, 'src/containers'),
-            '@asset': path.resolve(__dirname, 'src/assets'),
-        }
+        extensions: ['.js', '.jsx', '.ts', '.tsx']
     },
     devServer: {
         static: {
@@ -31,7 +22,7 @@ module.exports = {
         compress: true,
         hot: true,
         open: true,
-        port: 3005,
+        port: 3008,
         historyApiFallback: true,
     },
     module: {
@@ -78,7 +69,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'assets/[name].css'
         }),
-        new Dotenv()
+        /* new Dotenv() */
     ]
 
 }
