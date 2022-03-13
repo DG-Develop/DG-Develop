@@ -1,3 +1,6 @@
+
+$background: #191717;
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -7,4 +10,6 @@
 html{
     height: 100vh;
     font-size: 62.8%;
+    background-color: $background;
+    color: white;
 }
