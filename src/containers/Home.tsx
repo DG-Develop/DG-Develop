@@ -2,9 +2,21 @@ import React from 'react'
 
 const Home = () => {
     return (
-        <div>
-            Hello TypeScript, Webpack, Babel and SCSS and others.
-        </div>
+        <>
+            <header>
+                <nav>
+                    <li>
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
+                        <ul></ul>
+                    </li>
+                </nav>
+            </header>
+            <main>
+                Hello TypeScript, Webpack, Babel and SCSS and others.
+            </main>
+        </>
     )
 }
 
