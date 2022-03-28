@@ -14,7 +14,9 @@ const Home = () => {
                 </nav>
             </header>
             <main>
-                Hello TypeScript, Webpack, Babel and SCSS and others.
+                <section>
+                    <h1>Hi, I'm Full Stack Developer</h1>
+                </section>
             </main>
         </>
     )
