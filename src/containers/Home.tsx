@@ -7,7 +7,7 @@ const Home = () => {
                 <nav>
                     <li>
                         <ul></ul>
-                        <ul></ul>
+                        <ul>About</ul>
                         <ul></ul>
                         <ul></ul>
                     </li>
