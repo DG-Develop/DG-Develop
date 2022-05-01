@@ -1,4 +1,5 @@
-### David Gomez (DG-Develop) 👋
+## David Gomez (DG-Develop) 👋
+### Mobile Developer
 
 <!--
 **DG-Develop/DG-Develop** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
