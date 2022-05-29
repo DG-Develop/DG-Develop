@@ -6,9 +6,9 @@ const Home = () => {
             <header>
                 <nav>
                     <li>
-                        <ul></ul>
+                        <ul>Home</ul>
                         <ul>About</ul>
-                        <ul></ul>
+                        <ul>Work</ul>
                         <ul>Contact</ul>
                     </li>
                 </nav>
