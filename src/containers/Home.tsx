@@ -5,6 +5,7 @@ const Home = () => {
         <>
             <header>
                 <nav>
+                    <span className='logo'></span>
                     <li>
                         <ul>Home</ul>
                         <ul>About</ul>
@@ -15,7 +16,12 @@ const Home = () => {
             </header>
             <main>
                 <section>
-                    <h1>Hi, I'm Full Stack Developer</h1>
+                    <div>
+                        <h1>Hi, I'm Full Stack Developer</h1>
+                        <p>Specialist in database management, API creation and web application designer.</p>
+
+                        <button>Go to Work</button>
+                    </div>
                 </section>
             </main>
         </>
