@@ -16,13 +16,13 @@ const Home = () => {
           </li>
           <li>
             <ul>
-              <a href="">
-                <span className="twitter"></span>
+              <a href="https://twitter.com/DGDevelop">
+                <span className="i_twitter"></span>
               </a>
             </ul>
             <ul>
-              <a href="">
-                <span className="github"></span>
+              <a href="https://github.com/DG-Develop">
+                <span className="i_github"></span>
               </a>
             </ul>
           </li>
