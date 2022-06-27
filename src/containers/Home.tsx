@@ -42,7 +42,21 @@ const Home = () => {
         </section>
 
         <section>
-          <div></div>
+          <div>
+            <div>
+              <h3>Services I Offer</h3>
+            </div>
+
+            <div>
+              <hr />
+              <p>
+                I can help you by offering the following services to create your
+                innovative or business idea and grow it exponentially, in
+                addition to handling large amounts of data and helping you
+                decide on the information obtained from it.
+              </p>
+            </div>
+          </div>
           <div></div>
         </section>
       </main>
