@@ -1,7 +1,7 @@
 ## David Gomez (DG-Develop) 💻
 ### Mobile & Web Developer
 
-Specialist in database management, API creation and web application designer.
+Specialist in database management, API creation and web application designer with 3 years of experience.
 
 <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" width="20" height="20">  [Linkedin](https://www.linkedin.com/in/davidagp/)
 
