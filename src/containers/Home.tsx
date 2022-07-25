@@ -57,7 +57,17 @@ const Home = () => {
               </p>
             </div>
           </div>
-          <div></div>
+          <div>
+            <div>
+              <hr />
+            </div>
+            <div>
+              <hr />
+            </div>
+            <div>
+              <hr />
+            </div>
+          </div>
         </section>
       </main>
     </>
