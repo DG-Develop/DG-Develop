@@ -1,33 +1,10 @@
 import React from "react";
+import { Header } from "../components/Header";
 
 const Home = () => {
   return (
     <>
-      <header>
-        <nav>
-          <span className="logo"></span>
-          <li>
-            <ul>Home</ul>
-            <ul>About</ul>
-          </li>
-          <li>
-            <ul>Work</ul>
-            <ul>Contact</ul>
-          </li>
-          <li>
-            <ul>
-              <a href="https://twitter.com/DGDevelop">
-                <span className="i_twitter"></span>
-              </a>
-            </ul>
-            <ul>
-              <a href="https://github.com/DG-Develop">
-                <span className="i_github"></span>
-              </a>
-            </ul>
-          </li>
-        </nav>
-      </header>
+      <Header />
       <main>
         <section>
           <div>
