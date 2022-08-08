@@ -7,6 +7,10 @@ export const Header = () => {
     <header className="header">
       <nav>
         <span className="logo"></span>
+        <div>
+          <object data="image/svg" type="image+svg" ></object>
+          <span className="i_menu"></span>
+        </div>
         <li>
           <ul>Home</ul>
           <ul>About</ul>
