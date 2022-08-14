@@ -48,15 +48,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|gif|jpg|svg)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'assets/[name].[ext]'
-                        }
-                    }
-                ]
+                type: "asset",
+                test: /\.(png|gif|jpg|svg)$/i,
+                generator:{
+                    filename: 'assets/[name].[ext]'
+                }
             }
         ]
     },

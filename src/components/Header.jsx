@@ -1,6 +1,7 @@
 import React from "react";
 import '../assets/components/Header.scss';
 import '../assets/Icons.scss';
+import triangle from '../assets/static/rectangle_header.svg'
 
 export const Header = () => {
   return (
@@ -8,7 +9,7 @@ export const Header = () => {
       <nav>
         <span className="logo"></span>
         <div>
-          <object data="image/svg" type="image+svg" ></object>
+          <object data={triangle} type="image/svg+xml"></object>
           <span className="i_menu"></span>
         </div>
         <li>

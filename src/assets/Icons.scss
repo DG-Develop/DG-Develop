@@ -1,25 +1,32 @@
-@mixin icon-structure {
+@import './Vars.scss';
+
+
+@mixin icon-structure($iconPath, $width, $height, $filter) {
     display: inline-block;
+    width: $width;
+    height: $height;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+    background-image: url($iconPath);
+    filter: $filter;
 
     &:hover{
         cursor: pointer;
     }
 }
 
-.i_twitter,
-.i_github{
-    width: 30px;
-    height: 30px;
-    background-image: url('./static/github.svg');
-    @include icon-structure;
+.logo{
+    @include icon-structure("./static/logo.svg", 40px, 40px, $white-filter);
 }
 
-.logo{
-    width: 60px;
-    height: 60px;
-    background-image: url('./static/logo.svg');
-    @include icon-structure;
+.i_menu{
+    @include icon-structure("./static/menu.svg", 20px, 20px, $white-filter);
+}
+
+.i_twitter{
+    @include icon-structure("./static/twitter.svg", 35px, 35px, $white-filter);
+}
+.i_github{
+    @include icon-structure("./static/github.svg", 35px, 35px, $white-filter);
 }
