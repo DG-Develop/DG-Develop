@@ -1,15 +1,15 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const Dotenv = require('dotenv-webpack')
+// const Dotenv = require('dotenv-webpack')
+const MediaQueryPlugin = require('media-query-plugin');
 
 module.exports = {
     entry: './src/index.tsx',
-    mode: 'development',
-    devtool: 'source-map',
+    mode: 'production',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name].js',
+        filename: 'js/[name]-[contenthash].js',
         publicPath: '/'
     },
     resolve: {
@@ -44,6 +44,7 @@ module.exports = {
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
                     'css-loader',
+                    MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -62,9 +63,14 @@ module.exports = {
             filename: './index.html'
         }),
         new MiniCssExtractPlugin({
-            filename: 'assets/[name].css'
+            filename: 'css/[name]-[contenthash].css'
         }),
-        new Dotenv()
+        new MediaQueryPlugin({
+            queries: {
+                'print, screen and (min-width: 1024px)': 'desktop'
+            }
+        })
+        // new Dotenv()
     ]
 
 }

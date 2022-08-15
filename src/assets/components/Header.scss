@@ -1,10 +1,17 @@
 @import '../Vars.scss'; 
+@import '../Breakpoints.scss';
 
 .header{
     outline: 1px solid white;
-    padding: 16px 32px 8px 32px;
+    padding: 0 8px 8px;
     
-    .logo{
+    nav{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    @include media(desktop){
         outline: 1px solid red;
     }
 }

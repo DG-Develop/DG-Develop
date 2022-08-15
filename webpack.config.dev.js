@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const MediaQueryPlugin = require('media-query-plugin');
 /* const Dotenv = require('dotenv-webpack') */
 
 module.exports = {
@@ -43,8 +44,9 @@ module.exports = {
             {
                 test: /\.(s*)css$/,
                 use: [
-                    { loader: MiniCssExtractPlugin.loader },
+                    "style-loader",
                     'css-loader',
+                    MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -65,6 +67,11 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: 'assets/[name].css'
         }),
+        new MediaQueryPlugin({
+            queries: {
+                'print, screen and (min-width: 1024px)': 'desktop'
+            }
+        })
         /* new Dotenv() */
     ]
 
