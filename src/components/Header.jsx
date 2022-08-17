@@ -3,6 +3,10 @@ import "../assets/components/Header.scss";
 import "../assets/Icons.scss";
 import triangle from "../assets/static/rectangle_header.svg";
 
+if(window.innerWidth >= 1024){
+  import ("../assets/components/Header-desktop.scss");
+}
+
 export const Header = () => {
   return (
     <header className="header">

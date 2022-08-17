@@ -64,10 +64,10 @@ module.exports = {
             template: './public/index.html',
             filename: './index.html'
         }),
-        new MiniCssExtractPlugin({
-            filename: 'assets/[name].css'
-        }),
         new MediaQueryPlugin({
+            include:[
+                'Header'
+            ],
             queries: {
                 'print, screen and (min-width: 1024px)': 'desktop'
             }

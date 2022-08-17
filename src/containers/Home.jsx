@@ -5,6 +5,7 @@ const Home = () => {
   return (
     <>
       <Header />
+      {console.log("Adentro del componente Home")}
       <main>
         <section>
           <div>
