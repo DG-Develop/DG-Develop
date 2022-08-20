@@ -3,16 +3,17 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 // const Dotenv = require('dotenv-webpack')
 const MediaQueryPlugin = require('media-query-plugin');
 
 module.exports = {
-    entry: './src/index.tsx',
+    entry: './src/index.jsx',
     mode: 'production',
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'js/[name]-bundle.js',
+        filename: 'js/[name]-bundle.[contenthash].js',
         publicPath: './'
     },
     resolve: {
@@ -26,6 +27,15 @@ module.exports = {
             '@containers': path.resolve(__dirname, 'src/containers'),
             '@asset': path.resolve(__dirname, 'src/assets'),
         }
+    },
+    devServer: {
+        static: {
+            directory: path.join(__dirname, 'dist'),
+        },
+        compress: true,
+        open: true,
+        port: 3008,
+        historyApiFallback: true,
     },
     module: {
         rules: [
@@ -77,7 +87,8 @@ module.exports = {
             queries: {
                 'print, screen and (min-width: 1024px)': 'desktop'
             }
-        })
+        }),
+        new CleanWebpackPlugin(),
         // new Dotenv()
     ],
     optimization: {

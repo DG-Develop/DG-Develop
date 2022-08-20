@@ -5,7 +5,7 @@ const MediaQueryPlugin = require('media-query-plugin');
 /* const Dotenv = require('dotenv-webpack') */
 
 module.exports = {
-    entry: './src/index.tsx',
+    entry: './src/index.jsx',
     mode: 'development',
     devtool: 'source-map',
     output: {
