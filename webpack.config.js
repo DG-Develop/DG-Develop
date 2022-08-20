@@ -57,7 +57,7 @@ module.exports = {
                 use: [
                     { loader: MiniCssExtractPlugin.loader },
                     'css-loader',
-                    MediaQueryPlugin.loader,
+                    // MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -77,17 +77,17 @@ module.exports = {
             inject: 'body'
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].css',
-            chunkFilename: 'css/[id].css'
+            filename: 'css/[name].[contenthash].css'
+            // chunkFilename: 'css/[id].css'
         }),
-        new MediaQueryPlugin({
-            include: [
-                'Header'
-            ],
-            queries: {
-                'print, screen and (min-width: 1024px)': 'desktop'
-            }
-        }),
+        // new MediaQueryPlugin({
+        //     include: [
+        //         'Header'
+        //     ],
+        //     queries: {
+        //         'print, screen and (min-width: 1024px)': 'desktop'
+        //     }
+        // }),
         new CleanWebpackPlugin(),
         // new Dotenv()
     ],

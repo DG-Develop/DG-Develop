@@ -46,7 +46,7 @@ module.exports = {
                 use: [
                     "style-loader",
                     'css-loader',
-                    MediaQueryPlugin.loader,
+                    // MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -64,14 +64,14 @@ module.exports = {
             template: './public/index.html',
             filename: './index.html'
         }),
-        new MediaQueryPlugin({
-            include:[
-                'Header'
-            ],
-            queries: {
-                'print, screen and (min-width: 1024px)': 'desktop'
-            }
-        })
+        // new MediaQueryPlugin({
+        //     include:[
+        //         'Header'
+        //     ],
+        //     queries: {
+        //         'print, screen and (min-width: 1024px)': 'desktop'
+        //     }
+        // })
         /* new Dotenv() */
     ]
 
