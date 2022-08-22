@@ -14,7 +14,7 @@ export const Header = () => {
         <div>
           <span className="logo"></span>
         </div>
-        <div>
+        <div className="menu">
           <object data={triangle} type="image/svg+xml"></object>
           <span className="i_menu"></span>
           <li>
