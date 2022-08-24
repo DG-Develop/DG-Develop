@@ -17,7 +17,7 @@
 }
 
 .logo{
-    @include icon-structure("./static/logo.svg", 40px, 40px, $white-filter);
+    @include icon-structure("./static/logo.svg", 30px, 30px, $white-filter);
 }
 
 .i_menu{
@@ -25,8 +25,8 @@
 }
 
 .i_twitter{
-    @include icon-structure("./static/twitter.svg", 35px, 35px, $white-filter);
+    @include icon-structure("./static/twitter.svg", 24px, 20px, $white-filter);
 }
 .i_github{
-    @include icon-structure("./static/github.svg", 35px, 35px, $white-filter);
+    @include icon-structure("./static/github.svg", 20px, 20px, $white-filter);
 }

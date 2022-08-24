@@ -10,7 +10,6 @@ const App= () => {
                 <Route  path="/" element={<Home />} />
             </Switch>
         </BrowserRouter>
-        // <h1>Hola mundo</h1>
     )
 }
 

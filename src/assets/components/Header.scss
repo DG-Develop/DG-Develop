@@ -7,12 +7,48 @@
     
     nav{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; 
         align-items: center;
     }
 
 }
 
+.hamburguer__menu{
+    position: relative;
+
+    #menu-icon{
+        position: absolute;
+        top: 4px;
+        left: calc(50% - 11px);
+    }
+}
+
+.hamburguer__menu.animation-circle{
+    background-color: red;
+    outline: 1px solid white;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 20;
+
+    .transform-cicle{
+        z-index: 20;
+    }
+
+    #menu-icon{
+        z-index: 20;
+    }
+}
+
 .menu {
     display: none;
+}
+
+.social-media{
+
+    li{
+        display: flex;
+        gap: 16px;
+    }
 }
