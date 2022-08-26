@@ -4,7 +4,9 @@ import '../assets/components/ModalMenu.scss'
 const ModalMenu = () => {
   return (
     <div className='modal'>
-        
+        <div>
+          
+        </div>
     </div>
   )
 }
