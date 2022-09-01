@@ -52,11 +52,17 @@ module.exports = {
             },
             {
                 type: "asset",
-                test: /\.(png|gif|jpg|svg)$/i,
-                generator:{
+                test: /\.(png|gif|jpg|svg|ttf)$/i,
+                generator: {
                     filename: 'assets/[name].[ext]'
                 }
-            }
+            },
+            {
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                use: [{
+                    loader: 'file-loader',
+                }]
+            },
         ]
     },
     plugins: [

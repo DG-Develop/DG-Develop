@@ -1,10 +1,13 @@
-
 // Colors
+$white: #FBFBFB;
 $background: #191717;
+$background-secondary: #211F1D;
+$background-modal: rgba(53, 50, 51, 0.8);
 $linear-main: linear-gradient(90deg, #EE3D61 0%, #F07A2B 100%);
 
 // Filters
 $white-filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(49deg) brightness(108%) contrast(101%);
+
 
 *{
     box-sizing: border-box;
@@ -12,16 +15,17 @@ $white-filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(49deg) brightness(
     padding: 0;
 }
 
+
 html{
     height: 100vh;
     font-size: 62.8%;
     background-color: $background;
     color: white;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .modal{
-    background-color: $background;
-    opacity: 0.8;
+    background-color: $background-modal;
     position: fixed;
     top: 0;
     left: 0;

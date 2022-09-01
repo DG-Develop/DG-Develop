@@ -1,3 +1,26 @@
+@import '../Vars.scss';
+
 .modal{
-    outline: 1px solid blue;
+    outline: 1px solid purple;
+}
+
+.modal__menu{
+    outline: 1px solid white;
+    padding: 16px;
+    background-color: $background-secondary;
+
+    ul{
+        outline: 1px solid white;
+        display: grid;
+        gap: 8px;
+    }
+
+    li{
+        list-style: none;
+        padding: 16px 24px;
+        background: $linear-main;
+        color: $white;
+        border-radius: 112px;
+        width: 100%;
+    }
 }

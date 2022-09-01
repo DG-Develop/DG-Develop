@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-import "../assets/components/Header.scss";
-import "../assets/Icons.scss";
+// import "../assets/components/Header.scss";
+// import "../assets/Icons.scss";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
 
