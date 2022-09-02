@@ -1,4 +1,6 @@
-$quicksand-font-path: "../assets/fonts";
+$quicksand-font-path: "../../src/assets/fonts";
+// $quicksand-font-path: "../assets/fonts";
+
 @import './Font.scss';
 @import './Vars.scss'; 
 @import './Breakpoints.scss';

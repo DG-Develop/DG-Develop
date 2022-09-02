@@ -1,6 +1,3 @@
-@import './Vars.scss';
-
-
 @mixin icon-structure($iconPath, $width, $height, $filter) {
     display: inline-block;
     width: $width;

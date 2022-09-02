@@ -2,11 +2,18 @@
 $white: #FBFBFB;
 $background: #191717;
 $background-secondary: #211F1D;
-$background-modal: rgba(53, 50, 51, 0.8);
+$background-modal: rgba(53, 50, 51, 0.2);
 $linear-main: linear-gradient(90deg, #EE3D61 0%, #F07A2B 100%);
 
 // Filters
 $white-filter: invert(100%) sepia(1%) saturate(0%) hue-rotate(49deg) brightness(108%) contrast(101%);
+
+// Fonts
+$font-light: 300;
+$font-regular: 400;
+$font-medium: 500;
+$font-semibold: 600;
+$font-bold: 700;
 
 
 *{

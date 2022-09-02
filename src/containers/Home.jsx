@@ -1,8 +1,6 @@
 import React from "react";
 import { Header } from "../components/Header";
 
-import '../assets/Index.scss'
-
 const Home = () => {
   return (
     <>

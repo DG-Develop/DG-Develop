@@ -1,15 +1,14 @@
 import React from "react";
-import "../assets/components/ModalMenu.scss";
 
 const ModalMenu = () => {
   return (
     <div className="modal">
       <div className="modal__menu">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Work</li>
-          <li>Contact</li>
+          <li>HOME</li>
+          <li>ABOUT</li>
+          <li>WORK</li>
+          <li>CONTACT</li>
         </ul>
       </div>
     </div>

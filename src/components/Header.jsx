@@ -1,25 +1,30 @@
 import React, { useRef, useState } from "react";
 import { useMediaQuery } from "react-responsive";
-// import "../assets/components/Header.scss";
-// import "../assets/Icons.scss";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
 
-if (window.innerWidth >= 1024) {
-  import("../assets/components/Header-desktop.scss");
-}
-
 export const Header = () => {
-  const [openMenuMobile, setOpenMenuMobile] = useState(false)
-  const menuDinamic = useRef(null)
+  const [openMenuMobile, setOpenMenuMobile] = useState(false);
+  const menuDinamic = useRef(null);
 
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
-  const handleOpenModalMenu = () =>{
-    menuDinamic.current.classList.add("animation-circle")
-    setOpenMenuMobile(true)
-  }
-  
+  const handleOpenModalMenu = () => {
+    changeClassMenuDinamic();
+
+    setOpenMenuMobile(!openMenuMobile);
+  };
+
+  const changeClassMenuDinamic = () => {
+    const element = menuDinamic.current.classList;
+
+    if (!openMenuMobile) {
+      element.add("animation-circle");
+    } else {
+      element.remove("animation-circle");
+    }
+  };
+
   return (
     <header className="header">
       <nav>
@@ -28,7 +33,11 @@ export const Header = () => {
         </div>
 
         {!isDesktop && (
-          <div className="hamburguer__menu" onClick={handleOpenModalMenu}  ref={menuDinamic}>
+          <div
+            className="hamburguer__menu"
+            onClick={handleOpenModalMenu}
+            ref={menuDinamic}
+          >
             <object data={triangle} type="image/svg+xml"></object>
             <svg
               id="menu-icon"
