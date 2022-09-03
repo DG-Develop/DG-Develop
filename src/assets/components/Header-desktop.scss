@@ -1,7 +1,23 @@
-.header{
-        outline: 1px solid red;
+.header {
+  outline: 1px solid red;
 }
 
-.menu{
-        display: block;
+.menu {
+  outline: 1px solid crimson;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 104px;
+
+  ul {
+    display: flex;
+    gap: 32px;
+  }
+
+  li {
+    list-style: none;
+    padding: 8px 16px;
+    color: $white;
+    font-size: 1.6rem;
+    font-weight: $font-bold;
+  }
 }

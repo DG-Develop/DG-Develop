@@ -27,3 +27,7 @@
 .i_github{
     @include icon-structure("./static/github.svg", 20px, 20px, $white-filter);
 }
+
+.i_close{
+    @include icon-structure("./static/close.svg", 24px, 24px, $white-filter);
+}

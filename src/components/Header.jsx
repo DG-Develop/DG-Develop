@@ -1,28 +1,18 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
 
 export const Header = () => {
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
-  const menuDinamic = useRef(null);
-
   const isDesktop = useMediaQuery({ minWidth: 1024 });
 
   const handleOpenModalMenu = () => {
-    changeClassMenuDinamic();
-
-    setOpenMenuMobile(!openMenuMobile);
+    setOpenMenuMobile(true);
   };
 
-  const changeClassMenuDinamic = () => {
-    const element = menuDinamic.current.classList;
-
-    if (!openMenuMobile) {
-      element.add("animation-circle");
-    } else {
-      element.remove("animation-circle");
-    }
+  const handleCloseModalMenu = () => {
+    setOpenMenuMobile(!openMenuMobile);
   };
 
   return (
@@ -32,12 +22,8 @@ export const Header = () => {
           <span className="logo"></span>
         </div>
 
-        {!isDesktop && (
-          <div
-            className="hamburguer__menu"
-            onClick={handleOpenModalMenu}
-            ref={menuDinamic}
-          >
+        {!isDesktop ? (
+          <div className="hamburguer__menu" onClick={handleOpenModalMenu}>
             <object data={triangle} type="image/svg+xml"></object>
             <svg
               id="menu-icon"
@@ -67,19 +53,20 @@ export const Header = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            {openMenuMobile && <ModalMenu />}
+          </div>
+        ) : (
+          <div className="menu">
+            <ul>
+              <li>HOME</li>
+              <li>ABOUT</li>
+            </ul>
+            <ul>
+              <li>WORK</li>
+              <li>CONTACT</li>
+            </ul>
           </div>
         )}
-        <div className="menu">
-          <li>
-            <ul>Home</ul>
-            <ul>About</ul>
-          </li>
-          <li>
-            <ul>Work</ul>
-            <ul>Contact</ul>
-          </li>
-        </div>
+
         <div className="social-media">
           <li>
             <ul>
@@ -95,6 +82,7 @@ export const Header = () => {
           </li>
         </div>
       </nav>
+      {openMenuMobile && <ModalMenu OnCloseModal={handleCloseModalMenu} />}
     </header>
   );
 };

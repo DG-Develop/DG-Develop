@@ -1,10 +1,7 @@
 
 @font-face {
-    font-family: 'Quicksand', sans-serif;
-    font-style: normal;
-    font-weight: normal;
+    font-family: 'Quicksand';
     src: 
-        local('Quicksand-Bold')
         url('#{$quicksand-font-path}/Quicksand-Bold.ttf') format('truetype'),
         url('#{$quicksand-font-path}/Quicksand-Light.ttf') format('truetype'),
         url('#{$quicksand-font-path}/Quicksand-Medium.ttf') format('truetype'),

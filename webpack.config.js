@@ -62,18 +62,6 @@ module.exports = {
                     'sass-loader'
                 ]
             },
-            // {
-            //     test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-            //     use: [
-            //         {
-            //             loader: 'file-loader',
-            //             options: {
-            //                 name: '[name].[ext]',
-            //                 outputPath: 'fonts/'
-            //             }
-            //         }
-            //     ]
-            // },
             {
                 type: "asset",
                 test: /\.(png|gif|jpg|svg)$/i,
@@ -85,12 +73,6 @@ module.exports = {
                 test: /\.(woff|woff2|eot|ttf|otf)$/i,
                 type: 'asset/resource',
             },
-            // {
-            //     test: /\.(woff|woff2|eot|ttf|otf)$/i,
-            //     use: [{
-            //         loader: 'file-loader',
-            //     }]
-            // },
         ]
     },
     plugins: [

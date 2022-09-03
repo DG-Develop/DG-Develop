@@ -1,8 +1,15 @@
 
 .modal__menu{
     outline: 1px solid white;
-    padding: 56px 16px 16px;
+    padding: 16px;
     background-color: $background-secondary;
+    display: grid;
+    gap: 16px;
+    animation: fadeInDownBig 1s ease-out;
+
+    .button-circle{
+        margin: 0 auto;
+    }
     ul{
         outline: 1px solid white;
         display: grid;
@@ -19,4 +26,14 @@
         font-size: 1.4rem;
         font-weight: $font-bold;
     }
+}
+
+.button-circle{
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: $color-accent;
+    padding: 8px;
+    display: grid;
+    place-content: center;
 }

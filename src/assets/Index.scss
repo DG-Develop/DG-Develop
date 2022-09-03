@@ -1,10 +1,35 @@
-$quicksand-font-path: "../../src/assets/fonts";
-// $quicksand-font-path: "../assets/fonts";
-
-@import './Font.scss';
 @import './Vars.scss'; 
+@import './Font.scss';
 @import './Breakpoints.scss';
+@import './Anitmations.scss';
 @import './Icons.scss';
 @import './containers/Home.scss';
 @import './components/Header.scss';
 @import './components/ModalMenu.scss';
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html{
+    height: 100vh;
+    font-size: 62.8%;
+    background-color: $background;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+}
+
+.modal{
+    background-color: $background-modal;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+    animation: fadeIn .800s;
+}
