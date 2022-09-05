@@ -1,0 +1,26 @@
+.Hero {
+  outline: 1px solid crimson;
+  height: calc(100vh - 55px);
+  padding: 16px;
+}
+
+.Hero__description {
+  display: grid;
+  gap: 8px;
+
+  h1 {
+    font-weight: $font-bold;
+    font-size: 2.4rem;
+    background: $linear-main;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p{
+    font-weight: $font-medium;
+    font-size: 1.6rem;
+    color: $white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}

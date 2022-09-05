@@ -1,6 +1,5 @@
 
 .modal__menu{
-    outline: 1px solid white;
     padding: 16px;
     background-color: $background-secondary;
     display: grid;
@@ -11,7 +10,6 @@
         margin: 0 auto;
     }
     ul{
-        outline: 1px solid white;
         display: grid;
         gap: 8px;
     }

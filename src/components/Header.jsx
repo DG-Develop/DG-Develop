@@ -1,11 +1,13 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useNavigate } from "react-router-dom";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
 
 export const Header = () => {
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
   const isDesktop = useMediaQuery({ minWidth: 1024 });
+  const navigate = useNavigate();
 
   const handleOpenModalMenu = () => {
     setOpenMenuMobile(true);
@@ -15,11 +17,15 @@ export const Header = () => {
     setOpenMenuMobile(!openMenuMobile);
   };
 
+  const goToHome = () => {
+    navigate("/");
+  };
+
   return (
     <header className="header">
       <nav>
         <div>
-          <span className="logo"></span>
+          <span className="logo" onClick={goToHome}></span>
         </div>
 
         {!isDesktop ? (

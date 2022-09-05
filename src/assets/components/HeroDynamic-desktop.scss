@@ -1,0 +1,27 @@
+.Hero {
+  outline: 1px solid crimson;
+  width: 100%;
+  min-width: 255px;
+  max-width: 1255px;
+  margin: 0 auto;
+  height: calc(100vh - 72px);
+  padding: 16px 32px;
+}
+
+.Hero__description {
+  h1 {
+    font-weight: $font-bold;
+    font-size: 3.2rem;
+    background: linear-gradient(91deg, #ee3d61 0%, #f07a2b 22%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p{
+    font-weight: $font-medium;
+    font-size: 1.8rem;
+    color: $white;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+}

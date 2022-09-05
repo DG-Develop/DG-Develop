@@ -1,9 +1,14 @@
 .header {
   outline: 1px solid red;
+  padding: 16px;
+  width: 100%;
+  min-width: 255px;
+  max-width: 1255px;
+  margin: 0 auto;
 }
 
+
 .menu {
-  outline: 1px solid crimson;
   display: grid;
   grid-template-columns: auto auto;
   gap: 104px;
@@ -19,5 +24,10 @@
     color: $white;
     font-size: 1.6rem;
     font-weight: $font-bold;
+
+    &:hover{
+      cursor: pointer;
+      opacity: 0.9;
+    }
   }
 }
