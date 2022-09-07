@@ -31,3 +31,7 @@
 .i_close{
     @include icon-structure("./static/close.svg", 24px, 24px, $white-filter);
 }
+
+.decoration{
+    @include icon-structure("./static/decoration_header.svg", 164px, 164px, $white-filter)
+}

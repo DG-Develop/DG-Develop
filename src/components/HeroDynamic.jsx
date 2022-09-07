@@ -12,7 +12,7 @@ const HeroDynamic = () => {
         </p>
       </div>
 
-      <div>
+      <div className="hero__decoration">
         <span className="decoration accent"></span>
         <span className="decoration primary"></span>
         <span className="decoration primary-dark"></span>
