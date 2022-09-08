@@ -1,7 +1,13 @@
 .Hero {
-  outline: 1px solid crimson;
+  width: 100%;
+  min-width: 255px;
+  max-width: 1255px;
+  margin: 0 auto;
   height: calc(100vh - 55px);
   padding: 16px;
+  display: grid;
+  gap: 16px;
+  align-content: flex-start;
 }
 
 .Hero__description {
@@ -26,46 +32,66 @@
 }
 
 .hero__decoration{
-  outline: 1px solid blue;
   width: fit-content;
   height: 340px;
   position: relative;
 
+  .decoration__content{
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 8px;
+    align-items: center;
+    align-content: center;
+  
+  
+    .accent{
+      grid-column: 1/3;
+      grid-row: 1/3;
+      filter: $color-accent-filter;
+    }
+  
+    .primary{
+      grid-column: 3/5;
+      grid-row: 1/3;
+  
+      filter: $color-primary-filter;
+    }
+  
+    .primary-dark{
+      grid-column: 2/4;
+      grid-row: 2/5 ;
+      position: relative;
+      top: 16px;
+      filter: $color-primary-dark-filter;
+    }
+  }
+}
+
+
+.hero__actions{
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-  gap: 8px;
-  align-items: center;
-  align-content: center;
+  gap: 32px;
+  justify-items: center;
+}
 
 
-  .accent{
-    // position: absolute;
-    // top: 0;
-    // left: 0;
-    grid-column: 1/3;
-    grid-row: 1/3;
-    // justify-self: right;
-    filter: $color-accent-filter;
-  }
+.button-primary{
+  padding: 10px 24px;
+  border-radius: 8px;
+  background-color: $color-accent;
+  outline: none;
+  border: none;
+  color: $white;
+  font-size: 1.6rem;
+  font-weight: $font-bold;
+  opacity: 1;
+  display: grid;
+  place-content: center;
 
-  .primary{
-    // position: absolute;
-    // top: 0;
-    // right: 0;
-    grid-column: 3/5;
-    grid-row: 1/3;
-    // justify-self: left;
-    filter: $color-primary-filter;
-  }
-
-  .primary-dark{
-    // position: absolute;
-    // bottom: 0;
-    grid-column: 2/4;
-    grid-row: 2/5 ;
-    position: relative;
-    top: 16px;
-    filter: $color-primary-dark-filter;
+  &:hover{
+    cursor: pointer;
+    opacity: 0.9;
   }
 }

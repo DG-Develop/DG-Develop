@@ -13,15 +13,17 @@ const HeroDynamic = () => {
       </div>
 
       <div className="hero__decoration">
-        <span className="decoration accent"></span>
-        <span className="decoration primary"></span>
-        <span className="decoration primary-dark"></span>
+        <div className="decoration__content">
+          <span className="decoration accent"></span>
+          <span className="decoration primary"></span>
+          <span className="decoration primary-dark"></span>
 
-        <IconAnimated />
+          <IconAnimated />
+        </div>
       </div>
 
-      <div>
-        <button>Go to Work</button>
+      <div className="hero__actions">
+        <button className="button-primary">Go to Work</button>
         <span className="i_arrow-down"></span>
       </div>
     </section>
