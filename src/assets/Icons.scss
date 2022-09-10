@@ -39,3 +39,53 @@
 .decoration{
     @include icon-structure("./static/decoration_header.svg", 164px, 164px, $white-filter)
 }
+
+.anim-ear-left{
+    @include icon-structure("./static/ear_left.svg", 40px, 68px, $white-filter)
+}
+
+.anim-ear-right{
+    @include icon-structure("./static/ear_right.svg", 40px, 68px, $white-filter)
+}
+
+.anim-eye-left{
+    @include icon-structure("./static/eye_left.svg", 14px, 12px, $white-filter)
+}
+
+.anim-eye-right{
+    @include icon-structure("./static/eye_right.svg", 14px, 12px, $white-filter)
+}
+
+.anim-eyebrown-left{
+    @include icon-structure("./static/eyebrown_left.svg", 54px, 30px, $white-filter)
+}
+
+.anim-eyebrown-right{
+    @include icon-structure("./static/eyebrown_right.svg", 54px, 30px, $white-filter)
+}
+
+.anim-face{
+    @include icon-structure("./static/face.svg", 74px, 92px, $white-filter)
+}
+
+.anim-mouth{
+    @include icon-structure("./static/mouth.svg", 62px, 33px, $white-filter)
+}
+
+.cell-icon{
+    @include icon-structure("./static/cell.svg", 10px, 14px, $white-filter)
+}
+
+.desktop-icon{
+    @include icon-structure("./static/desktop.svg", 16px, 14px, $white-filter)
+}
+
+
+.database-icon{
+    @include icon-structure("./static/database.svg", 13px, 14px, $white-filter)
+}
+
+
+.decoration-left{
+    @include icon-structure("./static/decoration_left.svg", 64px, 64px, $color-primary-filter)
+}

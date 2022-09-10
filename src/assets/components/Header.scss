@@ -1,32 +1,33 @@
-.header{
-    padding: 0 8px 8px;
-    
-    nav{
-        display: flex;
-        justify-content: space-between; 
-        align-items: center;
-    }
+.header {
+  padding: 0 8px 8px;
+  width: 100%;
+  min-width: 255px;
+  max-width: 1920px;
 
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 
-.hamburguer__menu{
+.hamburguer__menu {
+  position: relative;
+
+  #menu-icon {
+    position: absolute;
+    top: 4px;
+    left: calc(50% - 11px);
+  }
+
+  .transform-cicle {
     position: relative;
-
-    #menu-icon{
-        position: absolute;
-        top: 4px;
-        left: calc(50% - 11px);
-    }
-
-    .transform-cicle{
-        position: relative;
-    }
+  }
 }
 
-.social-media{
-
-    li{
-        display: flex;
-        gap: 16px;
-    }
+.social-media {
+  li {
+    display: flex;
+    gap: 16px;
+  }
 }

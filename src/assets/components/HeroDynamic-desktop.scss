@@ -1,5 +1,4 @@
 .Hero {
-  outline: 1px solid crimson;
   height: calc(100vh - 72px);
   padding: 16px 32px;
 
@@ -39,7 +38,7 @@
   align-content: flex-start;
 
   .decoration__content{
-  
+    
     .primary-dark{
       top: 80px;
     }
@@ -49,6 +48,12 @@
     width: 300px;
     height: 300px;
   }
+}
+
+.logo-animated{
+  transform: scale(1.8);
+  left: calc(50% - 130px);
+  top: calc(50% - 50px);
 }
 
 .hero__actions{
