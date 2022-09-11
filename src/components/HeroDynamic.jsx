@@ -1,7 +1,8 @@
 import React from "react";
 import IconAnimated from "./IconAnimated";
 
-const HeroDynamic = () => {
+const HeroDynamic = ({ OnNextStack }) => {
+
   return (
     <section className="Hero">
       <div className="Hero__description">
@@ -24,7 +25,7 @@ const HeroDynamic = () => {
 
       <div className="hero__actions">
         <button className="button-primary">Go to Work</button>
-        <span className="i_arrow-down"></span>
+        <span className="i_arrow-down" onClick={OnNextStack}></span>
       </div>
     </section>
   );

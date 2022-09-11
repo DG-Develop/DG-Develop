@@ -1,0 +1,39 @@
+.footer {
+  padding: 32px;
+  grid-template-rows: none;
+  gap: 32px;
+
+  > div:first-of-type {
+    height:150px;
+    .decoration-right {
+      width: 225px;
+      height: 225px;
+    }
+  }
+}
+
+.footer__content {
+  .content__info {
+
+    p:first-child {
+      font-size: 2.4rem;
+    }
+
+    p:last-child {
+      font-size: 1.6rem;
+    }
+  }
+
+  div {
+    .logo {
+      width: 180px;
+      height: 180px;
+    }
+  }
+}
+
+.signature{
+    p{
+        font-size: 1.4rem;
+    }
+}

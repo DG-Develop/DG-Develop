@@ -63,8 +63,9 @@
   .stack__name {
     padding: 16px 0 26px;
     display: grid;
-    grid-template-columns: calc(10% - 32px) calc(90% - 32px);
+    grid-template-columns: 10% calc(90% - 32px);
     gap: 32px;
+    ;
     p:first-child {
       font-weight: $font-medium;
       font-size: 1.6rem;
@@ -75,6 +76,9 @@
         font-weight: $font-bold;
         font-size: 1.8rem;
         color: $white;
+        br{
+          display: none;
+        }
     }
   }
 
