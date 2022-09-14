@@ -1,0 +1,28 @@
+.modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: $background-modal;
+    z-index: 20;
+    animation: fadeIn 0.8s;
+}
+
+.modal__content-center{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card__carousel{
+    width: calc(100% - 32px);
+    min-width: 255px;
+    max-width: 500px;
+    height: 294px;
+    background-color: $background-secondary;
+    border-radius: 8px;
+    padding: 16px;
+}

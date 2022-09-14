@@ -1,0 +1,73 @@
+.card__carousel {
+  display: grid;
+  gap: 16px;
+  align-content: flex-start;
+  position: relative;
+}
+
+.carousel__header {
+  h2 {
+    font-weight: $font-bold;
+    font-size: 2.2rem;
+    background: linear-gradient(90deg, #ee3d61 0%, #f07a2b 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .i_close {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+  }
+}
+
+.carousel__animated {
+    overflow: hidden;
+    outline: 1px solid red;
+  .slide {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    -moz-animation: slider 5s infinite linear;
+    -webkit-animation: slider 5s infinite linear;
+    animation: slider 5s infinite linear;
+
+    .carousel__item {
+      padding: 16px;
+      background: $linear-gray;
+      border-radius: 8px;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+
+      div {
+        display: grid;
+        width: 100%;
+        gap: 2px;
+
+        p:first-child {
+          color: $white;
+          font-weight: $font-bold;
+          font-size: 1.4rem;
+        }
+
+        p:last-child {
+          color: $gray;
+          font-weight: $font-regular;
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes slider {
+  to {
+    -moz-transform: translateY(-40%);
+    -webkit-transform: translateY(-40%);
+    transform: translateY(-40%);
+  }
+}

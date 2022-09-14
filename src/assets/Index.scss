@@ -4,6 +4,8 @@
 @import './Anitmations.scss';
 @import './Icons.scss';
 @import './containers/Home.scss';
+@import './components/Modal.scss';
+@import './components/ModalStack.scss';
 @import './components/Header.scss';
 @import './components/ModalMenu.scss';
 @import './components/HeroDynamic.scss';
@@ -24,15 +26,4 @@ html{
     background-color: $background;
     color: white;
     font-family: 'Quicksand', sans-serif;
-}
-
-.modal{
-    background-color: $background-modal;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    animation: fadeIn .800s;
 }

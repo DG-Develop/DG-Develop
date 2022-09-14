@@ -1,7 +1,10 @@
 import React from "react";
 
-const StackMain = ({ Ref, OnNextFooter }) => {
+const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
 
+  const handleOpenModalStack = () => {
+      OnOpenModal()
+  }
 
   return (
       <section className="stack" ref={Ref}>
@@ -22,16 +25,17 @@ const StackMain = ({ Ref, OnNextFooter }) => {
         </div>
 
         <div className="stack__content">
+
           <div>
             <hr />
             <div className="stack__name">
               <p>01/</p>
               <p>
-                Mobile <br /> Development
+                API & <br /> Database
               </p>
             </div>
-            <div className="button-primary">
-              <span className="cell-icon"></span>
+            <div className="button-primary" onClick={handleOpenModalStack}>
+              <span className="database-icon"></span>
               <p>View Stack</p>
             </div>
           </div>
@@ -55,14 +59,15 @@ const StackMain = ({ Ref, OnNextFooter }) => {
             <div className="stack__name">
               <p>03/</p>
               <p>
-                Database <br /> Management
+                Mobile <br /> Development
               </p>
             </div>
             <div className="button-primary">
-              <span className="database-icon"></span>
+              <span className="cell-icon"></span>
               <p>View Stack</p>
             </div>
           </div>
+
         </div>
 
         <div className="stack__decorations">
