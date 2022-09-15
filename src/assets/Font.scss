@@ -1,10 +1,32 @@
 
 @font-face {
     font-family: 'Quicksand';
-    src: 
-        url('#{$quicksand-font-path}/Quicksand-Bold.ttf') format('truetype'),
-        url('#{$quicksand-font-path}/Quicksand-Light.ttf') format('truetype'),
-        url('#{$quicksand-font-path}/Quicksand-Medium.ttf') format('truetype'),
-        url('#{$quicksand-font-path}/Quicksand-Regular.ttf') format('truetype'),
-        url('#{$quicksand-font-path}/Quicksand-SemiBold.ttf') format('truetype');
+    font-weight: 700;
+    src: url('#{$quicksand-font-path}/Quicksand-Bold.ttf') format('truetype');
 }
+
+@font-face {
+    font-family: 'Quicksand';
+    font-weight: 300;
+    src: url('#{$quicksand-font-path}/Quicksand-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-weight: 500;
+    src: url('#{$quicksand-font-path}/Quicksand-Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Quicksand';
+    font-weight: 400;
+    src: url('#{$quicksand-font-path}/Quicksand-Regular.ttf') format('truetype');
+}
+
+
+@font-face {
+    font-family: 'Quicksand';
+    font-weight: 600;
+    src: url('#{$quicksand-font-path}/Quicksand-SemiBold.ttf') format('truetype');
+}
+

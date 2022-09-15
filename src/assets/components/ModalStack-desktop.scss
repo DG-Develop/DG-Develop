@@ -1,0 +1,89 @@
+.card__carousel{
+    height: 325px;
+}
+
+
+.carousel__header {
+  h2 {
+    font-size: 2.8rem;
+  }
+
+}
+
+.carousel__animated {
+  .slide {
+
+    .carousel__item {
+
+        img{
+            width: 40px;
+            height: 40px;
+        }
+
+      div {
+
+        p:first-child {
+
+          font-size: 1.6rem;
+        }
+
+        p:last-child {
+
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .slide.mobile {
+    height: calc(80px * 6);
+  }
+
+  .slide.web {
+    height: calc(80px * 10);
+  }
+
+  .slide.api {
+    height: calc(80px * 14);
+  }
+}
+
+
+@keyframes slider {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    100% {
+      -webkit-transform: translateY(calc(-80px * 3));
+      transform: translateY(calc(-80px * 3));
+    }
+  }
+  
+  
+  @keyframes sliderweb {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    100% {
+      -webkit-transform: translateY(calc(-80px * 5));
+      transform: translateY(calc(-80px * 5));
+    }
+  }
+  
+  
+  @keyframes sliderapi {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+    }
+  
+    100% {
+      -webkit-transform: translateY(calc(-80px * 7));
+      transform: translateY(calc(-80px * 7));
+    }
+  }
+  

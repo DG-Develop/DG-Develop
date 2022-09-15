@@ -2,8 +2,8 @@ import React from "react";
 
 const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
 
-  const handleOpenModalStack = () => {
-      OnOpenModal()
+  const handleOpenModalStack = (title) => {
+      OnOpenModal(title)
   }
 
   return (
@@ -34,7 +34,7 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
                 API & <br /> Database
               </p>
             </div>
-            <div className="button-primary" onClick={handleOpenModalStack}>
+            <div className="button-primary" onClick={() => handleOpenModalStack("API & Database")}>
               <span className="database-icon"></span>
               <p>View Stack</p>
             </div>
@@ -48,7 +48,7 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
                 Web <br /> Development
               </p>
             </div>
-            <div className="button-primary">
+            <div className="button-primary" onClick={() => handleOpenModalStack("Web Development")}>
               <span className="desktop-icon"></span>
               <p>View Stack</p>
             </div>
@@ -62,7 +62,7 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
                 Mobile <br /> Development
               </p>
             </div>
-            <div className="button-primary">
+            <div className="button-primary" onClick={() => handleOpenModalStack("Mobile Development")}>
               <span className="cell-icon"></span>
               <p>View Stack</p>
             </div>

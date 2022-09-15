@@ -1,3 +1,13 @@
+.card__carousel{
+  width: calc(100% - 32px);
+  min-width: 255px;
+  max-width: 600px;
+  height: 294px;
+  background-color: $background-secondary;
+  border-radius: 8px;
+  padding: 16px;
+}
+
 .card__carousel {
   display: grid;
   gap: 16px;
@@ -25,17 +35,14 @@
 }
 
 .carousel__animated {
-    overflow: hidden;
-    outline: 1px solid red;
+  overflow: hidden;
   .slide {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    -moz-animation: slider 5s infinite linear;
-    -webkit-animation: slider 5s infinite linear;
-    animation: slider 5s infinite linear;
 
     .carousel__item {
+      width: 100%;
       padding: 16px;
       background: $linear-gray;
       border-radius: 8px;
@@ -62,12 +69,63 @@
       }
     }
   }
+
+  .slide.mobile{
+    height: calc(75px * 6);
+    -moz-animation: slider 10s infinite linear;
+    -webkit-animation: slider 10s infinite linear;
+    animation: slider 10s infinite linear;
+  }
+
+  .slide.web{
+    height: calc(75px * 10);
+    -moz-animation: sliderweb 16s infinite linear;
+    -webkit-animation: sliderweb 16s infinite linear;
+    animation: sliderweb 16s infinite linear;
+  }
+
+  .slide.api{
+    height: calc(75px * 14);
+    -moz-animation: sliderapi 22s infinite linear;
+    -webkit-animation: sliderapi 22s infinite linear;
+    animation: sliderapi 22s infinite linear;
+  }
 }
 
 @keyframes slider {
-  to {
-    -moz-transform: translateY(-40%);
-    -webkit-transform: translateY(-40%);
-    transform: translateY(-40%);
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(calc(-75px * 3));
+    transform: translateY(calc(-75px * 3));
+  }
+}
+
+
+@keyframes sliderweb {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(calc(-75px * 5));
+    transform: translateY(calc(-75px * 5));
+  }
+}
+
+
+@keyframes sliderapi {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  100% {
+    -webkit-transform: translateY(calc(-75px * 7));
+    transform: translateY(calc(-75px * 7));
   }
 }

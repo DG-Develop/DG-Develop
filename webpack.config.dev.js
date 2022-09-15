@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const MediaQueryPlugin = require('media-query-plugin');
 /* const Dotenv = require('dotenv-webpack') */
 

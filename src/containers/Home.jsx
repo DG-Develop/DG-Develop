@@ -6,7 +6,9 @@ import Footer from "../components/Footer";
 import ModalStack from "../components/ModalStack";
 
 const Home = () => {
-  const [isOpenModalStack, setIsOpenModalStack] = useState(false)
+  
+  const [isOpenModalStack, setIsOpenModalStack] = useState(false);
+  const [titleStack, setTitleStack] = useState("");
   const stack = useRef(null);
   const footer = useRef(null);
 
@@ -18,9 +20,14 @@ const Home = () => {
     footer.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleOpenModal = () => {
-    setIsOpenModalStack(true)
-  }
+  const handleOpenModal = (title) => {
+    setIsOpenModalStack(true);
+    setTitleStack(title);
+  };
+
+  const handleCloseModal = () => {
+    setIsOpenModalStack(false);
+  };
 
   return (
     <>
@@ -28,12 +35,20 @@ const Home = () => {
       <main>
         <HeroDynamic OnNextStack={handleNextStack} />
 
-        <StackMain Ref={stack}  OnNextFooter={handleNextFooter} OnOpenModal={handleOpenModal}/>
+        <StackMain
+          Ref={stack}
+          OnNextFooter={handleNextFooter}
+          OnOpenModal={handleOpenModal}
+        />
       </main>
 
       <Footer Ref={footer} />
 
-      <ModalStack  isOpen={isOpenModalStack}/>
+      <ModalStack
+        isOpen={isOpenModalStack}
+        title={titleStack}
+        OnCloseModal={handleCloseModal}
+      />
     </>
   );
 };

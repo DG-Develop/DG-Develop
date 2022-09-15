@@ -18,24 +18,8 @@ module.exports = {
     },
     resolve: {
         extensions: ['.tsx', '.jsx', '.ts', '.js'],
-        alias: {
-            '@actions': path.resolve(__dirname, 'src/actions'),
-            '@assetComponent': path.resolve(__dirname, 'src/assets/components'),
-            '@assetContainer': path.resolve(__dirname, 'src/assets/containers'),
-            '@static': path.resolve(__dirname, 'src/assets/static'),
-            '@components': path.resolve(__dirname, 'src/components'),
-            '@containers': path.resolve(__dirname, 'src/containers'),
-            '@asset': path.resolve(__dirname, 'src/assets'),
-            '@font': path.resolve(__dirname, 'src/assets/fonts')
-        }
     },
     devServer: {
-        static: {
-            directory: path.join(__dirname, 'dist'),
-        },
-        compress: true,
-        open: true,
-        port: 3008,
         historyApiFallback: true,
     },
     module: {
@@ -64,15 +48,23 @@ module.exports = {
             },
             {
                 type: "asset",
-                test: /\.(png|gif|jpg|svg)$/i,
+                test: /\.(png|gif|jpg|svg|ttf)$/i,
                 generator: {
                     filename: 'assets/[name].[ext]'
                 }
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i,
-                type: 'asset/resource',
-            },
+                test: /\.(png|gif|jpg|svg|ttf)$/i,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[hash].[ext]',
+                            outputPath: 'assets'
+                        }
+                    }
+                ]
+            }
         ]
     },
     plugins: [
@@ -100,7 +92,7 @@ module.exports = {
         minimize: true,
         minimizer: [
             new CssMinimizerPlugin(),
-            // new TerserPlugin()
+            new TerserPlugin()
         ],
         splitChunks: {
             cacheGroups: {
@@ -112,5 +104,8 @@ module.exports = {
             },
         },
     },
+    performance: {
+        hints: false
+    }
 
 }
