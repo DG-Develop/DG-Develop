@@ -2,7 +2,7 @@
   "name": "dg-develop",
   "version": "1.0.0",
   "description": "<!--\r **DG-Develop/DG-Develop** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.",
-  "homepage": "dg-develop.github.io",
+  "homepage": "https://dg-develop.github.io/DG-Develop",
   "main": "index.js",
   "scripts": {
     "predeploy": "npm run build",
