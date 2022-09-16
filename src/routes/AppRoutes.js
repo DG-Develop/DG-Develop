@@ -1,11 +1,17 @@
 import React from "react";
+import About from "../containers/About";
 import Home from '../containers/Home'
+import ErrorPage from '../containers/ErrorPage'
 
 const AppRoutes = [
     {
         path: '/',
-        index: true,
         element: <Home />,
+        errroElement: <ErrorPage />
+    },
+    {
+        path: '/about',
+        element: <About />,
     },
 ]
 

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
@@ -63,12 +64,12 @@ export const Header = () => {
         ) : (
           <div className="menu">
             <ul>
-              <li>HOME</li>
-              <li>ABOUT</li>
+              <li><Link to="/">HOME</Link></li>
+              <li><Link to="/about">ABOUT</Link></li>
             </ul>
             <ul>
-              <li>WORK</li>
-              <li>CONTACT</li>
+              <li><Link to="/">WORK</Link></li>
+              <li><Link to="/">CONTACT</Link></li>
             </ul>
           </div>
         )}
