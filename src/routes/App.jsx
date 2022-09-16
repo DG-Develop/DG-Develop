@@ -1,5 +1,5 @@
 import React from "react";
-import { Routes as Switch, Route, BrowserRouter } from "react-router-dom";
+import { Routes as Switch, Route, BrowserRouter as Router } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 import "../assets/Index.scss";
 // import Home from "../containers/Home";
@@ -10,7 +10,7 @@ if (window.innerWidth >= 1024) {
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <Router>
       <Switch>
         {AppRoutes.map((route, index) => {
           const { element, ...rest } = route;
@@ -18,7 +18,7 @@ const App = () => {
         })}
         {/* <Route  path="/" element={<Home />} /> */}
       </Switch>
-    </BrowserRouter>
+    </Router>
   );
 };
 
