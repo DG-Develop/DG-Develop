@@ -8,7 +8,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MediaQueryPlugin = require('media-query-plugin');
 
 module.exports = {
-    entry: './src/index.jsx',
+    entry: './src/index-prod.jsx',
     mode: 'production',
     devtool: 'source-map',
     output: {

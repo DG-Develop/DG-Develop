@@ -9,6 +9,7 @@
     "deploy": "gh-pages -d dist",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./webpack.config.js",
+    "prod": "node ./server/server.js",
     "start": "webpack serve --config ./webpack.config.dev.js"
   },
   "repository": {
@@ -23,14 +24,15 @@
   },
   "dependencies": {
     "core-js": "3.24.1",
+    "express": "4.18.1",
     "gh-pages": "4.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-redux": "7.2.6",
+    "react-redux": "8.0.2",
     "react-responsive": "9.0.0-beta.10",
     "react-router-dom": "6.4.0",
-    "redux": "4.1.2",
-    "redux-thunk": "2.4.0"
+    "redux": "4.2.0",
+    "redux-thunk": "2.4.1"
   },
   "devDependencies": {
     "@babel/core": "7.16.0",
