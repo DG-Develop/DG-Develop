@@ -8,13 +8,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const MediaQueryPlugin = require('media-query-plugin');
 
 module.exports = {
-    entry: './src/index-prod.jsx',
+    entry: './src/index.jsx',
     mode: 'production',
     devtool: 'source-map',
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name]-bundle.[contenthash].js',
-        publicPath: './'
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.tsx', '.jsx', '.ts', '.js'],

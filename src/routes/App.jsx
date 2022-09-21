@@ -1,10 +1,12 @@
-
+import React from 'react'
 import {
+  BrowserRouter,
   // Routes as Switch,
   // BrowserRouter as Router ,
   createBrowserRouter,
+  Routes,
   // RouterProvider,
-  // Route
+  Route
 } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
 import "../assets/Index.scss";
@@ -15,20 +17,20 @@ if (window.innerWidth >= 1024) {
 }
 
 // const App = () => {
-
 //   return (
-//     <Router>
-//       <Switch>
+//     <BrowserRouter>
+//       <Routes>
 //         {AppRoutes.map((route, index) => {
 //           const { element, ...rest } = route;
 //           return <Route key={index} {...rest} element={element} />;
 //         })}
-//         {/* <Route  path="/" element={<Home />} /> */}
-//       </Switch>
-//     </Router>
+//       </Routes>
+//     </BrowserRouter>
 //   );
 // };
 
 const App = createBrowserRouter(AppRoutes)
+
+
 
 export default App;

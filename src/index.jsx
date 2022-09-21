@@ -1,8 +1,10 @@
 import React from "react";
+import ReactDOM from 'react-dom'
 import { createRoot } from "react-dom/client";
 import App from "./routes/App";
 // import { createBrowserHistory } from 'history';
 import { RouterProvider } from 'react-router-dom'
+import { Route } from "react-router-dom";
 
 // const history = createBrowserHistory();
 /* const store = createStore(reducers, {}, applyMiddleware(reduxThunk)) */
@@ -17,3 +19,7 @@ root.render(
         <RouterProvider router={App} />
     </React.StrictMode>
 )
+
+// root.render(
+//     <App />
+// )
