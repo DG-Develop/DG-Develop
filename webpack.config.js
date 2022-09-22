@@ -14,7 +14,6 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'js/[name]-bundle.[contenthash].js',
-        publicPath: '/'
     },
     resolve: {
         extensions: ['.tsx', '.jsx', '.ts', '.js'],
@@ -50,7 +49,9 @@ module.exports = {
             {
                 test: /\.(s*)css$/,
                 use: [
-                    { loader: MiniCssExtractPlugin.loader },
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
                     'css-loader',
                     // MediaQueryPlugin.loader,
                     'sass-loader'
@@ -63,18 +64,6 @@ module.exports = {
                     filename: 'assets/[name].[ext]'
                 }
             },
-            {
-                test: /\.(png|gif|jpg|svg|ttf)$/i,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: '[hash].[ext]',
-                            outputPath: 'assets'
-                        }
-                    }
-                ]
-            }
         ]
     },
     plugins: [
@@ -84,8 +73,10 @@ module.exports = {
             inject: 'body'
         }),
         new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash].css'
-            // chunkFilename: 'css/[id].css'
+            filename: 'css/[name].[contenthash].css',
+            linkType: 'text/css',
+            chunkFilename: 'css/[id].css',
+            ignoreOrder: false // Enable to remove warnings about conflicting order
         }),
         // new MediaQueryPlugin({
         //     include: [
@@ -101,7 +92,7 @@ module.exports = {
     optimization: {
         minimize: true,
         minimizer: [
-            new CssMinimizerPlugin(),
+            // new CssMinimizerPlugin(),
             new TerserPlugin()
         ],
         splitChunks: {

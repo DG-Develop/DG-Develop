@@ -19,7 +19,3 @@ root.render(
         <RouterProvider router={App} />
     </React.StrictMode>
 )
-
-// root.render(
-//     <App />
-// )
