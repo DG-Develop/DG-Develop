@@ -18,11 +18,15 @@
         list-style: none;
         padding: 16px 24px;
         background: $linear-main;
-        color: $white;
+        
         border-radius: 112px;
         width: 100%;
         font-size: 1.4rem;
         font-weight: $font-bold;
+        a{
+            text-decoration: none;
+            color: $white;
+        }
     }
 }
 

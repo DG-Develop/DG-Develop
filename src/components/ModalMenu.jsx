@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { Link } from "react-router-dom";
 
 const ModalMenu = ({ OnCloseModal }) => {
   const modalMenu = useRef(null);
@@ -21,10 +22,10 @@ const ModalMenu = ({ OnCloseModal }) => {
           <span className="i_close"></span>
         </div>
         <ul>
-          <li>HOME</li>
-          <li>ABOUT</li>
-          <li>WORK</li>
-          <li>CONTACT</li>
+          <li><Link to="/">HOME</Link></li>
+          <li><Link to="/about">ABOUT</Link></li>
+          <li><Link to="/">WORK</Link></li>
+          <li><Link to="/contact">CONTACT</Link></li>
         </ul>
       </div>
     </div>
