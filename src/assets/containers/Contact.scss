@@ -1,0 +1,91 @@
+.contact-form {
+  width: 100%;
+  min-width: 255px;
+  max-width: 1024px;
+  height: calc(100vh - 53px);
+  padding: 16px;
+  display: grid;
+  gap: 24px;
+  align-content: flex-start;
+  overflow-y: scroll;
+
+  label {
+    font-weight: $font-bold;
+    font-size: 1.4rem;
+    color: $white;
+  }
+}
+
+.contact-issue {
+  display: grid;
+  gap: 24px;
+  > div:first-child {
+    p {
+      font-weight: $font-bold;
+      font-size: 1.4rem;
+      color: $white;
+    }
+
+    h2 {
+      font-weight: $font-bold;
+      font-size: 2.4rem;
+      background: $linear-main;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+  }
+}
+
+.chips-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px 0;
+}
+
+.contact-inputs {
+  display: grid;
+  gap: 16px;
+
+  div {
+    display: grid;
+    gap: 8px;
+
+    textarea,
+    input {
+      border: none;
+      outline: none;
+      height: 58px;
+      background-color: $gray-dark;
+      padding: 8px;
+      border-radius: 8px;
+      color: $white;
+      font-weight: $font-medium;
+      font-size: 1.4rem;
+    }
+
+    textarea {
+      height: 116px;
+      resize: none;
+      font-family: "Quicksand", sans-serif;
+    }
+  }
+}
+
+.contact-action {
+  input {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: $color-accent;
+    border-radius: 8px;
+    color: $white;
+    font-weight: $font-bold;
+    font-size: 1.6rem;
+    padding: 10px;
+    width: 100%;
+    font-family: "Quicksand", sans-serif;
+  }
+}
