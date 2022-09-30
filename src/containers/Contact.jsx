@@ -1,12 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import ChipRadio from "../components/ChipRadio";
+import emailjs from "@emailjs/browser";
 
 import { Header } from "../components/Header";
 
 const Contact = () => {
-  const handleSubmit = () => {};
+  
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-  const handleChangeRadio = () => {};
+    emailjs
+      .sendForm(
+        "service_61iulb2",
+        "template_5w2jmx7",
+        e.target,
+        "JT_JBVOEw7g7Zblxm"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+
+    e.target.reset();
+  };
 
   const issues = [
     {
@@ -20,7 +40,7 @@ const Contact = () => {
       id: 2,
     },
     {
-      title: "Datbase",
+      title: "Database",
       name: "tag",
       id: 3,
     },
@@ -55,7 +75,6 @@ const Contact = () => {
                   Name={issue.name}
                   Id={issue.id}
                   Title={issue.title}
-                  OnChange={handleChangeRadio}
                 />
               ))}
             </div>
@@ -65,17 +84,17 @@ const Contact = () => {
         <section className="contact-inputs">
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" />
+            <input type="text" name="name" id="name" required/>
           </div>
 
           <div>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" />
+            <input type="email" name="email" id="email" required/>
           </div>
 
           <div>
             <label htmlFor="subject">Subject</label>
-            <input type="text" name="subject" id="subject" />
+            <input type="text" name="subject" id="subject" required/>
           </div>
 
           <div>
@@ -85,6 +104,7 @@ const Contact = () => {
               id="message"
               cols="30"
               rows="10"
+              required
             ></textarea>
           </div>
         </section>
