@@ -1,31 +1,29 @@
-import React, { useState } from "react";
+import React from "react";
 import ChipRadio from "../components/ChipRadio";
 import emailjs from "@emailjs/browser";
 
 import { Header } from "../components/Header";
 
 const Contact = () => {
-  
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_61iulb2",
-        "template_5w2jmx7",
+    try {
+      const result = await emailjs.sendForm(
+        process.env.YOUR_SERVICE_ID,
+        process.env.YOUR_TEMPLATE_ID,
         e.target,
-        "JT_JBVOEw7g7Zblxm"
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-        },
-        (error) => {
-          console.log(error.text);
-        }
+        process.env.YOUR_PUBLIC_KEY
       );
 
-    e.target.reset();
+      if (result.text == "Ok") {
+        // TODO: Show modal ok
+      }
+
+      e.target.reset();
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   const issues = [
@@ -84,17 +82,17 @@ const Contact = () => {
         <section className="contact-inputs">
           <div>
             <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" required/>
+            <input type="text" name="name" id="name" required />
           </div>
 
           <div>
             <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" required/>
+            <input type="email" name="email" id="email" required />
           </div>
 
           <div>
             <label htmlFor="subject">Subject</label>
-            <input type="text" name="subject" id="subject" required/>
+            <input type="text" name="subject" id="subject" required />
           </div>
 
           <div>

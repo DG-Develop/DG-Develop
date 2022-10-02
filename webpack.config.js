@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
-// const Dotenv = require('dotenv-webpack')
+const Dotenv = require('dotenv-webpack')
 const MediaQueryPlugin = require('media-query-plugin');
 
 module.exports = {
@@ -87,7 +87,7 @@ module.exports = {
         //     }
         // }),
         new CleanWebpackPlugin(),
-        // new Dotenv()
+        new Dotenv()
     ],
     optimization: {
         minimize: true,
