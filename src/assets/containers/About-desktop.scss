@@ -1,0 +1,39 @@
+.about {
+  height: calc(100vh - 70px);
+  padding: 16px 16px 0;
+
+  h2 {
+    font-size: 4rem;
+  }
+
+  > div:first-child {
+    width: 100%;
+    max-width: 600px;
+  }
+}
+
+.about__content{
+    hr {
+        width: 40px;
+        height: 2px;
+        background-color: $white;
+      };
+}
+
+.about__image {
+  position: absolute;
+
+  bottom: 0;
+  right: 0;
+  
+
+  picture {
+    width: 557px;
+    height: 569px;
+    display: grid;
+  place-content: center;
+  }
+  img {
+    transform: scale(0.7);
+  }
+}
