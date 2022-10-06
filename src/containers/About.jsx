@@ -18,15 +18,31 @@ const About = () => {
               <img src={me} alt="My photo presentation" />
             </picture>
           </div>
+
+          <hr className="line__lead" />
           <div className="about__content">
             <hr />
             <p>
-              I'm a Backend Developer with 3 years experience in development and
-              analytics about APIs and integration and deploy application web
-              and mobile.
+              My name is David Gomez, I'm 26 years old and I'm Mexican, I like
+              all about software development and design patterns. My favorite
+              color is red and I consider myself a person with capatiblities of
+              analyze complex tecnique information.
               <br />
-              Also UI and UX design with 
+              Also I'm a Backend Developer with 3 years experience in
+              development and analytics about APIs and integration and deploy
+              application web and mobile.
             </p>
+          </div>
+          <div className="about__decoration">
+            <hr className="line__left" />
+
+            <div className="decoration__name">
+              <div className="inner-circle__line">
+                <div className="circle"></div>
+              </div>
+              <p>DGDevelop</p>
+            </div>
+
           </div>
         </div>
       </section>

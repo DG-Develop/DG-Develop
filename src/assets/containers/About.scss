@@ -4,7 +4,8 @@
   min-width: 255px;
   max-width: 1255px;
   margin: 0 auto;
-  padding: 8px 8px 0;
+  padding: 8px 8px 16px;
+  overflow-y: scroll;
 
   h2 {
     font-weight: $font-bold;
@@ -40,4 +41,65 @@
 
 .about__image {
   text-align: center;
+}
+
+.line__lead {
+  border: none;
+  height: 5px;
+  width: 100%;
+  background-color: $white;
+  border-radius: 32px;
+  margin-bottom: 16px;
+}
+
+.about__decoration {
+  padding: 0 calc(20px + 10%);
+  position: relative;
+
+  .line__left {
+    border: none;
+    width: 5px;
+    height: calc(100vh - 390px);
+    background-color: $white;
+    border-radius: 32px;
+  }
+}
+
+.decoration__name {
+  width: 120px;
+  height: 120px;
+  border: 1px solid $color-accent;
+  border-radius: 50%;
+  display: grid;
+  place-content: center;
+  position: absolute;
+  top: calc(50% - 60px);
+  left: calc(50% - 60px);
+
+  .inner-circle__line {
+    width: 60px;
+    height: 60px;
+    border: 1px solid $color-accent;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+
+    .circle {
+      width: 40px;
+      height: 40px;
+      background-color: $color-accent;
+      border-radius: 50%;
+    }
+  }
+  p{
+    position: absolute;
+    right: -8px;
+    top: calc(50% - 12px);
+    color: $white;
+    font-size: 1.2rem;
+    font-weight: $font-medium;
+    background-color: $background;
+    padding: 4px;
+    border-radius: 4px;
+  }
 }
