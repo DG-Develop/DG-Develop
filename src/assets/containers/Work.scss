@@ -1,0 +1,68 @@
+.scroll-dynamic {
+  outline: 1px solid crimson;
+  display: grid;
+  gap: 16px;
+  padding: 8px;
+  height: calc(100vh - 53px);
+}
+
+.icon-container {
+  background-color: $background-secondary;
+  border-radius: 50%;
+  box-shadow: $shadow-card;
+  position: relative;
+  width: 140px;
+  height: 140px;
+  place-content: center;
+  position: relative;
+  left: calc(50% - 70px);
+  top: calc(50% - 70px);
+
+  .logo-animated {
+    transform: scale(0.6);
+    left: calc(50% - 125px);
+    top: calc(50% - 60px);
+
+    .anim-mouth,
+    .anim-face,
+    .anim-eyebrown-right,
+    .anim-eyebrown-left,
+    .anim-eye-right,
+    .anim-eye-left,
+    .anim-ear-right,
+    .anim-ear-left {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.scroll-content {
+  outline: 1px solid lightblue;
+  display: grid;
+  gap: 24px;
+
+  h1 {
+    font-weight: $font-bold;
+    font-size: 2.4rem;
+    background: $linear-main;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    font-size: 1.6rem;
+    color: $white;
+    font-weight: $font-bold;
+  }
+}
+
+
+.scroll-motion{
+    outline: 1px solid palegreen;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    gap: 16px;
+    padding: 16px;
+}

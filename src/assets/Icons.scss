@@ -93,3 +93,7 @@
 .decoration-right{
     @include icon-structure("./static/decoration_right.svg", 64px, 64px, $color-primary-dark-filter);
 }
+
+.scroll-icon{
+    @include icon-structure("./static/scroll.svg", 45px, 86px, $white-filter);
+}
