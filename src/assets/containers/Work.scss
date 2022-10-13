@@ -65,4 +65,14 @@
     justify-items: center;
     gap: 16px;
     padding: 16px;
+
+    span{
+      animation: scrollMotion 4s infinite ease-out;
+    }
+
+    p{
+      opacity: 0;
+      animation: opacityWork 2s infinite ease-out;
+      animation-direction: alternate;
+    }
 }

@@ -1,0 +1,7 @@
+.scroll-dynamic {
+    grid-template-columns: 10% 80%;
+    justify-content: space-between;
+    gap: 4px;
+    padding: 32px;
+    height: calc(100vh - 70px);
+  }
