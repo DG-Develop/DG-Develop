@@ -1,7 +1,62 @@
 .scroll-dynamic {
-    grid-template-columns: 10% 80%;
+    grid-template-columns: 15% 70%;
     justify-content: space-between;
     gap: 4px;
     padding: 32px;
     height: calc(100vh - 70px);
   }
+
+  .icon-container {
+    width: 200px;
+    height: 200px;
+    left: calc(5%);
+    top: calc(50% - 70px);
+  
+    .logo-animated {
+      transform: scale(0.8);
+      left: calc(50% - 125px);
+      top: calc(50% - 60px);
+    }
+  }
+
+
+  .scroll-content {
+    height: calc(100vh - 105px);
+
+    >div:first-child{
+      align-self: flex-end;
+      padding: 0 32px;
+      display: grid;
+      gap: 16px;
+
+      p{
+        display: inline-block;
+        width: 610px;
+      }
+    }
+    gap: 4px;
+  
+    h1 {
+      font-size: 4rem;
+      width: fit-content;
+    }
+  
+    p {
+      font-size: 3.2rem;
+    }
+  }
+
+
+  .scroll-motion{
+   justify-content: flex-start;
+   justify-items: start;
+   align-self: flex-end;
+   gap: 32px;
+
+   padding: 16px 32px;
+
+   span{
+    margin-left: 4px;
+   }
+
+}

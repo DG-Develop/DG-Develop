@@ -1,22 +1,23 @@
 .scroll-dynamic {
-  outline: 1px solid crimson;
   display: grid;
-  gap: 16px;
+  gap: 48px;
   padding: 8px;
   height: calc(100vh - 53px);
+  position: relative;
+  outline: 1px solid crimson;
+  overflow-y: scroll;
 }
 
 .icon-container {
   background-color: $background-secondary;
   border-radius: 50%;
   box-shadow: $shadow-card;
-  position: relative;
+  position: sticky;
   width: 140px;
   height: 140px;
   place-content: center;
-  position: relative;
   left: calc(50% - 70px);
-  top: calc(50% - 70px);
+  top: 40px;
 
   .logo-animated {
     transform: scale(0.6);
@@ -36,8 +37,15 @@
   }
 }
 
-.scroll-content {
+
+.work-start{
   outline: 1px solid lightblue;
+}
+
+
+.scroll-content {
+  outline: 1px solid cadetblue;
+  height: calc(100vh - 252px);
   display: grid;
   gap: 24px;
 
@@ -59,7 +67,6 @@
 
 
 .scroll-motion{
-    outline: 1px solid palegreen;
     display: grid;
     justify-content: center;
     justify-items: center;
@@ -75,4 +82,12 @@
       animation: opacityWork 2s infinite ease-out;
       animation-direction: alternate;
     }
+}
+
+
+.work-content{
+  img{
+    width: 305px;
+    height:600px;
+  }
 }
