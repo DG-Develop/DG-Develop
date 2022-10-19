@@ -4,50 +4,52 @@ import { Header } from "../components/Header";
 import genc from "../assets/static/genc.jpg";
 
 const Work = () => {
-  const firstWork = useRef(null)
-  const firstIntersection = useRef(null)
-  const [isVisible, setIsVisible] = useState(false)
+  const firstWork = useRef(null);
+  const lastwork = useRef(null);
+  const scrollDynamic = useRef(null);
+  const firstIntersection = useRef(null);
+  const [isVisible, setIsVisible] = useState(false);
 
   const callbackFunction = (entries) => {
-    const [entry] = entries
-    setIsVisible(entry.isIntersecting)
-  }
+    const [entry] = entries;
+    setIsVisible(entry.isIntersecting);
+  };
 
   const options = {
     root: null,
     rootMargin: "0px",
-    threshold: 1
-  }
+    threshold: 1,
+  };
 
   useEffect(() => {
-      const observer = new IntersectionObserver(callbackFunction, options)
-      firstIntersection.current && observer.observe(firstIntersection.current)
+    const observer = new IntersectionObserver(callbackFunction, options);
+    firstIntersection.current && observer.observe(firstIntersection.current);
 
-      return () => {
-        firstIntersection.current && observer.unobserve(firstIntersection.current)
-      }
-  }, [firstIntersection, options])
+    return () => {
+      firstIntersection.current &&
+        observer.unobserve(firstIntersection.current);
+    };
+  }, [firstIntersection, options]);
 
   useEffect(() => {
-    if(isVisible){
-      console.log('soy visible')
-      // firstWork.current.className = "work-content animation-fadeinRight"
-      firstWork.current.classList.remove('animation-fadeoutRight')
-      firstWork.current.classList.add('animation-fadeinRight')
-    }else{
-      console.log('Soy invisible')
-      // firstWork.current.classname = "work-content"
-      firstWork.current.classList.remove('animation-fadeinRight')
-      firstWork.current.classList.add('animation-fadeoutRight')
+    isVisible
+      ? firstWork.current.classList.add("animation-fadeinRight")
+      : firstWork.current.classList.remove("animation-fadeinRight");
+  }, [isVisible]);
 
-    }
-  }, [isVisible])
+  const handleScroll = () => {
+    console.log(scrollDynamic.current.scrollTop);
+  };
 
   return (
     <>
       <Header />
 
-      <section className="scroll-dynamic">
+      <section
+        className="scroll-dynamic"
+        ref={scrollDynamic}
+        onScroll={handleScroll}
+      >
         <div className="icon-container">
           <IconAnimated />
         </div>
@@ -79,6 +81,7 @@ const Work = () => {
           </section>
         </section>
         <div ref={firstIntersection}></div>
+        <div ref={lastwork}></div>
       </section>
     </>
   );
