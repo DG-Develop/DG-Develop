@@ -1,11 +1,11 @@
 .scroll-dynamic {
   display: grid;
-  gap: 48px;
+  gap: 32px;
   padding: 8px;
   height: calc(100vh - 53px);
   position: relative;
-  outline: 1px solid crimson;
-  overflow-y: scroll;
+  outline: 1px solid #dc143c;
+  // overflow-y: scroll;
 }
 
 .icon-container {
@@ -18,6 +18,9 @@
   place-content: center;
   left: calc(50% - 70px);
   top: 40px;
+
+  transform: translateY(0);
+  transition: transform .365s ease-out;
 
   .logo-animated {
     transform: scale(0.6);
@@ -37,9 +40,21 @@
   }
 }
 
-// .work-start {
-//   outline: 1px solid lightblue;
-// }
+.icon-container.motion-middle{
+  transform: translateY(-10px);
+  transition: transform .365s ease-out;
+}
+
+.icon-container.motion-top{
+  transform: translateY(-20px);
+  transition: transform .365s ease-out;
+}
+
+.work-start {
+  outline: 1px solid lightblue;
+  overflow-y: scroll;
+  height: calc(100vh -  250px);
+}
 
 .scroll-content {
   outline: 1px solid cadetblue;
@@ -83,20 +98,18 @@
 
 .work-content {
   outline: 1px solid mediumspringgreen;
-  height: calc(100vh - 100px); 
+  height: calc(100vh - 252px); 
   opacity: 0;
   animation: fadeOutRight 1s;
+  display: grid;
+  gap: 32px;
+  align-content: flex-start;
 }
 
 .work-content.animation-fadeinRight{
   opacity: 1;
   animation: fadeInRight 1s;
 }
-
-// .work-content.animation-fadeoutRight{
-//   opacity: 0;
-//   animation: fadeOutRight 1s;
-// }
 
 .work-title--right{
   text-align: right;
@@ -117,6 +130,7 @@
 
 
 .work-background{
+  outline: 1px solid white;
   width: 95%;
   min-width: 255px;
   max-width: 1024px;

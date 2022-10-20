@@ -5,9 +5,10 @@ import genc from "../assets/static/genc.jpg";
 
 const Work = () => {
   const firstWork = useRef(null);
-  const lastwork = useRef(null);
-  const scrollDynamic = useRef(null);
+  const workStart = useRef(null);
+  const iconContainer = useRef(null);
   const firstIntersection = useRef(null);
+
   const [isVisible, setIsVisible] = useState(false);
 
   const callbackFunction = (entries) => {
@@ -38,23 +39,44 @@ const Work = () => {
   }, [isVisible]);
 
   const handleScroll = () => {
-    console.log(scrollDynamic.current.scrollTop);
+    const top = workStart.current.scrollTop;
+    console.log(top);
+
+    if (window.innerWidth >= 1024) {
+      if (top >= 0 && top < 100) {
+        iconContainer.current.classList.remove("motion-top");
+        iconContainer.current.classList.remove("motion-middle");
+      } else if (top > 101 && top < 160) {
+        iconContainer.current.classList.remove("motion-top");
+        iconContainer.current.classList.add("motion-middle");
+      } else {
+        iconContainer.current.classList.remove("motion-middle");
+        iconContainer.current.classList.add("motion-top");
+      }
+    } else {
+      if (top >= 0 && top < 110) {
+        iconContainer.current.classList.remove("motion-top");
+        iconContainer.current.classList.remove("motion-middle");
+      } else if (top > 111 && top < 200) {
+        iconContainer.current.classList.remove("motion-top");
+        iconContainer.current.classList.add("motion-middle");
+      } else {
+        iconContainer.current.classList.remove("motion-middle");
+        iconContainer.current.classList.add("motion-top");
+      }
+    }
   };
 
   return (
     <>
       <Header />
 
-      <section
-        className="scroll-dynamic"
-        ref={scrollDynamic}
-        onScroll={handleScroll}
-      >
-        <div className="icon-container">
+      <section className="scroll-dynamic">
+        <div className="icon-container" ref={iconContainer}>
           <IconAnimated />
         </div>
 
-        <section className="work-start">
+        <section className="work-start" ref={workStart} onScroll={handleScroll}>
           <div className="scroll-content">
             <div>
               <h1>Welcome to my portfolio works</h1>
@@ -79,9 +101,9 @@ const Work = () => {
               </div>
             </div>
           </section>
+
+          <div ref={firstIntersection}></div>
         </section>
-        <div ref={firstIntersection}></div>
-        <div ref={lastwork}></div>
       </section>
     </>
   );
