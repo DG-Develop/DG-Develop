@@ -39,14 +39,18 @@ const Work = () => {
   }, [isVisible]);
 
   const handleScroll = () => {
+    const height = workStart.current.scrollHeight;
     const top = workStart.current.scrollTop;
-    console.log(top);
+    // console.log(top);
 
     if (window.innerWidth >= 1024) {
-      if (top >= 0 && top < 100) {
+      const tenPorcent = parseInt((10 * height) / 100);
+      const thirtyPorcent = parseInt((30 * height) / 100);
+
+      if (top >= 0 && top < tenPorcent) {
         iconContainer.current.classList.remove("motion-top");
         iconContainer.current.classList.remove("motion-middle");
-      } else if (top > 101 && top < 160) {
+      } else if (top > tenPorcent + 1 && top < thirtyPorcent) {
         iconContainer.current.classList.remove("motion-top");
         iconContainer.current.classList.add("motion-middle");
       } else {
@@ -100,9 +104,12 @@ const Work = () => {
                 <img src={genc} alt="work image about contract generator" />
               </div>
             </div>
+            <div ref={firstIntersection}></div>
           </section>
 
-          <div ref={firstIntersection}></div>
+          <section className="work-content">
+
+          </section>
         </section>
       </section>
     </>
