@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MediaQueryPlugin = require('media-query-plugin');
 const Dotenv = require('dotenv-webpack')
 
+
 module.exports = {
     entry: './src/index.jsx',
     mode: 'development',
@@ -45,7 +46,7 @@ module.exports = {
                 use: [
                     "style-loader",
                     'css-loader',
-                    // MediaQueryPlugin.loader,
+                    MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -67,14 +68,14 @@ module.exports = {
             template: './public/index.html',
             filename: './index.html'
         }),
-        // new MediaQueryPlugin({
-        //     include:[
-        //         'Header'
-        //     ],
-        //     queries: {
-        //         'print, screen and (min-width: 1024px)': 'desktop'
-        //     }
-        // })
+        new MediaQueryPlugin({
+            include:[
+                'Header'
+            ],
+            queries: {
+                'print, screen and (min-width: 1024px)': 'desktop'
+            }
+        }),
         new Dotenv()
     ]
 

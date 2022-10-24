@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import IconAnimated from "../components/IconAnimated";
 import { Header } from "../components/Header";
 import genc from "../assets/static/genc.jpg";
+import Separator from "../components/Separator";
 
 const Work = () => {
   const firstWork = useRef(null);
@@ -93,23 +94,25 @@ const Work = () => {
             </div>
           </div>
 
+          <Separator />
+
           <section className="work-content" ref={firstWork}>
             <div className="work-title--right">
               <h3>GenC</h3>
               <p>Contract generator</p>
             </div>
+            <div ref={firstIntersection}></div>
 
             <div className="work-background">
               <div>
                 <img src={genc} alt="work image about contract generator" />
               </div>
             </div>
-            <div ref={firstIntersection}></div>
           </section>
+          
+          <Separator />
 
-          <section className="work-content">
-
-          </section>
+          <section className="work-content"></section>
         </section>
       </section>
     </>

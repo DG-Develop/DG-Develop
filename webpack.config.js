@@ -53,7 +53,7 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader,
                     },
                     'css-loader',
-                    // MediaQueryPlugin.loader,
+                    MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -78,21 +78,21 @@ module.exports = {
             chunkFilename: 'css/[id].css',
             ignoreOrder: false // Enable to remove warnings about conflicting order
         }),
-        // new MediaQueryPlugin({
-        //     include: [
-        //         'Header'
-        //     ],
-        //     queries: {
-        //         'print, screen and (min-width: 1024px)': 'desktop'
-        //     }
-        // }),
+        new MediaQueryPlugin({
+            include: [
+                'index'
+            ],
+            queries: {
+                'print, screen and (min-width: 1024px)': 'desktop'
+            }
+        }),
         new CleanWebpackPlugin(),
         new Dotenv()
     ],
     optimization: {
         minimize: true,
         minimizer: [
-            // new CssMinimizerPlugin(),
+            new CssMinimizerPlugin(),
             new TerserPlugin()
         ],
         splitChunks: {

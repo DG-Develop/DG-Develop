@@ -41,12 +41,12 @@
 
 .icon-container.motion-middle{
   transform: translateY(-10px);
-  transition: transform .365s ease-out;
+  transition: transform .700s ease-out;
 }
 
 .icon-container.motion-top{
   transform: translateY(-20px);
-  transition: transform .365s ease-out;
+  transition: transform .700s ease-out;
 }
 
 .work-start {
@@ -96,18 +96,19 @@
 }
 
 .work-content {
-  // outline: 1px solid mediumspringgreen;
-  height: calc(100vh - 252px); 
+  outline: 1px solid mediumspringgreen;
+  height: 100vh;
   opacity: 0;
   animation: fadeOutRight 1s;
-  display: grid;
-  gap: 32px;
+  display: grid;  
+  gap: 16px;
   align-content: flex-start;
+  padding: 120px 0 0;
 }
 
 .work-content.animation-fadeinRight{
-  opacity: 1;
   animation: fadeInRight 1s;
+  opacity: 1;
 }
 
 .work-title--right{

@@ -29,6 +29,7 @@
 
 .work-start {
   height: calc(100vh - 110px);
+  overflow-x: hidden;
 }
 
 .scroll-content {
@@ -71,9 +72,9 @@
 }
 
 .work-content {
-  height: calc(100vh - 105px); 
+  height: calc(100vh - 105px);
   gap: 8px;
-  position: relative;
+  width: 100%;
 }
 
 .work-title--right {
