@@ -6,7 +6,7 @@ import AppRoutes from "./AppRoutes";
 import "../assets/Index.scss";
 
 if (window.innerWidth >= 1024) {
-  import("../assets/IndexDesktop.scss");
+  import("../assets/Index-desktop.scss");
 }
 
 const App =

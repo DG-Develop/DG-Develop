@@ -32,3 +32,36 @@ html{
     color: white;
     font-family: 'Quicksand', sans-serif;
 }
+
+// @media print, screen and (min-width: 1024px) {
+//     @import "./Icons-desktop.scss";
+//     @import "./containers/Contact-destop.scss";
+//     @import "./containers/About-desktop.scss";
+//     @import "./containers/Work-desktop.scss";
+//     @import "./components/ModalStack-desktop.scss";
+//     @import "./components/Header-desktop.scss";
+//     @import "./components/HeroDynamic-desktop.scss";
+//     @import "./components/StackMain-desktop.scss";
+//     @import "./components/Footer-desktop.scss";
+  
+//     ::-webkit-scrollbar-thumb {
+//       background: var(--gray-low);
+//       border-radius: 4px;
+//     }
+  
+//     ::-webkit-scrollbar {
+//       width: 8px;
+//       height: 8px;
+//       /*background: rgba(255, 255, 255, .2);*/
+//       border-radius: 4px;
+//     }
+  
+//     ::-webkit-scrollbar:hover {
+//       background: #b3b3b3;
+//       box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+//     }
+  
+//     ::-webkit-scrollbar:hover:active {
+//       background: #999;
+//     }
+//   }
