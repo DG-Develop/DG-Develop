@@ -5,16 +5,16 @@ const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
-// const MediaQueryPlugin = require('media-query-plugin');
+const MediaQueryPlugin = require('media-query-plugin');
 const LinkMediaHtmlWebpackPlugin = require('link-media-html-webpack-plugin');
 
-const getMediaFile = require('link-media-html-webpack-plugin/get-media-filename')
+// const getMediaFile = require('link-media-html-webpack-plugin/get-media-filename')
 
-const getFilePath = (filename) => path.join(__dirname, 'src', 'assets', filename);
+// const getFilePath = (filename) => path.join(__dirname, 'src', 'assets', filename);
 
 
 module.exports = {
-    entry: ['./src/index.jsx', './src/assets/Index.scss'],
+    entry: './src/index.jsx', 
     mode: 'production',
     devtool: 'source-map',
     output: {
@@ -59,7 +59,7 @@ module.exports = {
                         loader: MiniCssExtractPlugin.loader,
                     },
                     'css-loader',
-                    // MediaQueryPlugin.loader,
+                    MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -74,9 +74,9 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
+            title: 'Portofolio',
             template: './public/index.html',
-            filename: 'index.html',
-            inject: 'body'
+            filename: 'index.html'
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
@@ -84,17 +84,16 @@ module.exports = {
             chunkFilename: 'css/[id].css',
             ignoreOrder: false // Enable to remove warnings about conflicting order
         }),
-        // new MediaQueryPlugin({
-        //     include: [
-        //         'Index'
-        //     ],
-        //     queries: {
-        //         'print, screen and (min-width: 1024px)': 'desktop'
-        //     }
-        // }),
+        new MediaQueryPlugin({
+            include: [
+                'Index'
+            ],
+            queries: {
+                'print, screen and (min-width: 1024px)': 'desktop'
+            }
+        }),
         new CleanWebpackPlugin(),
         new Dotenv(),
-        new LinkMediaHtmlWebpackPlugin(),
     ],
     optimization: {
         minimize: true,
@@ -108,7 +107,7 @@ module.exports = {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendors',
                     chunks: 'all',
-                },
+                }
             },
         },
     },
