@@ -6,15 +6,10 @@ const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const MediaQueryPlugin = require('media-query-plugin');
-const LinkMediaHtmlWebpackPlugin = require('link-media-html-webpack-plugin');
-
-// const getMediaFile = require('link-media-html-webpack-plugin/get-media-filename')
-
-// const getFilePath = (filename) => path.join(__dirname, 'src', 'assets', filename);
 
 
 module.exports = {
-    entry: './src/index.jsx', 
+    entry: './src/index.jsx',
     mode: 'production',
     devtool: 'source-map',
     output: {
@@ -47,18 +42,12 @@ module.exports = {
                 }
             },
             {
-                test: /\.html$/,
-                use: {
-                    loader: 'html-loader'
-                }
-            },
-            {
                 test: /\.(s*)css$/,
                 use: [
                     {
                         loader: MiniCssExtractPlugin.loader,
                     },
-                    'css-loader',
+                    { loader: 'css-loader' },
                     MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
@@ -76,7 +65,10 @@ module.exports = {
         new HtmlWebpackPlugin({
             title: 'Portofolio',
             template: './public/index.html',
-            filename: 'index.html'
+            filename: 'index.html',
+            inject: false,
+            hash: true
+            // link: '<link href="css/index-desktop.css" rel="stylesheet" media="(min-width: 1024px)">'
         }),
         new MiniCssExtractPlugin({
             filename: 'css/[name].[contenthash].css',
@@ -85,11 +77,9 @@ module.exports = {
             ignoreOrder: false // Enable to remove warnings about conflicting order
         }),
         new MediaQueryPlugin({
-            include: [
-                'Index'
-            ],
+            include: true,
             queries: {
-                'print, screen and (min-width: 1024px)': 'desktop'
+                'only screen and (min-width: 1024px)': 'desktop'
             }
         }),
         new CleanWebpackPlugin(),

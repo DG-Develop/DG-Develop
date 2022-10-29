@@ -33,7 +33,7 @@ html{
     font-family: 'Quicksand', sans-serif;
 }
 
-@media print, screen and (min-width: 1024px) {
+@media only screen and (min-width: 1024px) {
     @import "./Icons-desktop.scss";
     @import "./containers/Contact-destop.scss";
     @import "./containers/About-desktop.scss";

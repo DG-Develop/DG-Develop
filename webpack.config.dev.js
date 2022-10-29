@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const MediaQueryPlugin = require('media-query-plugin');
 const Dotenv = require('dotenv-webpack')
 
 
@@ -36,17 +35,10 @@ module.exports = {
                 }
             },
             {
-                test: /\.html$/,
-                use: {
-                    loader: 'html-loader'
-                }
-            },
-            {
                 test: /\.(s*)css$/,
                 use: [
                     "style-loader",
                     'css-loader',
-                    MediaQueryPlugin.loader,
                     'sass-loader'
                 ]
             },
@@ -65,16 +57,22 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './public/index.html',
-            filename: './index.html'
-        }),
-        new MediaQueryPlugin({
-            include:[
-                'Header'
-            ],
-            queries: {
-                'print, screen and (min-width: 1024px)': 'desktop'
-            }
+            templateContent: `<!DOCTYPE html>
+            <html lang="en" theme="dark">
+            
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Portofolio</title>
+            </head>
+            
+            <body>
+                <main id="app"></main>
+                <div id="modal"></div>
+            </body>
+            
+            </html>`,
+            filename: 'index.html',
         }),
         new Dotenv()
     ]
