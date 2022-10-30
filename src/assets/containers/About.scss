@@ -15,6 +15,20 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
   }
+
+  @include media(desktop) {
+    height: calc(100vh - 70px);
+    padding: 16px 16px 0;
+
+    h2 {
+      font-size: 4rem;
+    }
+
+    > div:first-child {
+      width: 100%;
+      max-width: 600px;
+    }
+  }
 }
 
 .about__content {
@@ -37,10 +51,35 @@
     color: $white;
     font-weight: $font-medium;
   }
+
+  @include media(desktop) {
+    hr {
+      width: 40px;
+      height: 2px;
+      background-color: $white;
+    }
+  }
 }
 
 .about__image {
   text-align: center;
+
+  @include media(desktop) {
+    position: absolute;
+
+    bottom: 0;
+    right: 0;
+
+    picture {
+      width: 557px;
+      height: 569px;
+      display: grid;
+      place-content: center;
+    }
+    img {
+      transform: scale(0.7);
+    }
+  }
 }
 
 .line__lead {
@@ -50,6 +89,11 @@
   background-color: $white;
   border-radius: 32px;
   margin-bottom: 16px;
+
+  @include media(desktop) {
+    margin-top: 16px;
+    margin-bottom: 24px;
+  }
 }
 
 .about__decoration {
@@ -91,7 +135,7 @@
       border-radius: 50%;
     }
   }
-  p{
+  p {
     position: absolute;
     right: -8px;
     top: calc(50% - 12px);
@@ -101,5 +145,27 @@
     background-color: $background;
     padding: 4px;
     border-radius: 4px;
+  }
+
+  @include media(desktop) {
+    width: 180px;
+    height: 180px;
+    top: calc(50% - 90px);
+    left: calc(50% - 90px);
+
+    .inner-circle__line {
+      width: 100px;
+      height: 100px;
+
+      .circle {
+        width: 70px;
+        height: 70px;
+      }
+    }
+    p {
+      right: -10px;
+      top: calc(50% - 14px);
+      font-size: 1.6rem;
+    }
   }
 }

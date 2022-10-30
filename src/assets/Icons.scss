@@ -1,99 +1,147 @@
 @mixin icon-structure($iconPath, $width, $height, $filter) {
-    display: inline-block;
-    width: $width;
-    height: $height;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-image: url($iconPath);
-    filter: $filter;
+  display: inline-block;
+  width: $width;
+  height: $height;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url($iconPath);
+  filter: $filter;
 
-    &:hover{
-        cursor: pointer;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.logo {
+  @include icon-structure("./static/logo.svg", 30px, 30px, $white-filter);
+
+  @include media(desktop) {
+    width: 35px;
+    height: 35px;
+
+    &:hover {
+      opacity: 0.9;
     }
+  }
 }
 
-.logo{
-    @include icon-structure("./static/logo.svg", 30px, 30px, $white-filter);
+.i_menu {
+  @include icon-structure("./static/menu.svg", 20px, 20px, $white-filter);
 }
 
-.i_menu{
-    @include icon-structure("./static/menu.svg", 20px, 20px, $white-filter);
+.i_twitter {
+  @include icon-structure("./static/twitter.svg", 24px, 20px, $white-filter);
+
+  @include media(desktop) {
+    width: 26px;
+    height: 22px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
+}
+.i_github {
+  @include icon-structure("./static/github.svg", 20px, 20px, $white-filter);
+
+  @include media(desktop) {
+    width: 22px;
+    height: 22px;
+    &:hover {
+      opacity: 0.9;
+    }
+  }
 }
 
-.i_twitter{
-    @include icon-structure("./static/twitter.svg", 24px, 20px, $white-filter);
-}
-.i_github{
-    @include icon-structure("./static/github.svg", 20px, 20px, $white-filter);
+.i_close {
+  @include icon-structure("./static/close.svg", 24px, 24px, $white-filter);
 }
 
-.i_close{
-    @include icon-structure("./static/close.svg", 24px, 24px, $white-filter);
+.i_arrow-down {
+  @include icon-structure("./static/arrow_down.svg", 24px, 32px, $white-filter);
 }
 
-.i_arrow-down{
-    @include icon-structure("./static/arrow_down.svg", 24px, 32px, $white-filter);
+.decoration {
+  @include icon-structure(
+    "./static/decoration_header.svg",
+    164px,
+    164px,
+    $white-filter
+  );
 }
 
-.decoration{
-    @include icon-structure("./static/decoration_header.svg", 164px, 164px, $white-filter)
+.anim-ear-left {
+  @include icon-structure("./static/ear_left.svg", 40px, 68px, $white-filter);
 }
 
-.anim-ear-left{
-    @include icon-structure("./static/ear_left.svg", 40px, 68px, $white-filter)
+.anim-ear-right {
+  @include icon-structure("./static/ear_right.svg", 40px, 68px, $white-filter);
 }
 
-.anim-ear-right{
-    @include icon-structure("./static/ear_right.svg", 40px, 68px, $white-filter)
+.anim-eye-left {
+  @include icon-structure("./static/eye_left.svg", 14px, 12px, $white-filter);
 }
 
-.anim-eye-left{
-    @include icon-structure("./static/eye_left.svg", 14px, 12px, $white-filter)
+.anim-eye-right {
+  @include icon-structure("./static/eye_right.svg", 14px, 12px, $white-filter);
 }
 
-.anim-eye-right{
-    @include icon-structure("./static/eye_right.svg", 14px, 12px, $white-filter)
+.anim-eyebrown-left {
+  @include icon-structure(
+    "./static/eyebrown_left.svg",
+    54px,
+    30px,
+    $white-filter
+  );
 }
 
-.anim-eyebrown-left{
-    @include icon-structure("./static/eyebrown_left.svg", 54px, 30px, $white-filter)
+.anim-eyebrown-right {
+  @include icon-structure(
+    "./static/eyebrown_right.svg",
+    54px,
+    30px,
+    $white-filter
+  );
 }
 
-.anim-eyebrown-right{
-    @include icon-structure("./static/eyebrown_right.svg", 54px, 30px, $white-filter)
+.anim-face {
+  @include icon-structure("./static/face.svg", 74px, 92px, $white-filter);
 }
 
-.anim-face{
-    @include icon-structure("./static/face.svg", 74px, 92px, $white-filter)
+.anim-mouth {
+  @include icon-structure("./static/mouth.svg", 62px, 33px, $white-filter);
 }
 
-.anim-mouth{
-    @include icon-structure("./static/mouth.svg", 62px, 33px, $white-filter)
+.cell-icon {
+  @include icon-structure("./static/cell.svg", 10px, 14px, $white-filter);
 }
 
-.cell-icon{
-    @include icon-structure("./static/cell.svg", 10px, 14px, $white-filter)
+.desktop-icon {
+  @include icon-structure("./static/desktop.svg", 16px, 14px, $white-filter);
 }
 
-.desktop-icon{
-    @include icon-structure("./static/desktop.svg", 16px, 14px, $white-filter)
+.database-icon {
+  @include icon-structure("./static/database.svg", 13px, 14px, $white-filter);
 }
 
-
-.database-icon{
-    @include icon-structure("./static/database.svg", 13px, 14px, $white-filter)
+.decoration-left {
+  @include icon-structure(
+    "./static/decoration_left.svg",
+    64px,
+    64px,
+    $color-primary-filter
+  );
 }
 
-
-.decoration-left{
-    @include icon-structure("./static/decoration_left.svg", 64px, 64px, $color-primary-filter)
+.decoration-right {
+  @include icon-structure(
+    "./static/decoration_right.svg",
+    64px,
+    64px,
+    $color-primary-dark-filter
+  );
 }
 
-.decoration-right{
-    @include icon-structure("./static/decoration_right.svg", 64px, 64px, $color-primary-dark-filter);
-}
-
-.scroll-icon{
-    @include icon-structure("./static/scroll.svg", 45px, 86px, $white-filter);
+.scroll-icon {
+  @include icon-structure("./static/scroll.svg", 45px, 86px, $white-filter);
 }

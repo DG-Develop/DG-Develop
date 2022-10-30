@@ -1,4 +1,4 @@
-.card__carousel{
+.card__carousel {
   width: calc(100% - 32px);
   min-width: 255px;
   max-width: 600px;
@@ -6,6 +6,10 @@
   background-color: $background-secondary;
   border-radius: 8px;
   padding: 16px;
+
+  @include media(desktop) {
+    height: 325px;
+  }
 }
 
 .card__carousel {
@@ -31,6 +35,12 @@
     position: absolute;
     top: 8px;
     right: 8px;
+  }
+
+  @include media(desktop) {
+    h2 {
+      font-size: 2.8rem;
+    }
   }
 }
 
@@ -68,23 +78,56 @@
         }
       }
     }
+
+    @include media(desktop) {
+      .slide {
+        .carousel__item {
+          img {
+            width: 40px;
+            height: 40px;
+          }
+
+          div {
+            p:first-child {
+              font-size: 1.6rem;
+            }
+
+            p:last-child {
+              font-size: 1.4rem;
+            }
+          }
+        }
+      }
+
+      .slide.mobile {
+        height: calc(80px * 6);
+      }
+
+      .slide.web {
+        height: calc(80px * 10);
+      }
+
+      .slide.api {
+        height: calc(80px * 14);
+      }
+    }
   }
 
-  .slide.mobile{
+  .slide.mobile {
     height: calc(75px * 6);
     -moz-animation: slider 10s infinite linear;
     -webkit-animation: slider 10s infinite linear;
     animation: slider 10s infinite linear;
   }
 
-  .slide.web{
+  .slide.web {
     height: calc(75px * 10);
     -moz-animation: sliderweb 16s infinite linear;
     -webkit-animation: sliderweb 16s infinite linear;
     animation: sliderweb 16s infinite linear;
   }
 
-  .slide.api{
+  .slide.api {
     height: calc(75px * 14);
     -moz-animation: sliderapi 22s infinite linear;
     -webkit-animation: sliderapi 22s infinite linear;
@@ -92,40 +135,4 @@
   }
 }
 
-@keyframes slider {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
 
-  100% {
-    -webkit-transform: translateY(calc(-75px * 3));
-    transform: translateY(calc(-75px * 3));
-  }
-}
-
-
-@keyframes sliderweb {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  100% {
-    -webkit-transform: translateY(calc(-75px * 5));
-    transform: translateY(calc(-75px * 5));
-  }
-}
-
-
-@keyframes sliderapi {
-  0% {
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-  }
-
-  100% {
-    -webkit-transform: translateY(calc(-75px * 7));
-    transform: translateY(calc(-75px * 7));
-  }
-}

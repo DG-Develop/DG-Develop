@@ -6,7 +6,7 @@ const TerserPlugin = require('terser-webpack-plugin')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const MediaQueryPlugin = require('media-query-plugin');
-
+const CompressionPlugin = require('compression-webpack-plugin');
 
 module.exports = {
     entry: './src/index.jsx',
@@ -29,16 +29,6 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            "@babel/preset-env",
-                            "@babel/preset-react",
-                            "@babel/preset-typescript"
-                        ],
-                        plugins: [
-                            ["@babel/plugin-transform-runtime"]
-                        ]
-                    }
                 }
             },
             {
@@ -79,8 +69,13 @@ module.exports = {
         new MediaQueryPlugin({
             include: true,
             queries: {
-                'only screen and (min-width: 1024px)': 'desktop'
+                'only screen and (min-width: 1024px)': 'desktop',
+                'only screen and (min-width: 1300px)': 'desktop_large'
             }
+        }),
+        new CompressionPlugin({
+            test: /\.js$|\.css$/,
+            filename: '[path]-[name].gz',
         }),
         new CleanWebpackPlugin(),
         new Dotenv(),
@@ -104,5 +99,4 @@ module.exports = {
     performance: {
         hints: false
     }
-
 }
