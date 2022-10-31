@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import IconAnimated from "../components/IconAnimated";
 import { Header } from "../components/Header";
 import genc from "../assets/static/genc.jpg";
+import keradent from "../assets/static/Keradent.jpg";
 import Separator from "../components/Separator";
 
 const Work = () => {
@@ -109,10 +110,22 @@ const Work = () => {
               </div>
             </div>
           </section>
-          
+
           <Separator />
 
-          <section className="work-content"></section>
+          <section className="work-content">
+            <div className="work-title--right">
+              <h3>Keradent</h3>
+              <p>Register of expedients</p>
+            </div>
+            {/* <div ref={firstIntersection}></div> */}
+
+            <div className="work-background">
+              <div>
+                <img src={keradent} alt="work image about register of expedients" />
+              </div>
+            </div>
+          </section>
         </section>
       </section>
     </>

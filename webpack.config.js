@@ -70,7 +70,7 @@ module.exports = {
             include: true,
             queries: {
                 'only screen and (min-width: 1024px)': 'desktop',
-                'only screen and (min-width: 1300px)': 'desktop_large'
+                'only screen and (min-width: 1440px)': 'desktop_large'
             }
         }),
         new CompressionPlugin({
