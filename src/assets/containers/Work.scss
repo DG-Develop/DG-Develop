@@ -4,7 +4,7 @@
   padding: 8px;
   height: calc(100vh - 53px);
   position: relative;
-  outline: 1px solid #dc143c;
+  overflow-y: scroll;
 
   @include media(desktop) {
     grid-template-columns: 15% 70%;
@@ -79,18 +79,16 @@
 }
 
 .work-start {
-  outline: 1px solid lightblue;
-  overflow-y: scroll;
-  height: calc(100vh - 250px);
+  height: fit-content;
+  position: relative;
+  z-index: 20;
 
   @include media(desktop) {
-    height: calc(100vh - 80px);
-    // overflow-x: hidden;
+    overflow-x: hidden;
   }
 }
 
 .scroll-content {
-  // outline: 1px solid cadetblue;
   height: calc(100vh - 252px);
   display: grid;
   gap: 24px;
@@ -168,115 +166,228 @@
   }
 }
 
-.work-content {
-  outline: 1px solid mediumspringgreen;
+.work-content--mobile.work-right,
+.work-content--desktop.work-right {
+  animation: fadeOutRight 1s;
+
+  .work-title {
+    text-align: right;
+  }
+
+  .work-background {
+    justify-self: start;
+    background: $color-primary-dark-transapent;
+
+    img {
+      right: 0;
+    }
+  }
+
+  @include media(desktop) {
+    .work-background {
+      img {
+        right: calc(-10%);
+      }
+    }
+  }
+}
+
+.work-content--mobile.work-left,
+.work-content--desktop.work-left {
+  animation: fadeOutLeft 1s;
+
+  .work-title {
+    text-align: left;
+  }
+
+  .work-background {
+    justify-self: end;
+    background: $color-primary-transparent;
+
+    img {
+      left: 0;
+    }
+  }
+
+  @include media(desktop) {
+    .work-background {
+      img {
+        left: calc(-10%);
+      }
+    }
+  }
+}
+
+.work-content--mobile.work-left,
+.work-content--mobile.work-right{
+  .work-background{
+    justify-self: center;
+  }
+}
+
+.work-content--mobile,
+.work-content--desktop {
   height: 100vh;
   opacity: 0;
-  animation: fadeOutRight 1s;
   display: grid;
   gap: 16px;
   align-content: flex-start;
   padding: 100px 0 0;
+
+  .work-title {
+    padding: 8px;
+
+    h3 {
+      font-weight: $font-bold;
+      font-size: 2.4rem;
+      color: $white;
+    }
+
+    p {
+      font-size: 1.6rem;
+      font-weight: $font-medium;
+      color: $white;
+    }
+  }
+
+  .work-background {
+    min-width: 255px;
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 16px;
+
+    img {
+      border-radius: 16px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
 
   @include media(desktop) {
     height: calc(100vh - 80px);
     gap: 8px;
     width: 100%;
     padding: 16px 0 0;
+
+    .work-title {
+      padding: 8px 22%;
+      h3 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        font-size: 1.8rem;
+      }
+    }
+
+    .work-background {
+      margin: 0 8px;
+
+      img {
+        bottom: calc(50% - 200px);
+      }
+    }
   }
 
-  @include media(desktopL){
+  @include media(desktopL) {
     padding: 100px 0 0;
+
+    .work-title {
+      h3 {
+        font-size: 3.2rem;
+      }
+
+      p {
+        font-size: 2.4rem;
+      }
+    }
+    .work-background {
+
+      img {
+        bottom: calc(50% - 305px);
+      }
+    }
   }
 }
 
-.work-content.animation-fadeinRight {
+.work-content--desktop {
+  .work-background {
+    width: 95%;
+    height: 250px;
+
+    img {
+      width: 305px;
+      height: 223px;
+    }
+  }
+
+  @include media(desktop) {
+    .work-background {
+      width: 70%;
+      height: 440px;
+
+      img {
+        width: 90%;
+        height: 400px;
+      }
+    }
+  }
+
+  @include media(desktopL){
+    .work-background {
+      height: 650px;
+
+      img {
+        height: 610px;
+      }
+    }
+  }
+}
+
+.work-content--mobile {
+  .work-background {
+    width: 80%;
+    height: 400px;
+
+    img {
+      width: 240px;
+      height: 340px;
+    }
+  }
+
+  @include media(desktop) {
+    .work-background {
+      width: 45%;
+      height: 450px;
+
+      img {
+        width: 70%;
+        height: 400px;
+      }
+    }
+  }
+
+  @include media(desktopL){
+    .work-background {
+      height: 650px;
+
+      img {
+        height: 610px;
+      }
+    }
+  }
+}
+
+.work-content--mobile.work-right.animation-fadeinRight,
+.work-content--desktop.work-right.animation-fadeinRight {
   animation: fadeInRight 1s;
   opacity: 1;
 }
 
-.work-title--right {
-  text-align: right;
-  padding: 8px;
-
-  h3 {
-    font-weight: $font-bold;
-    font-size: 2.4rem;
-    color: $white;
-  }
-
-  p {
-    font-size: 1.6rem;
-    font-weight: $font-medium;
-    color: $white;
-  }
-
-  @include media(desktop) {
-    padding: 8px 20%;
-    h3 {
-      font-size: 2.4rem;
-    }
-
-    p {
-      font-size: 1.8rem;
-    }
-  }
-
-  @include media(desktopL){
-    h3 {
-      font-size: 3.2rem;
-    }
-
-    p {
-      font-size: 2.4rem;
-    }
-  }
-}
-
-.work-background {
-  outline: 1px solid lightblue;
-  width: 95%;
-  min-width: 255px;
-  max-width: 1024px;
-  height: 250px;
-  margin: 0 auto;
-  position: relative;
-  border-radius: 16px;
-  background: $color-primary-dark-transapent;
-
-  img {
-    width: 305px;
-    height: 223px;
-    border-radius: 16px;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-  }
-
-  @include media(desktop) {
-    width: 70%;
-    height: 440px;
-    outline: 1px solid green;
-    margin: 0 8px;
-
-    img {
-      width: 90%;
-      height: 400px;
-      right: calc(-10%);
-      bottom: calc(50% - 200px);
-    }
-  }
-
-  @include media(desktopL){
-    // width: 480px;
-    height: 650px;
-    outline: 1px solid crimson;
-
-    img {
-      // width: 450px;
-      height: 610px;
-      // right: calc(-10%);
-      bottom: calc(50% - 305px);
-    }
-  }
+.work-content--mobile.work-left.animation-fadeinLeft,
+.work-content--desktop.work-left.animation-fadeinLeft {
+  animation: fadeInLeft 1s;
+  opacity: 1;
 }
