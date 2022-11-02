@@ -40,12 +40,10 @@ const Work = () => {
     setIsVisibleThird(entry.isIntersecting);
   };
 
-
   const callbackFunctionFourth = (entries) => {
     const [entry] = entries;
     setIsVisibleFourth(entry.isIntersecting);
   };
-
 
   const options = {
     root: null,
@@ -73,7 +71,6 @@ const Work = () => {
     };
   }, [secondIntersection, options]);
 
-
   useEffect(() => {
     const observer = new IntersectionObserver(callbackFunctionThird, options);
     thirdIntersection.current && observer.observe(thirdIntersection.current);
@@ -95,28 +92,34 @@ const Work = () => {
   }, [fourthIntersection, options]);
 
   useEffect(() => {
-    isVisible
-      ? firstWork.current.classList.add("animation-fadeinRight")
-      : firstWork.current.classList.remove("animation-fadeinRight");
+    if (isVisible) {
+      firstWork.current.classList.add("animation-fadeinRight");
+    }
 
-    // if(isVisible) {
-    //   firstWork.current.classList.add("animation-fadeinRight")
-    // }
-
-    // if(!isVisible)
-  }, [isVisible]);
+    if ((isVisible && isVisibleSecond) || !isVisible) {
+      firstWork.current.classList.remove("animation-fadeinRight");
+    }
+  }, [isVisible, isVisibleSecond]);
 
   useEffect(() => {
-    isVisibleSecond
-      ? secondWork.current.classList.add("animation-fadeinLeft")
-      : secondWork.current.classList.remove("animation-fadeinLeft");
-  }, [isVisibleSecond]);
+    if (isVisibleSecond) {
+      secondWork.current.classList.add("animation-fadeinLeft");
+    }
+
+    if ((isVisibleSecond && isVisibleThird) || !isVisibleSecond) {
+      secondWork.current.classList.remove("animation-fadeinLeft");
+    }
+  }, [isVisibleSecond, isVisibleThird]);
 
   useEffect(() => {
-    isVisibleThird
-      ? thirdWork.current.classList.add("animation-fadeinRight")
-      : thirdWork.current.classList.remove("animation-fadeinRight");
-  }, [isVisibleThird]);
+    if (isVisibleThird) {
+      thirdWork.current.classList.add("animation-fadeinRight");
+    }
+
+    if ((isVisibleThird && isVisibleFourh) || !isVisibleThird) {
+      thirdWork.current.classList.remove("animation-fadeinRight");
+    }
+  }, [isVisibleThird, isVisibleFourh]);
 
   useEffect(() => {
     isVisibleFourh
@@ -127,33 +130,38 @@ const Work = () => {
   const handleScroll = () => {
     const height = srollDynamic.current.scrollHeight;
     const top = srollDynamic.current.scrollTop;
-    // console.log(top);
 
-    if (window.innerWidth >= 1024) {
-      const tenPorcent = parseInt((10 * height) / 100);
-      const thirtyPorcent = parseInt((30 * height) / 100);
+    // const porcentaje = (top * 100) / height;
+    // console.log(porcentaje);
 
-      if (top >= 0 && top < tenPorcent) {
-        iconContainer.current.classList.remove("motion-top");
-        iconContainer.current.classList.remove("motion-middle");
-      } else if (top > tenPorcent + 1 && top < thirtyPorcent) {
-        iconContainer.current.classList.remove("motion-top");
-        iconContainer.current.classList.add("motion-middle");
-      } else {
-        iconContainer.current.classList.remove("motion-middle");
-        iconContainer.current.classList.add("motion-top");
-      }
-    } else {
-      if (top >= 0 && top < 110) {
-        iconContainer.current.classList.remove("motion-top");
-        iconContainer.current.classList.remove("motion-middle");
-      } else if (top > 111 && top < 200) {
-        iconContainer.current.classList.remove("motion-top");
-        iconContainer.current.classList.add("motion-middle");
-      } else {
-        iconContainer.current.classList.remove("motion-middle");
-        iconContainer.current.classList.add("motion-top");
-      }
+    const threePorcent = parseInt((3 * height) / 100);
+    const tenPorcent = parseInt((10 * height) / 100);
+    const thirtyPorcent = parseInt((30 * height) / 100);
+    const fiftyPorcent = parseInt((50 * height) / 100);
+    const seventyPorcent = parseInt((70 * height) / 100);
+    const eghtyFivePorcent = parseInt((85 * height) / 100);
+
+    if (top >= 0 && top < threePorcent) {
+      iconContainer.current.classList.remove("motion-top");
+      iconContainer.current.classList.remove("motion-middle");
+    } else if (top > threePorcent + 1 && top < tenPorcent) {
+      iconContainer.current.classList.remove("motion-top");
+      iconContainer.current.classList.add("motion-middle");
+    } else if (top > tenPorcent + 1 && top < thirtyPorcent) {
+      iconContainer.current.classList.remove("motion-middle");
+      iconContainer.current.classList.add("motion-top");
+    } else if (top > thirtyPorcent + 1 && top < fiftyPorcent) {
+      iconContainer.current.classList.remove("motion-top");
+      iconContainer.current.classList.add("motion-middle");
+    } else if (top > fiftyPorcent + 1 && top < seventyPorcent){
+      iconContainer.current.classList.remove("motion-middle");
+      iconContainer.current.classList.add("motion-top");
+    }else if (top > seventyPorcent + 1 && top < eghtyFivePorcent){
+      iconContainer.current.classList.remove("motion-top");
+      iconContainer.current.classList.add("motion-middle");
+    }else {
+      iconContainer.current.classList.remove("motion-top");
+      iconContainer.current.classList.remove("motion-middle");
     }
   };
 
@@ -161,12 +169,16 @@ const Work = () => {
     <>
       <Header />
 
-      <section className="scroll-dynamic" onScroll={handleScroll} ref={srollDynamic}>
+      <section
+        className="scroll-dynamic"
+        onScroll={handleScroll}
+        ref={srollDynamic}
+      >
         <div className="icon-container" ref={iconContainer}>
           <IconAnimated />
         </div>
 
-        <section className="work-start" ref={workStart} >
+        <section className="work-start" ref={workStart}>
           <div className="scroll-content">
             <div>
               <h1>Welcome to my portfolio works</h1>
@@ -180,13 +192,14 @@ const Work = () => {
           </div>
 
           <Separator />
+          <Separator />
 
           <section className="work-content--desktop work-right" ref={firstWork}>
             <div className="work-title">
               <h3>GenC</h3>
               <p>Contract generator</p>
             </div>
-            <div className="intersecting" ref={firstIntersection}></div>
+            <div ref={firstIntersection}></div>
 
             <div className="work-background">
               <div>
@@ -195,6 +208,7 @@ const Work = () => {
             </div>
           </section>
 
+          <Separator />
           <Separator />
 
           <section className="work-content--desktop work-left" ref={secondWork}>
@@ -215,6 +229,7 @@ const Work = () => {
           </section>
 
           <Separator />
+          <Separator />
 
           <section className="work-content--mobile work-right" ref={thirdWork}>
             <div className="work-title">
@@ -231,6 +246,7 @@ const Work = () => {
           </section>
 
           <Separator />
+          <Separator />
 
           <section className="work-content--mobile work-left" ref={fourthWork}>
             <div className="work-title">
@@ -246,6 +262,7 @@ const Work = () => {
             </div>
           </section>
 
+          <Separator />
           <Separator />
         </section>
       </section>

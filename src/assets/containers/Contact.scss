@@ -7,7 +7,7 @@
   display: grid;
   gap: 24px;
   align-content: flex-start;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   label {
     font-weight: $font-bold;
