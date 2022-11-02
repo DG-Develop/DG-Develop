@@ -5,6 +5,7 @@
   height: calc(100vh - 53px);
   position: relative;
   overflow-y: scroll;
+  // outline: 1px solid lightblue;
 
   @include media(desktop) {
     grid-template-columns: 15% 70%;
@@ -83,9 +84,10 @@
   position: relative;
   z-index: 20;
 
-  @include media(desktop) {
-    overflow-x: hidden;
-  }
+  // TODO: Buscar una manera que al momento de hacer una animación a la derecha no traspase el eje horizontal 
+  // @include media(desktop) {
+  //   overflow-x: hidden;
+  // }
 }
 
 .scroll-content {
@@ -233,6 +235,16 @@
   gap: 16px;
   align-content: flex-start;
   padding: 100px 0 0;
+  position: relative;
+
+  // .intersecting{
+  //   outline: 1px solid lightcoral;
+  //   position: absolute;
+  //   top: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   right: 0;
+  // }
 
   .work-title {
     padding: 8px;
@@ -384,10 +396,14 @@
 .work-content--desktop.work-right.animation-fadeinRight {
   animation: fadeInRight 1s;
   opacity: 1;
+  position: sticky;
+  top: 0;
 }
 
 .work-content--mobile.work-left.animation-fadeinLeft,
 .work-content--desktop.work-left.animation-fadeinLeft {
   animation: fadeInLeft 1s;
   opacity: 1;
+  position: sticky;
+  top: 0;
 }

@@ -12,6 +12,7 @@ const Work = () => {
   const secondWork = useRef(null);
   const thirdWork = useRef(null);
   const fourthWork = useRef(null);
+  const srollDynamic = useRef(null);
   const workStart = useRef(null);
   const iconContainer = useRef(null);
   const firstIntersection = useRef(null);
@@ -97,6 +98,12 @@ const Work = () => {
     isVisible
       ? firstWork.current.classList.add("animation-fadeinRight")
       : firstWork.current.classList.remove("animation-fadeinRight");
+
+    // if(isVisible) {
+    //   firstWork.current.classList.add("animation-fadeinRight")
+    // }
+
+    // if(!isVisible)
   }, [isVisible]);
 
   useEffect(() => {
@@ -118,8 +125,8 @@ const Work = () => {
   }, [isVisibleFourh]);
 
   const handleScroll = () => {
-    const height = workStart.current.scrollHeight;
-    const top = workStart.current.scrollTop;
+    const height = srollDynamic.current.scrollHeight;
+    const top = srollDynamic.current.scrollTop;
     // console.log(top);
 
     if (window.innerWidth >= 1024) {
@@ -154,12 +161,12 @@ const Work = () => {
     <>
       <Header />
 
-      <section className="scroll-dynamic" onScroll={handleScroll} ref={workStart}>
+      <section className="scroll-dynamic" onScroll={handleScroll} ref={srollDynamic}>
         <div className="icon-container" ref={iconContainer}>
           <IconAnimated />
         </div>
 
-        <section className="work-start" >
+        <section className="work-start" ref={workStart} >
           <div className="scroll-content">
             <div>
               <h1>Welcome to my portfolio works</h1>
@@ -179,7 +186,7 @@ const Work = () => {
               <h3>GenC</h3>
               <p>Contract generator</p>
             </div>
-            <div ref={firstIntersection}></div>
+            <div className="intersecting" ref={firstIntersection}></div>
 
             <div className="work-background">
               <div>
