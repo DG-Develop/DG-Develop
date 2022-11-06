@@ -1,13 +1,16 @@
 import React, { useEffect, useRef, useState } from "react";
 import IconAnimated from "../components/IconAnimated";
 import { Header } from "../components/Header";
-import genc from "../assets/static/genc.jpg";
+import gecon from "../assets/static/Gecon.png";
 import keradent from "../assets/static/Keradent.jpg";
 import baluarteck from "../assets/static/Baluartteck.jpg";
 import saintscript from "../assets/static/Saintscript.jpg";
 import Separator from "../components/Separator";
+import { useNavigate } from "react-router-dom";
 
 const Work = () => {
+  const navigate = useNavigate()
+  
   const firstWork = useRef(null);
   const secondWork = useRef(null);
   const thirdWork = useRef(null);
@@ -165,6 +168,10 @@ const Work = () => {
     }
   };
 
+  const HandleNavigateWorkInfo = name => {
+    navigate(`/work/${name}`)
+  }
+
   return (
     <>
       <Header />
@@ -201,9 +208,9 @@ const Work = () => {
             </div>
             <div ref={firstIntersection}></div>
 
-            <div className="work-background">
+            <div className="work-background" onClick={() => HandleNavigateWorkInfo('Gecon')}>
               <div>
-                <img src={genc} alt="work image about contract generator" />
+                <img src={gecon} alt="work image about contract generator" />
               </div>
             </div>
           </section>

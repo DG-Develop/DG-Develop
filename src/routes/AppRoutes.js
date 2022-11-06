@@ -4,6 +4,7 @@ import Home from '../containers/Home'
 import Work from '../containers/Work'
 import ErrorPage from '../containers/ErrorPage'
 import Contact from "../containers/Contact";
+import WorkInfo from "../containers/WorkInfo";
 
 const AppRoutes = [
     {
@@ -22,6 +23,10 @@ const AppRoutes = [
     {
         path: '/contact',
         element: <Contact />,
+    },
+    {
+        path: '/work/:workname',
+        element: <WorkInfo />,
     },
 ]
 
