@@ -1,10 +1,105 @@
 .info__container{
-    outline: 1xp solid cadetblue;
-    padding: 8px;
     width: 100%;
     overflow-y: auto;
 }
 
 .info__about{
-    outline: 1px solid crimson;
+    background-color: $tertiary-80;
+    padding: 8px;
+    overflow: hidden;
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    @include media(desktop){
+        padding: 32px;
+    }
+}
+
+.sticky__header{
+    display: grid;
+    gap: 8px;
+
+    h1{
+        color: $tertiary-10;
+        font-weight: $font-bold;
+        font-size: 8rem;
+        letter-spacing: -0.6rem;
+        text-align: center;
+    }
+
+
+    @include media(desktopL){
+        h1{
+            font-size: 10rem;
+        }
+    }
+}
+
+.info__content{
+    margin-top: 8px;
+    display: grid;
+    gap: 16px;
+
+    p:first-child{
+        color: $background;
+        font-weight: $font-semibold;
+        font-size: 2rem;
+    }
+
+    p:last-child{
+        color: $background;
+        font-weight: $font-medium;
+        font-size: 1.6rem;
+    }
+
+    @include media(desktop){
+        p:first-child{
+            font-size: 3.2rem;
+        }
+    
+        p:last-child{
+            font-size: 1.8rem;
+        }
+    }
+}
+
+.info__action{
+    margin-top: 32px;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    height: 150px;
+
+    @include media(desktop){
+        height: fit-content;
+    }
+
+    @include media(desktopL){
+        height: 200px;
+    }
+}
+
+/*  el valor de bottom se calculó haciendo la resta del max-width (750px) menos el valor de min-width (250px) dando un total
+    de 500px y ese valor lo dividimos entre dos y nos da un total de 250px que es lo que se resta después del 50% de la imagen*/
+.info__image--main{
+    position: absolute;
+    bottom: calc(250px - 50% );
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    img{
+        width: 80%;
+        min-width: 250px;
+        max-width: 750px;
+        border-radius: 16px;
+    }
+
+    @include media(desktop){
+        bottom: -60%;
+    }
+
+    @include media(desktopL){
+        bottom: calc(250px - 50% );
+    }
 }

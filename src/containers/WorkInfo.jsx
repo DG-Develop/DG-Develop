@@ -1,4 +1,5 @@
 import React from "react";
+import TonalButtonWithIcon from "../widgets/TonalButtonWithIcon";
 
 import gecon from "../assets/static/Gecon.png";
 
@@ -21,7 +22,15 @@ const WorkInfo = () => {
           </p>
         </div>
 
-        {/* TODO: Widget Button Icon */}
+        <div className="info__action">
+          <TonalButtonWithIcon
+            id="btn-see-more"
+            name="See more"
+            icon="i_arrow-down"
+            type="button"
+            classBtnColor="tonal-button-primary"
+          />
+        </div>
 
         <div className="info__image--main">
           <img src={gecon} alt="image home of proyect GECON" />

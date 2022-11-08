@@ -8,7 +8,13 @@ $linear-gray: linear-gradient(90deg, #29323C 0%, #485563 100%);
 $gray-dark: #545454;
 $gray: #959292;
 $color-primary-dark: #EE5847;
+$tertiary-10: #A60013;
 $color-accent: #EE3D61;
+$tertiary-80: #FF8599;
+$primary-10: #A85100;
+$primary-99: #FFE0AB;
+$primary-hovered: linear-gradient(0deg, rgba(240, 122, 43, 0.08), rgba(240, 122, 43, 0.08)), #FFE0AB;
+$primary-focused: linear-gradient(0deg, rgba(240, 122, 43, 0.2), rgba(240, 122, 43, 0.2)), #FFE0AB;
 $color-primary-dark-transapent: rgba(238, 88, 71, 0.25);
 $color-primary-transparent: rgba(240, 122, 43, 0.25);
 
@@ -18,6 +24,7 @@ $background-filter: invert(5%) sepia(5%) saturate(1001%) hue-rotate(314deg) brig
 $color-accent-filter: invert(32%) sepia(53%) saturate(5482%) hue-rotate(333deg) brightness(114%) contrast(87%);
 $color-primary-filter: invert(53%) sepia(54%) saturate(728%) hue-rotate(339deg) brightness(97%) contrast(94%);
 $color-primary-dark-filter: invert(43%) sepia(23%) saturate(1532%) hue-rotate(318deg) brightness(104%) contrast(105%);
+$primary-99-filter: invert(26%) sepia(92%) saturate(5456%) hue-rotate(41deg) brightness(106%) contrast(102%);
 
 // Fonts
 $font-light: 300;
@@ -28,5 +35,6 @@ $font-bold: 700;
 
 // Shadows
 $shadow-card: 0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15);
+$elevated-button-hovered: 0px 2px 6px 2px rgba(0, 0, 0, 0.15), 0px 1px 2px rgba(0, 0, 0, 0.3);
 
 $quicksand-font-path: "../assets/fonts";

@@ -1,0 +1,79 @@
+.tonal-button-primary{
+    width: fit-content;
+    padding: 10px 24px 10px 16px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 8px;
+    background: $primary-99;
+    border-radius: 120px;
+    align-items: center;
+    box-shadow: none;
+    transition: box-shadow .365s ease-out;   
+
+    &:hover{
+        cursor: pointer;
+        box-shadow: $elevated-button-hovered;
+        background: $primary-hovered;
+    }
+
+    &:focus-within:not(:hover){
+        background: $primary-focused;
+    }
+
+    &:active:not(:hover){
+        background: $primary-focused;
+    }
+
+    span{
+        filter: $primary-99-filter;
+        width: 12px;
+        height: 14px;
+    }
+
+    input[type=button]{
+        outline: none;
+        border: none;
+        font-family: 'Quicksand';
+        color: $primary-10;
+        font-weight: $font-bold;
+        font-size: 1.6rem;
+        background: $primary-99;
+
+        &:hover{
+            cursor: pointer;
+            background: $primary-hovered;
+        }
+
+        &:focus:not(:hover){
+            background: $primary-focused;
+        }
+
+        &:active:not(:hover){
+            background: $primary-focused;
+        }
+    }
+
+    @include media(desktop){
+        span{
+            
+            width: 14px;
+            height: 16px;
+        }
+
+        input[type=button]{
+            font-size: 1.8rem;
+        }
+    }
+
+    @include media(desktopL){
+        span{
+            
+            width: 16px;
+            height: 18px;
+        }
+
+        input[type=button]{
+            font-size: 2rem;
+        }
+    }
+}
