@@ -2,6 +2,8 @@ import React from "react";
 import TonalButtonWithIcon from "../widgets/TonalButtonWithIcon";
 
 import gecon from "../assets/static/Gecon.png";
+import geconContractList from "../assets/static/Gecon_Contract_List.png";
+import geconEmployeeList from "../assets/static/Gecon_Employee_List.png";
 import { Link } from "react-router-dom";
 
 const WorkInfo = () => {
@@ -48,43 +50,47 @@ const WorkInfo = () => {
           </div>
           <div className="work-item__content">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit
-              amet rutrum suspendisse. Libero consequat, ante hac risus.
-              Parturient scelerisque tempor, lobortis vestibulum, sed
-              scelerisque massa tincidunt. Ut quis fermentum vitae volutpat
-              auctor facilisis.
+              The principal page contains two sections for download of
+              contracts. <br /> The first of them, download an individual
+              contract by folio and this section you can choose the download
+              method by dynamic or manual. <br /> The second section you can
+              download multiple contracts by government dependecies, you choose
+              the year and period (Semi-annual, Quarterly, Monthly, Biweekly or
+              by Day) and then you choose te government dependecie. <br /> The
+              section next to downloads section is about downloads progress list
+              and you can cancel it while the operation is active.
             </p>
           </div>
         </div>
 
         <div className="description__work-item invert">
           <div className="work-item__header">
-            <h4>Employee List</h4>
-            <img src={gecon} alt="image home of proyect GECON" />
+            <h4>Contract List</h4>
+            <img src={geconContractList} alt="image home of proyect GECON" />
           </div>
           <div className="work-item__content">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit
-              amet rutrum suspendisse. Libero consequat, ante hac risus.
-              Parturient scelerisque tempor, lobortis vestibulum, sed
-              scelerisque massa tincidunt. Ut quis fermentum vitae volutpat
-              auctor facilisis.
+              You can see all contracts and also update it and delete it. <br />
+              Also you can search any contract, writing the name, DNI, contract
+              folio and number employee. <br /> And the last action you can add
+              contract and this redirect to contract form
             </p>
           </div>
         </div>
 
         <div className="description__work-item">
           <div className="work-item__header">
-            <h4>Contract List</h4>
-            <img src={gecon} alt="image home of proyect GECON" />
+            <h4>Employee Lis</h4>
+            <img src={geconEmployeeList} alt="image home of proyect GECON" />
           </div>
           <div className="work-item__content">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus sit
-              amet rutrum suspendisse. Libero consequat, ante hac risus.
-              Parturient scelerisque tempor, lobortis vestibulum, sed
-              scelerisque massa tincidunt. Ut quis fermentum vitae volutpat
-              auctor facilisis.
+              In this page you see two sections the first of them is about
+              contract staff and you can see employee information and search by
+              name, DNI and number employee. <br /> In the second section you
+              can see all about the signatories who will have the task of
+              signing the staff contracts also you can search for it by the
+              filters of the previous section.
             </p>
           </div>
         </div>
