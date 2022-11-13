@@ -246,6 +246,20 @@
   }
 }
 
+@keyframes downToUp{
+  0%{
+    transform: translateY(80%);
+  }
+
+  50%{
+    transform: translateY(0);
+  }
+
+  100%{
+    transform: translateY(80%);
+  }
+}
+
 @include media(desktop) {
   @keyframes slider {
     0% {

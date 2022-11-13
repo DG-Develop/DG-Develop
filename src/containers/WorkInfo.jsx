@@ -1,18 +1,27 @@
-import React from "react";
+import React, { useRef } from "react";
 import TonalButtonWithIcon from "../widgets/TonalButtonWithIcon";
 
 import gecon from "../assets/static/Gecon.png";
 import geconContractList from "../assets/static/Gecon_Contract_List.png";
 import geconEmployeeList from "../assets/static/Gecon_Employee_List.png";
+import geconGenerateContracts from "../assets/static/Gecon_Generate_Contracts.png";
+import geconUpdateContract from "../assets/static/Gecon_Update_Contract.png";
+import geconAddSignature from "../assets/static/Gecon_Add_Signature.png";
 import { Link } from "react-router-dom";
 
 const WorkInfo = () => {
+  const infoDescrip = useRef(null)
+
+  const handleMainToDesc = () => {
+    infoDescrip.current.scrollIntoView({ behavior: "smooth" });
+  }
+
   return (
     <main className="info__container">
       <section className="info__about">
         <div className="sticky__header">
           <span className="i_back">
-            <Link to="/work"></Link>{" "}
+            <Link to="/work"></Link>
           </span>
           <h1>GECON</h1>
         </div>
@@ -34,6 +43,7 @@ const WorkInfo = () => {
             icon="i_arrow-down"
             type="button"
             classBtnColor="tonal-button-primary"
+            onClick={handleMainToDesc}
           />
         </div>
 
@@ -42,23 +52,21 @@ const WorkInfo = () => {
         </div>
       </section>
 
-      <section className="info__description">
-        <div className="description__work-item">
+      <section className="info__description" ref={infoDescrip}>
+        <div className="description__work-item" >
           <div className="work-item__header">
             <h4>Home</h4>
             <img src={gecon} alt="image home of proyect GECON" />
           </div>
           <div className="work-item__content">
             <p>
-              The principal page contains two sections for download of
-              contracts. <br /> The first of them, download an individual
-              contract by folio and this section you can choose the download
-              method by dynamic or manual. <br /> The second section you can
-              download multiple contracts by government dependecies, you choose
-              the year and period (Semi-annual, Quarterly, Monthly, Biweekly or
-              by Day) and then you choose te government dependecie. <br /> The
-              section next to downloads section is about downloads progress list
-              and you can cancel it while the operation is active.
+              Download a single contract or many. <br /> To download a single
+              contract, write the contract folio dynamically or manual. <br />
+              To download many contracts, choose year, period (Semi-annual,
+              Quarterly, Monthly, Biweekly or by Day) and finally choose the
+              government dependency. <br />
+              See download progress and you can cancel it while the operation is
+              active.
             </p>
           </div>
         </div>
@@ -70,27 +78,71 @@ const WorkInfo = () => {
           </div>
           <div className="work-item__content">
             <p>
-              You can see all contracts and also update it and delete it. <br />
+              See all contracts and also update it and delete it. <br />
               Also you can search any contract, writing the name, DNI, contract
-              folio and number employee. <br /> And the last action you can add
-              contract and this redirect to contract form
+              folio and number employee.
             </p>
           </div>
         </div>
 
         <div className="description__work-item">
           <div className="work-item__header">
-            <h4>Employee Lis</h4>
+            <h4>Employee List</h4>
             <img src={geconEmployeeList} alt="image home of proyect GECON" />
           </div>
           <div className="work-item__content">
             <p>
-              In this page you see two sections the first of them is about
-              contract staff and you can see employee information and search by
-              name, DNI and number employee. <br /> In the second section you
-              can see all about the signatories who will have the task of
-              signing the staff contracts also you can search for it by the
-              filters of the previous section.
+              Control the staff and signatories and see you partial information.
+              Also you can search to employee or signers by name, DNI and number
+              of employee. Control the staff and signatories and see you partial
+              information. <br /> Also you can search to employee or signers by
+              name, DNI and number of employee.
+            </p>
+          </div>
+        </div>
+
+        <div className="description__work-item invert">
+          <div className="work-item__header">
+            <h4>Generate Contracts</h4>
+            <img
+              src={geconGenerateContracts}
+              alt="image home of proyect GECON"
+            />
+          </div>
+          <div className="work-item__content">
+            <p>
+              Generate multiple contracts by government dependency, choose
+              contract duration and then choose the signatories (Max. 3 and Min.
+              2 depending on government dependency) and finally choose staff to
+              generate contract or contracts. <br /> This process save it for
+              choose another government dependency and generate multiple
+              contracts to one click.
+            </p>
+          </div>
+        </div>
+
+        <div className="description__work-item">
+          <div className="work-item__header">
+            <h4>Update Contract</h4>
+            <img src={geconUpdateContract} alt="image home of proyect GECON" />
+          </div>
+          <div className="work-item__content">
+            <p>
+              Update contracts, change the duration, government dependency or
+              position as long as the contract has not been signed.
+            </p>
+          </div>
+        </div>
+
+        <div className="description__work-item invert">
+          <div className="work-item__header">
+            <h4>Add signers</h4>
+            <img src={geconAddSignature} alt="image home of proyect GECON" />
+          </div>
+          <div className="work-item__content">
+            <p>
+              Add new signers, choose by government dependency, then write or
+              choose you position and indicate the order to sig.
             </p>
           </div>
         </div>

@@ -23,6 +23,7 @@
   min-width: 250px;
   max-width: 1200px;
   margin: 0 auto;
+  animation: fadeIn 1s;
 
   h1 {
     color: $tertiary-10;
@@ -47,8 +48,8 @@
       filter: $tertiary-30-filter;
     }
 
-    &:hover{
-        filter: $tertiary-50-filter;
+    &:hover {
+      filter: $tertiary-50-filter;
     }
   }
 
@@ -67,6 +68,7 @@
   min-width: 250px;
   max-width: 1200px;
   margin: 8px auto 0;
+  animation: fadeIn 2s;
 
   p:first-child {
     color: $background;
@@ -104,6 +106,7 @@
   min-width: 250px;
   max-width: 1200px;
   margin: 32px auto 0;
+  animation: fadeInRight 2s;
 
   @include media(desktop) {
     height: fit-content;
@@ -123,6 +126,7 @@
   left: 0;
   right: 0;
   text-align: center;
+  animation: downToUp 4s infinite ease-in;
 
   img {
     width: 80%;
