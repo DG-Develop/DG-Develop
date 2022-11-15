@@ -106,7 +106,11 @@
   min-width: 250px;
   max-width: 1200px;
   margin: 32px auto 0;
-  animation: fadeInRight 2s;
+  overflow: hidden;
+
+  .tonal-button-primary {
+    animation: fadeInDownBig 2s;
+  }
 
   @include media(desktop) {
     height: fit-content;
@@ -159,6 +163,8 @@
   margin: 0 auto;
   display: grid;
   gap: 16px;
+  opacity: 0;
+  transform: translateY(-20%);
 
   @include media(desktop) {
     gap: 32px;
@@ -183,6 +189,13 @@
       order: 1;
     }
   }
+}
+
+.description__work-item.fadeInDown,
+.description__work-item.invert.fadeInDown {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 1s linear, transform 1s linear;
 }
 
 .work-item__header {

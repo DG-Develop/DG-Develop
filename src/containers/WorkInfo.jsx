@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import TonalButtonWithIcon from "../widgets/TonalButtonWithIcon";
 
 import gecon from "../assets/static/Gecon.png";
@@ -8,9 +8,32 @@ import geconGenerateContracts from "../assets/static/Gecon_Generate_Contracts.pn
 import geconUpdateContract from "../assets/static/Gecon_Update_Contract.png";
 import geconAddSignature from "../assets/static/Gecon_Add_Signature.png";
 import { Link } from "react-router-dom";
+import useObserver from "../hooks/useObserver";
 
 const WorkInfo = () => {
   const infoDescrip = useRef(null)
+
+  const [observer, setElements, entries] = useObserver({
+    threshold: 0.25,
+    root: null
+  })
+
+  useEffect(() => {
+    const targets = document.querySelectorAll('.description__work-item')
+
+    setElements(targets)
+
+  }, [setElements])
+
+  useEffect(() => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        const element = entry.target
+        element.classList.add("fadeInDown");
+        observer.unobserve(element)
+      }
+    })
+  }, [entries, observer])
 
   const handleMainToDesc = () => {
     infoDescrip.current.scrollIntoView({ behavior: "smooth" });
