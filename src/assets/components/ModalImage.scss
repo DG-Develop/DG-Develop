@@ -1,0 +1,88 @@
+.modal-image{
+    background-color: $background-secondary;
+    border-radius: 8px 8px 0 0;
+    height: calc(100vh - 100px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 8px;
+    overflow-y: auto;
+
+    @include media(desktop){
+        padding: 16px;
+    }
+}
+
+.modal-image__content{
+    width: 100%;
+    min-width: 250px;
+    max-width: 1024px;
+    margin: 0 auto;
+    display: grid;
+    gap: 50px;
+    align-items: start;
+    
+}
+
+.btn__close-modal{
+    display: inline-block;
+    width: fit-content;
+    justify-self: end;
+    // position: relative;
+    
+    // outline: 1px solid lightcoral;
+
+    input[type=button]{
+        background: $background-secondary;
+        border: none;
+        outline: none;
+        width: 24px;
+        height: 24px;
+    }
+
+    .i_close{
+        position: fixed;
+        top: 56px;
+        right: 8px;
+    }
+
+    &:focus-within{
+        outline: 1px solid white;
+    }
+}
+
+.modal__image-main{
+    width: 100%;
+    height: 250px;
+    text-align: center;
+    img{
+        width: inherit;
+        min-width: 250px;
+        // max-width: 1024px;
+        height: inherit;
+        border-radius: 16px;
+    }
+
+    @include media(desktop){
+        height: 700px;
+    }
+}
+
+.modal__carousel-image{
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+    height: 60px;
+    padding: 8px 4px;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+    outline: 1px solid white;
+
+    img{
+        width: 100%;
+        min-width: 46px;
+        height: 35px;
+        scroll-snap-align: center;
+    }
+}

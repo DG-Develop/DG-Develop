@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import TonalButtonWithIcon from "../widgets/TonalButtonWithIcon";
 
 import gecon from "../assets/static/Gecon.png";
@@ -9,9 +9,11 @@ import geconUpdateContract from "../assets/static/Gecon_Update_Contract.png";
 import geconAddSignature from "../assets/static/Gecon_Add_Signature.png";
 import { Link } from "react-router-dom";
 import useObserver from "../hooks/useObserver";
+import ModalImage from "../components/ModalImage";
 
 const WorkInfo = () => {
   const infoDescrip = useRef(null)
+  const [isOpenModalImage, setIsOpenModalImage] = useState(true)
 
   const [observer, setElements, entries] = useObserver({
     threshold: 0.25,
@@ -37,6 +39,14 @@ const WorkInfo = () => {
 
   const handleMainToDesc = () => {
     infoDescrip.current.scrollIntoView({ behavior: "smooth" });
+  }
+
+  const handleOpenModalImage = () => {
+    setIsOpenModalImage(true)
+  }
+
+  const handleCloseModalImage = () => {
+    setIsOpenModalImage(false)
   }
 
   return (
@@ -170,6 +180,8 @@ const WorkInfo = () => {
           </div>
         </div>
       </section>
+
+      <ModalImage isOpen={isOpenModalImage} OnCloseModal={handleCloseModalImage}/>
     </main>
   );
 };
