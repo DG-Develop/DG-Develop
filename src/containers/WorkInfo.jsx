@@ -13,7 +13,7 @@ import ModalImage from "../components/ModalImage";
 
 const WorkInfo = () => {
   const infoDescrip = useRef(null)
-  const [isOpenModalImage, setIsOpenModalImage] = useState(true)
+  const [isOpenModalImage, setIsOpenModalImage] = useState(false)
 
   const [observer, setElements, entries] = useObserver({
     threshold: 0.25,
@@ -81,7 +81,7 @@ const WorkInfo = () => {
         </div>
 
         <div className="info__image--main">
-          <img src={gecon} alt="image home of proyect GECON" />
+          <img src={gecon} alt="image home of proyect GECON" onClick={handleOpenModalImage}/>
         </div>
       </section>
 
