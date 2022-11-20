@@ -1,94 +1,103 @@
-.modal-image{
-    background-color: $background-secondary;
-    border-radius: 8px 8px 0 0;
-    height: calc(100vh - 100px);
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 8px;
-    overflow-y: auto;
-    animation: backInUp 1s ease-out;
+.modal-image {
+  background-color: $background-secondary;
+  border-radius: 8px 8px 0 0;
+  height: calc(100vh - 100px);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 8px;
+  overflow-y: auto;
+  animation: backInUp 1s ease-out;
 
-    @include media(desktop){
-        padding: 16px;
+  @include media(desktop) {
+    padding: 16px;
+  }
+}
+
+.modal-image.close-modal {
+  animation: backOutDown 1s ease-in;
+}
+
+.modal-image__content {
+  width: 100%;
+  min-width: 250px;
+  max-width: 1024px;
+  margin: 0 auto;
+  display: grid;
+  gap: 50px;
+  align-items: start;
+
+  @include media(desktopL) {
+    max-width: 1200px;
+  }
+}
+
+.btn__close-modal {
+  display: inline-block;
+  width: fit-content;
+  justify-self: end;
+
+  input[type="button"] {
+    background: $background-secondary;
+    border: none;
+    outline: none;
+    width: 24px;
+    height: 24px;
+  }
+
+  .i_close {
+    position: fixed;
+    top: 56px;
+    right: 8px;
+    animation: fadeIn 2s cubic-bezier(1, -0.14, 1, 0.74);
+
+    &:hover {
+      filter: $tertiary-99-filter;
     }
+  }
+
+  .i_close.close-icon {
+    opacity: 0;
+  }
+
+  &:focus-within {
+    .i_close {
+      filter: $tertiary-99-filter;
+    }
+  }
 }
 
-.modal-image.close-modal{
-    animation: backOutDown 1s ease-in;
-}
-
-.modal-image__content{
-    width: 100%;
+.modal__image-main {
+  width: 100%;
+  height: 250px;
+  text-align: center;
+  img {
+    width: inherit;
     min-width: 250px;
-    max-width: 1024px;
-    margin: 0 auto;
-    display: grid;
-    gap: 50px;
-    align-items: start;
-    
-    @include media(desktopL){
-        max-width: 1200px;
-    }
+    height: inherit;
+    border-radius: 16px;
+  }
+
+  @include media(desktop) {
+    height: 700px;
+  }
+
+  @include media(desktopL) {
+    height: 800px;
+  }
 }
 
-.btn__close-modal{
-    display: inline-block;
-    width: fit-content;
-    justify-self: end;
+.modal__carousel-image {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 1024px;
+  align-items: center;
 
-    input[type=button]{
-        background: $background-secondary;
-        border: none;
-        outline: none;
-        width: 24px;
-        height: 24px;
-    }
-
-    .i_close{
-        position: fixed;
-        top: 56px;
-        right: 8px;
-        animation: fadeIn 2s cubic-bezier(1,-0.14,1,.74);
-
-        &:hover{
-            filter: $tertiary-99-filter;
-        }
-    }
-
-    .i_close.close-icon{
-        opacity: 0;
-    }
-
-    &:focus-within{
-        .i_close{
-            filter: $tertiary-99-filter;
-        }
-    }
-}
-
-.modal__image-main{
+  .carousel {
     width: 100%;
-    height: 250px;
-    text-align: center;
-    img{
-        width: inherit;
-        min-width: 250px;
-        height: inherit;
-        border-radius: 16px;
-    }
-
-    @include media(desktop){
-        height: 700px;
-    }
-
-    @include media(desktopL){
-        height: 800px;
-    }
-}
-
-.modal__carousel-image{
     display: flex;
     gap: 16px;
     overflow-x: auto;
@@ -98,39 +107,46 @@
     scroll-snap-type: x proximity;
     outline: 1px solid white;
 
-    div{
-        position: relative;
+    div {
+      position: relative;
 
-        input[type=radio]{
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-        }
+      input[type="radio"] {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+      }
 
-        input[type=radio]:checked:not(:focus) + img{
-            outline: 4px solid $tertiary-80;
-        }
+      input[type="radio"]:checked:not(:focus) + img {
+        outline: 4px solid $tertiary-80;
+      }
 
-        input[type=radio]:focus + img{
-            outline: 4px solid $tertiary-10;
-        }
+      input[type="radio"]:focus + img {
+        outline: 4px solid $tertiary-10;
+      }
+    }
+  }
+
+  img {
+    width: 100%;
+    min-width: 50px;
+    height: 38px;
+    scroll-snap-align: center;
+  }
+
+  @include media(desktop) {
+    .carousel {
+      height: 70px;
     }
 
-    img{
-        width: 100%;
-        min-width: 50px;
-        height: 38px;
-        scroll-snap-align: center;
+    img {
+      min-width: 58px;
+      height: 42px;
     }
+  }
 
-    @include media(desktop){
-
-        height: 70px;
-        img{
-            min-width: 58px;
-            height: 42px;
-        }
-    }
+  @include media(desktopL) {
+    max-width: 1200px;
+  }
 }

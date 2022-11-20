@@ -66,6 +66,14 @@
   @include icon-structure("./static/arrow_down.svg", 24px, 32px, $white-filter);
 }
 
+.i_next {
+  @include icon-structure("./static/next.svg", 10px, 16px, $white-filter);
+}
+
+.i_return {
+  @include icon-structure("./static/return.svg", 10px, 16px, $white-filter);
+}
+
 .decoration {
   @include icon-structure(
     "./static/decoration_header.svg",
