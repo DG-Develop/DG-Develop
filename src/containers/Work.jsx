@@ -7,10 +7,12 @@ import baluarteck from "../assets/static/Baluartteck.jpg";
 import saintscript from "../assets/static/Saintscript.jpg";
 import Separator from "../components/Separator";
 import { useNavigate } from "react-router-dom";
+import { useAppSelector } from "../app/hooks";
 
 const Work = () => {
-  const navigate = useNavigate()
-  
+  const works = useAppSelector((state) => state.works);
+  const navigate = useNavigate();
+
   const firstWork = useRef(null);
   const secondWork = useRef(null);
   const thirdWork = useRef(null);
@@ -156,21 +158,21 @@ const Work = () => {
     } else if (top > thirtyPorcent + 1 && top < fiftyPorcent) {
       iconContainer.current.classList.remove("motion-top");
       iconContainer.current.classList.add("motion-middle");
-    } else if (top > fiftyPorcent + 1 && top < seventyPorcent){
+    } else if (top > fiftyPorcent + 1 && top < seventyPorcent) {
       iconContainer.current.classList.remove("motion-middle");
       iconContainer.current.classList.add("motion-top");
-    }else if (top > seventyPorcent + 1 && top < eghtyFivePorcent){
+    } else if (top > seventyPorcent + 1 && top < eghtyFivePorcent) {
       iconContainer.current.classList.remove("motion-top");
       iconContainer.current.classList.add("motion-middle");
-    }else {
+    } else {
       iconContainer.current.classList.remove("motion-top");
       iconContainer.current.classList.remove("motion-middle");
     }
   };
 
-  const HandleNavigateWorkInfo = name => {
-    navigate(`/work/${name}`)
-  }
+  const HandleNavigateWorkInfo = (name) => {
+    navigate(`/work/${name}`);
+  };
 
   return (
     <>
@@ -201,6 +203,33 @@ const Work = () => {
           <Separator />
           <Separator />
 
+          {/* {works.map((work) => (
+            <>
+              <section
+                className="work-content--desktop work-right"
+                ref={firstWork}
+              >
+                <div className="work-title">
+                  <h3>GenC</h3>
+                  <p>Contract generator</p>
+                </div>
+                <div ref={firstIntersection}></div>
+
+                <div
+                  className="work-background"
+                  onClick={() => HandleNavigateWorkInfo("Gecon")}
+                >
+                  <div>
+                    <img
+                      src={gecon}
+                      alt="work image about contract generator"
+                    />
+                  </div>
+                </div>
+              </section>
+            </>
+          ))} */}
+
           <section className="work-content--desktop work-right" ref={firstWork}>
             <div className="work-title">
               <h3>GenC</h3>
@@ -208,7 +237,10 @@ const Work = () => {
             </div>
             <div ref={firstIntersection}></div>
 
-            <div className="work-background" onClick={() => HandleNavigateWorkInfo('Gecon')}>
+            <div
+              className="work-background"
+              onClick={() => HandleNavigateWorkInfo("Gecon")}
+            >
               <div>
                 <img src={gecon} alt="work image about contract generator" />
               </div>

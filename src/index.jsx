@@ -1,20 +1,20 @@
 import React from "react";
 import { createRoot } from "react-dom/client";
+import { RouterProvider } from "react-router-dom";
+
+import { Provider } from 'react-redux'
+import store from './app/store'
+
 import App from "./routes/App";
-// import { createBrowserHistory } from 'history';
-import { RouterProvider } from 'react-router-dom'
-import { Route } from "react-router-dom";
 
-// const history = createBrowserHistory();
-/* const store = createStore(reducers, {}, applyMiddleware(reduxThunk)) */
-
-// ReactDOM.render(<App />, document.getElementById('app'))
 
 const rootElement = document.getElementById("app");
 const root = createRoot(rootElement);
 
 root.render(
-    <React.StrictMode>
+  <React.StrictMode>
+    <Provider store={store}>
         <RouterProvider router={App} />
-    </React.StrictMode>
-)
+    </Provider>
+  </React.StrictMode>
+);

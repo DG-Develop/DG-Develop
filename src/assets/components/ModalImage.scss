@@ -89,12 +89,30 @@
 }
 
 .modal__carousel-image {
-  display: flex;
+  display: grid;
+  grid-template-columns: 20px auto 20px;
   gap: 8px;
   width: 100%;
   min-width: 250px;
   max-width: 1024px;
   align-items: center;
+  padding: 0 8px;
+
+  >div:not(.carousel){
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-content: center;
+
+    &:hover{
+      cursor: pointer;
+      span{
+
+        filter: $tertiary-99-filter;
+      }
+    }
+  }
+
 
   .carousel {
     width: 100%;
@@ -105,7 +123,6 @@
     padding: 8px 4px;
     overscroll-behavior-x: contain;
     scroll-snap-type: x proximity;
-    outline: 1px solid white;
 
     div {
       position: relative;
@@ -116,6 +133,10 @@
         bottom: 0;
         left: 0;
         right: 0;
+
+        &:hover{
+          cursor: pointer;
+        }
       }
 
       input[type="radio"]:checked:not(:focus) + img {
@@ -124,6 +145,12 @@
 
       input[type="radio"]:focus + img {
         outline: 4px solid $tertiary-10;
+      }
+
+      input[type=radio]:hover:checked + img,
+      input[type=radio]:hover + img{
+        cursor: pointer;
+        outline: 4px solid $color-accent;
       }
     }
   }

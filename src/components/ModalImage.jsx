@@ -10,9 +10,9 @@ import { useIsOverflow } from "../hooks/useIsOverflow";
 
 const ModalImage = ({ isOpen, OnCloseModal }) => {
   const carousel = useRef(null);
-  const [imageSelect, setImageSelect] = useState(null)
-  const [scrollX, setScrollX] = useState(0)
-  const [scrollEnd, setScrollEnd] = useState(false)
+  const [imageSelect, setImageSelect] = useState(null);
+  const [scrollX, setScrollX] = useState(0);
+  const [scrollEnd, setScrollEnd] = useState(false);
   const [isOverflow, setIsOverflow] = useState(false);
   const _ = useIsOverflow(carousel, (hasOverflow) => {
     if (!hasOverflow) {
@@ -52,16 +52,24 @@ const ModalImage = ({ isOpen, OnCloseModal }) => {
     geconEmployeeList,
     geconGenerateContracts,
     geconUpdateContract,
-    geconAddSignature
+    geconAddSignature,
   ];
 
   useEffect(() => {
-    if(isOpen){
-      const input = document.querySelector('#imagen-0')
-      input.checked = true
-      setImageSelect(listaImagenes[0])
+    if (isOpen) {
+      if(listaImagenes.length > 1){
+          const input = document.querySelector("#imagen-0");
+          input.checked = true;
+      }
+      setImageSelect(listaImagenes[0]);
     }
-  }, [isOpen])
+  }, [isOpen]);
+
+  const clearState = () => {
+    setScrollX(0);
+    setScrollEnd(false);
+    setIsOverflow(false);
+  };
 
   const handleCloseModal = () => {
     const iconClose = document.querySelector(".i_close");
@@ -73,21 +81,36 @@ const ModalImage = ({ isOpen, OnCloseModal }) => {
     setTimeout(() => {
       modal.classList.remove("close-modal");
       iconClose.classList.remove("close-icon");
+
+      clearState();
       OnCloseModal();
     }, 1000);
   };
 
   const handleScroll = (shift) => {
-    carousel.current.scrollLeft += shift
+    carousel.current.scrollLeft += shift;
 
-    setScrollX(scrollX + shift)
+    setScrollX(scrollX + shift);
 
-    setScrollEnd(Math.floor(carousel.current.scrollWidth - carousel.current.scrollLeft) <= carousel.current.offsetWidth)
+    setScrollEnd(
+      Math.floor(carousel.current.scrollWidth - carousel.current.scrollLeft) <=
+        carousel.current.offsetWidth
+    );
   };
 
   const handleChangeImage = (id) => {
-    setImageSelect(listaImagenes[id])
-  }
+    setImageSelect(listaImagenes[id]);
+  };
+
+  const handleScrollMove = (event) => {
+    setScrollX(event.currentTarget.scrollLeft);
+
+    setScrollEnd(
+      Math.floor(
+        event.currentTarget.scrollWidth - event.currentTarget.scrollLeft
+      ) <= event.currentTarget.offsetWidth
+    );
+  };
 
   return (
     <Modal isOpen={isOpen}>
@@ -111,33 +134,43 @@ const ModalImage = ({ isOpen, OnCloseModal }) => {
             <img src={imageSelect} alt="home" />
           </div>
 
-          <div className="modal__carousel-image">
-            {(isOverflow && scrollX !== 0) && (
-              <div onClick={() => handleScroll(-50)}>
-                <span className="i_return"></span>
-              </div>
-            )}
-
-            <div className="carousel" ref={carousel}>
-              {listaImagenes.map((imagen, idx) => (
-                <div key={idx}>
-                  <input
-                    type="radio"
-                    id={`imagen-${idx}`}
-                    name="carouselImage"
-                    onChange={() => handleChangeImage(idx)}
-                  />
-                  <img src={imagen} alt={`iamgen-${idx}`} />
+          {listaImagenes.length > 1 && (
+            <div className="modal__carousel-image">
+              {isOverflow && scrollX !== 0 ? (
+                <div onClick={() => handleScroll(-50)}>
+                  <span className="i_return"></span>
                 </div>
-              ))}
-            </div>
+              ) : (
+                <div></div>
+              )}
 
-            {(isOverflow && !scrollEnd) && (
-              <div onClick={() => handleScroll(+50)}>
-                <span className="i_next"></span>
+              <div
+                className="carousel"
+                ref={carousel}
+                onScroll={handleScrollMove}
+              >
+                {listaImagenes.map((imagen, idx) => (
+                  <div key={idx}>
+                    <input
+                      type="radio"
+                      id={`imagen-${idx}`}
+                      name="carouselImage"
+                      onChange={() => handleChangeImage(idx)}
+                    />
+                    <img src={imagen} alt={`iamgen-${idx}`} />
+                  </div>
+                ))}
               </div>
-            )}
-          </div>
+
+              {isOverflow && !scrollEnd ? (
+                <div onClick={() => handleScroll(+50)}>
+                  <span className="i_next"></span>
+                </div>
+              ) : (
+                <div></div>
+              )}
+            </div>
+          )}
         </div>
       </section>
     </Modal>
