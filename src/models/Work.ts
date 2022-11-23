@@ -5,5 +5,6 @@ export interface Work{
     title: string,
     subtitle: string,
     imageTitle: string,
-    listImage: Image[]
+    listImage: Image[],
+    mediaQuery: string
 }

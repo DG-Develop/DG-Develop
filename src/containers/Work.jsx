@@ -8,129 +8,164 @@ import saintscript from "../assets/static/Saintscript.jpg";
 import Separator from "../components/Separator";
 import { useNavigate } from "react-router-dom";
 import { useAppSelector } from "../app/hooks";
+import useObserver from "../hooks/useObserver";
 
 const Work = () => {
   const works = useAppSelector((state) => state.works);
   const navigate = useNavigate();
 
-  const firstWork = useRef(null);
-  const secondWork = useRef(null);
-  const thirdWork = useRef(null);
-  const fourthWork = useRef(null);
+  const [observer, setElements, entries] = useObserver({
+    threshold: 0.25,
+    root: null
+  })
+
+  // const firstWork = useRef(null);
+  // const secondWork = useRef(null);
+  // const thirdWork = useRef(null);
+  // const fourthWork = useRef(null);
   const srollDynamic = useRef(null);
   const workStart = useRef(null);
   const iconContainer = useRef(null);
-  const firstIntersection = useRef(null);
-  const secondIntersection = useRef(null);
-  const thirdIntersection = useRef(null);
-  const fourthIntersection = useRef(null);
+  // const firstIntersection = useRef(null);
+  // const secondIntersection = useRef(null);
+  // const thirdIntersection = useRef(null);
+  // const fourthIntersection = useRef(null);
 
-  const [isVisible, setIsVisible] = useState(false);
-  const [isVisibleSecond, setIsVisibleSecond] = useState(false);
-  const [isVisibleThird, setIsVisibleThird] = useState(false);
-  const [isVisibleFourh, setIsVisibleFourth] = useState(false);
-
-  const callbackFunction = (entries) => {
-    const [entry] = entries;
-    setIsVisible(entry.isIntersecting);
-  };
-
-  const callbackFunctionSecond = (entries) => {
-    const [entry] = entries;
-    setIsVisibleSecond(entry.isIntersecting);
-  };
-
-  const callbackFunctionThird = (entries) => {
-    const [entry] = entries;
-    setIsVisibleThird(entry.isIntersecting);
-  };
-
-  const callbackFunctionFourth = (entries) => {
-    const [entry] = entries;
-    setIsVisibleFourth(entry.isIntersecting);
-  };
-
-  const options = {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1,
-  };
+  const [isElement, setIsElement] = useState([])
+  // const [isVisible, setIsVisible] = useState(false);
+  // const [isVisibleSecond, setIsVisibleSecond] = useState(false);
+  // const [isVisibleThird, setIsVisibleThird] = useState(false);
+  // const [isVisibleFourh, setIsVisibleFourth] = useState(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunction, options);
-    firstIntersection.current && observer.observe(firstIntersection.current);
+    const targetsDesktop = document.querySelectorAll('.work-content--desktop')
+    const targetsMobile = document.querySelectorAll('.work-content--mobile')
 
-    return () => {
-      firstIntersection.current &&
-        observer.unobserve(firstIntersection.current);
-    };
-  }, [firstIntersection, options]);
+    setElements([...targetsDesktop, ...targetsMobile])
+  }, [setElements])
 
   useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunctionSecond, options);
-    secondIntersection.current && observer.observe(secondIntersection.current);
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        // if(isElement){
+        //   console.log(element)
+        //   isElement.classList.remove("animation-fadeinRight")
+        // }
+        const elementFoud = document.querySelector('.animation-fadeinRight')
 
-    return () => {
-      secondIntersection.current &&
-        observer.unobserve(secondIntersection.current);
-    };
-  }, [secondIntersection, options]);
+        if(elementFoud){
+          elementFoud.classList.remove('animation-fadeinRight')
+        }
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunctionThird, options);
-    thirdIntersection.current && observer.observe(thirdIntersection.current);
+        const element = entry.target
+        element.classList.add("animation-fadeinRight")
 
-    return () => {
-      thirdIntersection.current &&
-        observer.unobserve(thirdIntersection.current);
-    };
-  }, [thirdIntersection, options]);
+        // setElements([...isElement, element])
+      }
+    })
+  }, [entries, observer])
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(callbackFunctionFourth, options);
-    fourthIntersection.current && observer.observe(fourthIntersection.current);
+  // const callbackFunction = (entries) => {
+  //   const [entry] = entries;
+  //   setIsVisible(entry.isIntersecting);
+  // };
 
-    return () => {
-      fourthIntersection.current &&
-        observer.unobserve(fourthIntersection.current);
-    };
-  }, [fourthIntersection, options]);
+  // const callbackFunctionSecond = (entries) => {
+  //   const [entry] = entries;
+  //   setIsVisibleSecond(entry.isIntersecting);
+  // };
 
-  useEffect(() => {
-    if (isVisible) {
-      firstWork.current.classList.add("animation-fadeinRight");
-    }
+  // const callbackFunctionThird = (entries) => {
+  //   const [entry] = entries;
+  //   setIsVisibleThird(entry.isIntersecting);
+  // };
 
-    if ((isVisible && isVisibleSecond) || !isVisible) {
-      firstWork.current.classList.remove("animation-fadeinRight");
-    }
-  }, [isVisible, isVisibleSecond]);
+  // const callbackFunctionFourth = (entries) => {
+  //   const [entry] = entries;
+  //   setIsVisibleFourth(entry.isIntersecting);
+  // };
 
-  useEffect(() => {
-    if (isVisibleSecond) {
-      secondWork.current.classList.add("animation-fadeinLeft");
-    }
+  // const options = {
+  //   root: null,
+  //   rootMargin: "0px",
+  //   threshold: 1,
+  // };
 
-    if ((isVisibleSecond && isVisibleThird) || !isVisibleSecond) {
-      secondWork.current.classList.remove("animation-fadeinLeft");
-    }
-  }, [isVisibleSecond, isVisibleThird]);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(callbackFunction, options);
+  //   firstIntersection.current && observer.observe(firstIntersection.current);
 
-  useEffect(() => {
-    if (isVisibleThird) {
-      thirdWork.current.classList.add("animation-fadeinRight");
-    }
+  //   return () => {
+  //     firstIntersection.current &&
+  //       observer.unobserve(firstIntersection.current);
+  //   };
+  // }, [firstIntersection, options]);
 
-    if ((isVisibleThird && isVisibleFourh) || !isVisibleThird) {
-      thirdWork.current.classList.remove("animation-fadeinRight");
-    }
-  }, [isVisibleThird, isVisibleFourh]);
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(callbackFunctionSecond, options);
+  //   secondIntersection.current && observer.observe(secondIntersection.current);
 
-  useEffect(() => {
-    isVisibleFourh
-      ? fourthWork.current.classList.add("animation-fadeinLeft")
-      : fourthWork.current.classList.remove("animation-fadeinLeft");
-  }, [isVisibleFourh]);
+  //   return () => {
+  //     secondIntersection.current &&
+  //       observer.unobserve(secondIntersection.current);
+  //   };
+  // }, [secondIntersection, options]);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(callbackFunctionThird, options);
+  //   thirdIntersection.current && observer.observe(thirdIntersection.current);
+
+  //   return () => {
+  //     thirdIntersection.current &&
+  //       observer.unobserve(thirdIntersection.current);
+  //   };
+  // }, [thirdIntersection, options]);
+
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(callbackFunctionFourth, options);
+  //   fourthIntersection.current && observer.observe(fourthIntersection.current);
+
+  //   return () => {
+  //     fourthIntersection.current &&
+  //       observer.unobserve(fourthIntersection.current);
+  //   };
+  // }, [fourthIntersection, options]);
+
+  // useEffect(() => {
+  //   if (isVisible) {
+  //     firstWork.current.classList.add("animation-fadeinRight");
+  //   }
+
+  //   if ((isVisible && isVisibleSecond) || !isVisible) {
+  //     firstWork.current.classList.remove("animation-fadeinRight");
+  //   }
+  // }, [isVisible, isVisibleSecond]);
+
+  // useEffect(() => {
+  //   if (isVisibleSecond) {
+  //     secondWork.current.classList.add("animation-fadeinLeft");
+  //   }
+
+  //   if ((isVisibleSecond && isVisibleThird) || !isVisibleSecond) {
+  //     secondWork.current.classList.remove("animation-fadeinLeft");
+  //   }
+  // }, [isVisibleSecond, isVisibleThird]);
+
+  // useEffect(() => {
+  //   if (isVisibleThird) {
+  //     thirdWork.current.classList.add("animation-fadeinRight");
+  //   }
+
+  //   if ((isVisibleThird && isVisibleFourh) || !isVisibleThird) {
+  //     thirdWork.current.classList.remove("animation-fadeinRight");
+  //   }
+  // }, [isVisibleThird, isVisibleFourh]);
+
+  // useEffect(() => {
+  //   isVisibleFourh
+  //     ? fourthWork.current.classList.add("animation-fadeinLeft")
+  //     : fourthWork.current.classList.remove("animation-fadeinLeft");
+  // }, [isVisibleFourh]);
 
   const handleScroll = () => {
     const height = srollDynamic.current.scrollHeight;
@@ -203,17 +238,14 @@ const Work = () => {
           <Separator />
           <Separator />
 
-          {/* {works.map((work) => (
-            <>
-              <section
-                className="work-content--desktop work-right"
-                ref={firstWork}
-              >
+          {works.map((work, idx) => (
+            <div key={work.id}>
+              <section className={`work-content--${work.mediaQuery === "Desktop" ? "desktop": "mobile"} ${idx % 2 === 0 ? "work-right" : "work-left"}`}>
                 <div className="work-title">
-                  <h3>GenC</h3>
-                  <p>Contract generator</p>
+                  <h3>{work.title}</h3>
+                  <p>{work.subtitle}</p>
                 </div>
-                <div ref={firstIntersection}></div>
+                {/* <div ref={firstIntersection}></div> */}
 
                 <div
                   className="work-background"
@@ -227,10 +259,13 @@ const Work = () => {
                   </div>
                 </div>
               </section>
-            </>
-          ))} */}
 
-          <section className="work-content--desktop work-right" ref={firstWork}>
+              <Separator />
+              <Separator />
+            </div>
+          ))}
+
+          {/* <section className="work-content--desktop work-right" ref={firstWork}>
             <div className="work-title">
               <h3>GenC</h3>
               <p>Contract generator</p>
@@ -302,7 +337,7 @@ const Work = () => {
           </section>
 
           <Separator />
-          <Separator />
+          <Separator /> */}
         </section>
       </section>
     </>
