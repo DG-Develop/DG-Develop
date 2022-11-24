@@ -1,15 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-import workReducer from '../features/works/workSlice'
-import { Work } from '../models'
-
-
+import workReducer, { WorkState } from '../features/works/workSlice'
 export interface AppStore{
-    works: Work[]
+    workEstado: WorkState
 }
 
 const store = configureStore<AppStore>({
     reducer: {
-        works: workReducer
+        workEstado: workReducer,
     }
 })
 

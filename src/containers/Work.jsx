@@ -1,171 +1,70 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import IconAnimated from "../components/IconAnimated";
 import { Header } from "../components/Header";
-import gecon from "../assets/static/Gecon.png";
-import keradent from "../assets/static/Keradent.jpg";
-import baluarteck from "../assets/static/Baluartteck.jpg";
-import saintscript from "../assets/static/Saintscript.jpg";
 import Separator from "../components/Separator";
 import { useNavigate } from "react-router-dom";
-import { useAppSelector } from "../app/hooks";
+import { useAppSelector, useAppDispatch } from "../app/hooks";
 import useObserver from "../hooks/useObserver";
+import { chooseWork } from "../features/works/workSlice";
 
 const Work = () => {
-  const works = useAppSelector((state) => state.works);
+  const works = useAppSelector(({ workEstado }) => workEstado.works);
+  const dispatch = useAppDispatch()
   const navigate = useNavigate();
 
   const [observer, setElements, entries] = useObserver({
-    threshold: 0.25,
-    root: null
-  })
+    threshold: 0.5,
+    root: null,
+  });
 
-  // const firstWork = useRef(null);
-  // const secondWork = useRef(null);
-  // const thirdWork = useRef(null);
-  // const fourthWork = useRef(null);
   const srollDynamic = useRef(null);
-  const workStart = useRef(null);
   const iconContainer = useRef(null);
-  // const firstIntersection = useRef(null);
-  // const secondIntersection = useRef(null);
-  // const thirdIntersection = useRef(null);
-  // const fourthIntersection = useRef(null);
-
-  const [isElement, setIsElement] = useState([])
-  // const [isVisible, setIsVisible] = useState(false);
-  // const [isVisibleSecond, setIsVisibleSecond] = useState(false);
-  // const [isVisibleThird, setIsVisibleThird] = useState(false);
-  // const [isVisibleFourh, setIsVisibleFourth] = useState(false);
 
   useEffect(() => {
-    const targetsDesktop = document.querySelectorAll('.work-content--desktop')
-    const targetsMobile = document.querySelectorAll('.work-content--mobile')
+    const targetsDesktop = document.querySelectorAll(".work-content--desktop");
+    const targetsMobile = document.querySelectorAll(".work-content--mobile");
+    const scrollContent = document.querySelector(".scroll-content");
 
-    setElements([...targetsDesktop, ...targetsMobile])
-  }, [setElements])
+    setElements([...targetsDesktop, ...targetsMobile, scrollContent]);
+  }, [setElements]);
 
   useEffect(() => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        // if(isElement){
-        //   console.log(element)
-        //   isElement.classList.remove("animation-fadeinRight")
-        // }
-        const elementFoud = document.querySelector('.animation-fadeinRight')
+    function cleanAnimation() {
+      const animationElementRight = document.querySelector(
+        ".animation-fadeinRight"
+      );
+      const animationElementLeft = document.querySelector(
+        ".animation-fadeinLeft"
+      );
 
-        if(elementFoud){
-          elementFoud.classList.remove('animation-fadeinRight')
+      if (animationElementRight) {
+        animationElementRight.classList.remove("animation-fadeinRight");
+      }
+
+      if (animationElementLeft) {
+        animationElementLeft.classList.remove("animation-fadeinLeft");
+      }
+    }
+
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
+
+        cleanAnimation()
+
+        if (element.className === "scroll-content") {
+          cleanAnimation()
         }
 
-        const element = entry.target
-        element.classList.add("animation-fadeinRight")
-
-        // setElements([...isElement, element])
+        element.className.includes("work-right")
+          ? element.classList.add("animation-fadeinRight")
+          : element.className.includes("work-left")
+          ? element.classList.add("animation-fadeinLeft")
+          : "";
       }
-    })
-  }, [entries, observer])
+    });
+  }, [entries, observer]);
 
-  // const callbackFunction = (entries) => {
-  //   const [entry] = entries;
-  //   setIsVisible(entry.isIntersecting);
-  // };
-
-  // const callbackFunctionSecond = (entries) => {
-  //   const [entry] = entries;
-  //   setIsVisibleSecond(entry.isIntersecting);
-  // };
-
-  // const callbackFunctionThird = (entries) => {
-  //   const [entry] = entries;
-  //   setIsVisibleThird(entry.isIntersecting);
-  // };
-
-  // const callbackFunctionFourth = (entries) => {
-  //   const [entry] = entries;
-  //   setIsVisibleFourth(entry.isIntersecting);
-  // };
-
-  // const options = {
-  //   root: null,
-  //   rootMargin: "0px",
-  //   threshold: 1,
-  // };
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(callbackFunction, options);
-  //   firstIntersection.current && observer.observe(firstIntersection.current);
-
-  //   return () => {
-  //     firstIntersection.current &&
-  //       observer.unobserve(firstIntersection.current);
-  //   };
-  // }, [firstIntersection, options]);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(callbackFunctionSecond, options);
-  //   secondIntersection.current && observer.observe(secondIntersection.current);
-
-  //   return () => {
-  //     secondIntersection.current &&
-  //       observer.unobserve(secondIntersection.current);
-  //   };
-  // }, [secondIntersection, options]);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(callbackFunctionThird, options);
-  //   thirdIntersection.current && observer.observe(thirdIntersection.current);
-
-  //   return () => {
-  //     thirdIntersection.current &&
-  //       observer.unobserve(thirdIntersection.current);
-  //   };
-  // }, [thirdIntersection, options]);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(callbackFunctionFourth, options);
-  //   fourthIntersection.current && observer.observe(fourthIntersection.current);
-
-  //   return () => {
-  //     fourthIntersection.current &&
-  //       observer.unobserve(fourthIntersection.current);
-  //   };
-  // }, [fourthIntersection, options]);
-
-  // useEffect(() => {
-  //   if (isVisible) {
-  //     firstWork.current.classList.add("animation-fadeinRight");
-  //   }
-
-  //   if ((isVisible && isVisibleSecond) || !isVisible) {
-  //     firstWork.current.classList.remove("animation-fadeinRight");
-  //   }
-  // }, [isVisible, isVisibleSecond]);
-
-  // useEffect(() => {
-  //   if (isVisibleSecond) {
-  //     secondWork.current.classList.add("animation-fadeinLeft");
-  //   }
-
-  //   if ((isVisibleSecond && isVisibleThird) || !isVisibleSecond) {
-  //     secondWork.current.classList.remove("animation-fadeinLeft");
-  //   }
-  // }, [isVisibleSecond, isVisibleThird]);
-
-  // useEffect(() => {
-  //   if (isVisibleThird) {
-  //     thirdWork.current.classList.add("animation-fadeinRight");
-  //   }
-
-  //   if ((isVisibleThird && isVisibleFourh) || !isVisibleThird) {
-  //     thirdWork.current.classList.remove("animation-fadeinRight");
-  //   }
-  // }, [isVisibleThird, isVisibleFourh]);
-
-  // useEffect(() => {
-  //   isVisibleFourh
-  //     ? fourthWork.current.classList.add("animation-fadeinLeft")
-  //     : fourthWork.current.classList.remove("animation-fadeinLeft");
-  // }, [isVisibleFourh]);
 
   const handleScroll = () => {
     const height = srollDynamic.current.scrollHeight;
@@ -205,8 +104,9 @@ const Work = () => {
     }
   };
 
-  const HandleNavigateWorkInfo = (name) => {
-    navigate(`/work/${name}`);
+  const HandleNavigateWorkInfo = (work) => {
+    // navigate(`/work/${work.title}`);
+    dispatch(chooseWork(work))
   };
 
   return (
@@ -222,7 +122,7 @@ const Work = () => {
           <IconAnimated />
         </div>
 
-        <section className="work-start" ref={workStart}>
+        <section className="work-start">
           <div className="scroll-content">
             <div>
               <h1>Welcome to my portfolio works</h1>
@@ -240,20 +140,23 @@ const Work = () => {
 
           {works.map((work, idx) => (
             <div key={work.id}>
-              <section className={`work-content--${work.mediaQuery === "Desktop" ? "desktop": "mobile"} ${idx % 2 === 0 ? "work-right" : "work-left"}`}>
+              <section
+                className={`work-content--${
+                  work.mediaQuery === "Desktop" ? "desktop" : "mobile"
+                } ${idx % 2 === 0 ? "work-right" : "work-left"}`}
+              >
                 <div className="work-title">
                   <h3>{work.title}</h3>
                   <p>{work.subtitle}</p>
                 </div>
-                {/* <div ref={firstIntersection}></div> */}
 
                 <div
                   className="work-background"
-                  onClick={() => HandleNavigateWorkInfo("Gecon")}
+                  onClick={() => HandleNavigateWorkInfo(work)}
                 >
                   <div>
                     <img
-                      src={gecon}
+                      src={work.imageTitle}
                       alt="work image about contract generator"
                     />
                   </div>
@@ -264,80 +167,6 @@ const Work = () => {
               <Separator />
             </div>
           ))}
-
-          {/* <section className="work-content--desktop work-right" ref={firstWork}>
-            <div className="work-title">
-              <h3>GenC</h3>
-              <p>Contract generator</p>
-            </div>
-            <div ref={firstIntersection}></div>
-
-            <div
-              className="work-background"
-              onClick={() => HandleNavigateWorkInfo("Gecon")}
-            >
-              <div>
-                <img src={gecon} alt="work image about contract generator" />
-              </div>
-            </div>
-          </section>
-
-          <Separator />
-          <Separator />
-
-          <section className="work-content--desktop work-left" ref={secondWork}>
-            <div className="work-title">
-              <h3>Keradent</h3>
-              <p>Register of expedients</p>
-            </div>
-            <div ref={secondIntersection}></div>
-
-            <div className="work-background">
-              <div>
-                <img
-                  src={keradent}
-                  alt="work image about register of expedients"
-                />
-              </div>
-            </div>
-          </section>
-
-          <Separator />
-          <Separator />
-
-          <section className="work-content--mobile work-right" ref={thirdWork}>
-            <div className="work-title">
-              <h3>Baluarteck</h3>
-              <p>Mobile checker</p>
-            </div>
-            <div ref={thirdIntersection}></div>
-
-            <div className="work-background">
-              <div>
-                <img src={baluarteck} alt="work image about mobile checker" />
-              </div>
-            </div>
-          </section>
-
-          <Separator />
-          <Separator />
-
-          <section className="work-content--mobile work-left" ref={fourthWork}>
-            <div className="work-title">
-              <h3>Saintscript</h3>
-              <p>Register of informationr</p>
-            </div>
-            <div ref={fourthIntersection}></div>
-
-            <div className="work-background">
-              <div>
-                <img src={saintscript} alt="work image about mobile checker" />
-              </div>
-            </div>
-          </section>
-
-          <Separator />
-          <Separator /> */}
         </section>
       </section>
     </>
