@@ -10,44 +10,46 @@ import geconAddSignature from "../assets/static/Gecon_Add_Signature.png";
 import { Link } from "react-router-dom";
 import useObserver from "../hooks/useObserver";
 import ModalImage from "../components/ModalImage";
+import { useAppSelector } from "../app/hooks";
 
 const WorkInfo = () => {
-  const infoDescrip = useRef(null)
-  const [isOpenModalImage, setIsOpenModalImage] = useState(false)
+  const work = useAppSelector(({ workEstado }) => workEstado.workSelect);
+
+  const infoDescrip = useRef(null);
+  const [isOpenModalImage, setIsOpenModalImage] = useState(false);
 
   const [observer, setElements, entries] = useObserver({
     threshold: 0.25,
-    root: null
-  })
+    root: null,
+  });
 
   useEffect(() => {
-    const targets = document.querySelectorAll('.description__work-item')
+    const targets = document.querySelectorAll(".description__work-item");
 
-    setElements(targets)
-
-  }, [setElements])
+    setElements(targets);
+  }, [setElements]);
 
   useEffect(() => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        const element = entry.target
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const element = entry.target;
         element.classList.add("fadeInDown");
-        observer.unobserve(element)
+        observer.unobserve(element);
       }
-    })
-  }, [entries, observer])
+    });
+  }, [entries, observer]);
 
   const handleMainToDesc = () => {
     infoDescrip.current.scrollIntoView({ behavior: "smooth" });
-  }
+  };
 
   const handleOpenModalImage = () => {
-    setIsOpenModalImage(true)
-  }
+    setIsOpenModalImage(true);
+  };
 
   const handleCloseModalImage = () => {
-    setIsOpenModalImage(false)
-  }
+    setIsOpenModalImage(false);
+  };
 
   return (
     <main className="info__container">
@@ -56,11 +58,11 @@ const WorkInfo = () => {
           <span className="i_back">
             <Link to="/work"></Link>
           </span>
-          <h1>GECON</h1>
+          <h1>{work.title}</h1>
         </div>
 
         <div className="info__content">
-          <p>Contract generator</p>
+          <p>{work.subtitle}</p>
           <p>
             PWA application for generate fixed-terms contracts for the payroll
             personal of Human Resources department with the final porpuse we
@@ -81,12 +83,16 @@ const WorkInfo = () => {
         </div>
 
         <div className="info__image--main">
-          <img src={gecon} alt="image home of proyect GECON" onClick={handleOpenModalImage}/>
+          <img
+            src={gecon}
+            alt="image home of proyect GECON"
+            onClick={handleOpenModalImage}
+          />
         </div>
       </section>
 
       <section className="info__description" ref={infoDescrip}>
-        <div className="description__work-item" >
+        <div className="description__work-item">
           <div className="work-item__header">
             <h4>Home</h4>
             <img src={gecon} alt="image home of proyect GECON" />
@@ -181,7 +187,10 @@ const WorkInfo = () => {
         </div>
       </section>
 
-      <ModalImage isOpen={isOpenModalImage} OnCloseModal={handleCloseModalImage}/>
+      <ModalImage
+        isOpen={isOpenModalImage}
+        OnCloseModal={handleCloseModalImage}
+      />
     </main>
   );
 };

@@ -18,6 +18,10 @@ const initialState: WorkState = {
             id: 0,
             title: 'GeCon',
             subtitle: 'Contract generator',
+            appDescription: `PWA application for generate fixed-terms contracts for the payroll
+            personal of Human Resources department with the final porpuse we
+            have the presupuestal control and personal analysis that has been
+            hired by this means.`,
             imageTitle: gecon,
             listImage: [],
             mediaQuery: 'Desktop'
@@ -26,6 +30,7 @@ const initialState: WorkState = {
             id: 1,
             title: 'Keradent',
             subtitle: 'Register of expedients',
+            appDescription: `PWA application that register patient expedient and keep clinical historial `,
             imageTitle: keradent,
             listImage: [],
             mediaQuery: 'Desktop'
@@ -34,6 +39,10 @@ const initialState: WorkState = {
             id: 2,
             title: 'Baluarteck',
             subtitle: 'Mobile checker',
+            appDescription: `PWA application for generate fixed-terms contracts for the payroll
+            personal of Human Resources department with the final porpuse we
+            have the presupuestal control and personal analysis that has been
+            hired by this means.`,
             imageTitle: baluarteck,
             listImage: [],
             mediaQuery: 'Mobile'
@@ -42,6 +51,10 @@ const initialState: WorkState = {
             id: 3,
             title: 'Saintscript',
             subtitle: 'Register of information',
+            appDescription: `PWA application for generate fixed-terms contracts for the payroll
+            personal of Human Resources department with the final porpuse we
+            have the presupuestal control and personal analysis that has been
+            hired by this means.`,
             imageTitle: saintscript,
             listImage: [],
             mediaQuery: 'Mobile'

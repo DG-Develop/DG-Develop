@@ -105,8 +105,8 @@ const Work = () => {
   };
 
   const HandleNavigateWorkInfo = (work) => {
-    // navigate(`/work/${work.title}`);
     dispatch(chooseWork(work))
+    navigate(`/work/${work.title}`);
   };
 
   return (
