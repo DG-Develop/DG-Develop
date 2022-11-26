@@ -153,6 +153,22 @@
   }
 }
 
+.info__image--main.mobile-image__main{
+  bottom: calc(50px - 50%);
+
+  @include media(desktop){
+    bottom: -85%;
+
+    img{
+      max-width: 500px;
+    }
+  }
+
+  @include media(desktop){
+    bottom: -40%;
+  }
+}
+
 /*  */
 .info__description {
   overflow-x: hidden;
