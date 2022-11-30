@@ -1,6 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Work, Image } from '../../models'
 const gecon = require("../../assets/static/Gecon.png");
+const geconManual = require("../../assets/static/Gecon_Manual.png");
+const geconSemiAnnual = require("../../assets/static/Gecon_Semi_Anual.png");
+const geconQuarterly = require("../../assets/static/Gecon_Quarterly.png");
+const geconMonthly = require("../../assets/static/Gecon_Monthly.png");
+const geconBiweekly = require("../../assets/static/Gecon_Biweekly.png");
+const geconDay = require("../../assets/static/Gecon_Day.png");
 const geconContractList = require("../../assets/static/Gecon_Contract_List.png");
 const geconEmployeeList = require("../../assets/static/Gecon_Employee_List.png");
 const geconGenerateContracts = require("../../assets/static/Gecon_Generate_Contracts.png");
@@ -21,7 +27,56 @@ const imageGecon: Image[] = [{
     route: gecon,
     imageTitle: 'Home',
     description: ['Download a single contract or many.', 'To download a single contract, write the contract folio dynamically or manual.', 'To download many contracts, choose year, period (Semi-annual, Quarterly, Monthly, Biweekly or by Day) and finally choose the government dependency.', 'See download progress and you can cancel it while the operation is active.'],
-    listImage: []
+    listImage: [{
+        id: 0,
+        route: gecon,
+        imageTitle: '',
+        description: [],
+        listImage: []
+    },
+    {
+        id: 1,
+        route: geconManual,
+        imageTitle: '',
+        description: [],
+        listImage: []
+    },
+    {
+        id: 2,
+        route: geconSemiAnnual,
+        imageTitle: '',
+        description: [],
+        listImage: []
+    },
+    {
+        id: 3,
+        route: geconQuarterly,
+        imageTitle: '',
+        description: [],
+        listImage: []
+    },
+    {
+        id: 4,
+        route: geconMonthly,
+        imageTitle: '',
+        description: [],
+        listImage: []
+    },
+    {
+        id: 5,
+        route: geconBiweekly,
+        imageTitle: '',
+        description: [],
+        listImage: []
+    },
+    {
+        id: 6,
+        route: geconDay,
+        imageTitle: '',
+        description: [],
+        listImage: []
+    }
+]
 },
 {
     id: 1,

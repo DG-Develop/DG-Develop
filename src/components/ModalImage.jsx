@@ -1,14 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import Modal from "./Modal";
-import gecon from "../assets/static/Gecon.png";
-import geconContractList from "../assets/static/Gecon_Contract_List.png";
-import geconEmployeeList from "../assets/static/Gecon_Employee_List.png";
-import geconGenerateContracts from "../assets/static/Gecon_Generate_Contracts.png";
-import geconUpdateContract from "../assets/static/Gecon_Update_Contract.png";
-import geconAddSignature from "../assets/static/Gecon_Add_Signature.png";
 import { useIsOverflow } from "../hooks/useIsOverflow";
 
-const ModalImage = ({ isOpen, OnCloseModal }) => {
+const ModalImage = ({ isOpen, OnCloseModal, ListaImagenes }) => {
   const carousel = useRef(null);
   const [imageSelect, setImageSelect] = useState(null);
   const [scrollX, setScrollX] = useState(0);
@@ -22,48 +16,19 @@ const ModalImage = ({ isOpen, OnCloseModal }) => {
     setIsOverflow(hasOverflow);
   });
 
-  const listaImagenes = [
-    gecon,
-    geconContractList,
-    geconEmployeeList,
-    geconGenerateContracts,
-    geconUpdateContract,
-    geconAddSignature,
-    gecon,
-    geconContractList,
-    geconEmployeeList,
-    geconGenerateContracts,
-    geconUpdateContract,
-    geconAddSignature,
-    gecon,
-    geconContractList,
-    geconEmployeeList,
-    geconGenerateContracts,
-    geconUpdateContract,
-    geconAddSignature,
-    gecon,
-    geconContractList,
-    geconEmployeeList,
-    geconGenerateContracts,
-    geconUpdateContract,
-    geconAddSignature,
-    gecon,
-    geconContractList,
-    geconEmployeeList,
-    geconGenerateContracts,
-    geconUpdateContract,
-    geconAddSignature,
-  ];
-
   useEffect(() => {
     if (isOpen) {
-      if(listaImagenes.length > 1){
+      if(ListaImagenes.length > 1){
           const input = document.querySelector("#imagen-0");
           input.checked = true;
       }
-      setImageSelect(listaImagenes[0]);
+      setImageSelect(ListaImagenes[0]);
     }
   }, [isOpen]);
+
+  useEffect(() => {
+    console.log(imageSelect)
+  }, [imageSelect])
 
   const clearState = () => {
     setScrollX(0);
@@ -99,7 +64,7 @@ const ModalImage = ({ isOpen, OnCloseModal }) => {
   };
 
   const handleChangeImage = (id) => {
-    setImageSelect(listaImagenes[id]);
+    setImageSelect(ListaImagenes[id]);
   };
 
   const handleScrollMove = (event) => {
@@ -134,7 +99,7 @@ const ModalImage = ({ isOpen, OnCloseModal }) => {
             <img src={imageSelect} alt="home" />
           </div>
 
-          {listaImagenes.length > 1 && (
+          {ListaImagenes.length > 1 && (
             <div className="modal__carousel-image">
               {isOverflow && scrollX !== 0 ? (
                 <div onClick={() => handleScroll(-50)}>
@@ -149,7 +114,7 @@ const ModalImage = ({ isOpen, OnCloseModal }) => {
                 ref={carousel}
                 onScroll={handleScrollMove}
               >
-                {listaImagenes.map((imagen, idx) => (
+                {ListaImagenes.map((imagen, idx) => (
                   <div key={idx}>
                     <input
                       type="radio"

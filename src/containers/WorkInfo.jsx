@@ -11,6 +11,7 @@ const WorkInfo = () => {
 
   const infoDescrip = useRef(null);
   const [isOpenModalImage, setIsOpenModalImage] = useState(false);
+  const [imageList, setImageList] = useState([])
 
   const [observer, setElements, entries] = useObserver({
     threshold: 0.25,
@@ -37,7 +38,8 @@ const WorkInfo = () => {
     infoDescrip.current.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleOpenModalImage = () => {
+  const handleOpenModalImage = (list) => {
+    setImageList(list)
     setIsOpenModalImage(true);
   };
 
@@ -79,7 +81,7 @@ const WorkInfo = () => {
           <img
             src={work.imageTitle}
             alt="image home of proyect GECON"
-            onClick={handleOpenModalImage}
+            onClick={() => handleOpenModalImage([work.imageTitle])}
           />
         </div>
       </section>
@@ -92,7 +94,7 @@ const WorkInfo = () => {
           >
             <div className="work-item__header">
               <h4>{image.imageTitle}</h4>
-              <img src={image.route} alt="image home of proyect GECON" />
+              <img src={image.route} alt="image home of proyect GECON" onClick={() => handleOpenModalImage(image.listImage.map(img => img.route))}/>
             </div>
             <div className="work-item__content">
               <p>
@@ -110,6 +112,7 @@ const WorkInfo = () => {
       <ModalImage
         isOpen={isOpenModalImage}
         OnCloseModal={handleCloseModalImage}
+        ListaImagenes={imageList}
       />
     </main>
   );
