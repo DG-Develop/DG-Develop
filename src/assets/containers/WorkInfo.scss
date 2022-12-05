@@ -5,7 +5,6 @@
 }
 
 .info__about {
-  background-color: $tertiary-80;
   padding: 8px;
   overflow: hidden;
   width: 100%;
@@ -14,6 +13,26 @@
 
   @include media(desktop) {
     padding: 32px;
+  }
+}
+
+.info__about.tertiary {
+  background-color: $tertiary-80;
+
+  .sticky__header {
+    h1 {
+      color: $tertiary-10;
+    }
+  }
+}
+
+.info__about.secondary {
+  background-color: $secondary-80;
+
+  .sticky__header {
+    h1 {
+      color: $secondary-10;
+    }
   }
 }
 
@@ -27,7 +46,6 @@
   animation: fadeIn 1s;
 
   h1 {
-    color: $tertiary-10;
     font-weight: $font-bold;
     font-size: 8rem;
     letter-spacing: -0.6rem;
@@ -139,7 +157,7 @@
     max-width: 750px;
     border-radius: 16px;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }
@@ -153,18 +171,18 @@
   }
 }
 
-.info__image--main.mobile-image__main{
+.info__image--main.mobile-image__main {
   bottom: calc(50px - 50%);
 
-  @include media(desktop){
+  @include media(desktop) {
     bottom: -85%;
 
-    img{
+    img {
       max-width: 500px;
     }
   }
 
-  @include media(desktop){
+  @include media(desktop) {
     bottom: -40%;
   }
 }
@@ -219,6 +237,19 @@
   transition: opacity 1s linear, transform 1s linear;
 }
 
+.work-item__header.tertiary {
+  h4 {
+    color: $tertiary-80;
+  }
+}
+
+.work-item__header.secondary {
+  h4 {
+    color: $secondary-80;
+  }
+}
+
+
 .work-item__header {
   width: 100%;
   display: grid;
@@ -227,14 +258,13 @@
   h4 {
     font-weight: $font-bold;
     font-size: 2rem;
-    color: $tertiary-80;
   }
 
   img {
     width: 100%;
     border-radius: 16px;
 
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
   }

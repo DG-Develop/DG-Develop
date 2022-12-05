@@ -7,5 +7,6 @@ export interface Work{
     appDescription: string,
     imageTitle: string,
     listImage: Image[],
-    mediaQuery: string
+    mediaQuery: string,
+    colorTheme: string
 }

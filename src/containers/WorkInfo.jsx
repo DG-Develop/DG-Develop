@@ -11,12 +11,19 @@ const WorkInfo = () => {
 
   const infoDescrip = useRef(null);
   const [isOpenModalImage, setIsOpenModalImage] = useState(false);
+  const [themePrincipal, setThemePrincipal] = useState("")
   const [imageList, setImageList] = useState([])
 
   const [observer, setElements, entries] = useObserver({
     threshold: 0.25,
     root: null,
   });
+
+  useEffect(() => {
+    if(work){
+      setThemePrincipal(work.colorTheme)
+    }
+  }, [work])
 
   useEffect(() => {
     const targets = document.querySelectorAll(".description__work-item");
@@ -49,7 +56,7 @@ const WorkInfo = () => {
 
   return (
     <main className="info__container">
-      <section className="info__about">
+      <section className={`info__about ${themePrincipal}`}>
         <div className="sticky__header">
           <span className="i_back">
             <Link to="/work"></Link>
@@ -92,7 +99,7 @@ const WorkInfo = () => {
             className={`description__work-item ${idx % 2 !== 0 && "invert"}`}
             key={image.id}
           >
-            <div className="work-item__header">
+            <div className={`work-item__header ${themePrincipal}`}>
               <h4>{image.imageTitle}</h4>
               <img src={image.route} alt="image home of proyect GECON" onClick={() => handleOpenModalImage(image.listImage.map(img => img.route))}/>
             </div>
