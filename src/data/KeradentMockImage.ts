@@ -2,6 +2,13 @@ import { Image } from '../models'
 const keradentFormPersonal = require("../assets/static/Keradent_Form_Personal.png");
 const keradentFormPersonal2 = require("../assets/static/Keradent_Form_Personal2.png");
 const keradentPatientList = require("../assets/static/Keradent_Patient_List.png");
+const keradentPatientList2 = require("../assets/static/Keradent_Patient_List2.png");
+const keradentPatientInfo = require("../assets/static/Keradent_Patient_Info.png");
+const keradentPatientInfoDelete = require("../assets/static/Keradent_Patient_Info_Delete.png");
+const keradentPatientExpedient = require("../assets/static/Keradent_Patient_Expedient.png");
+const keradentPatientExpedient2 = require("../assets/static/Keradent_Patient_Expedient2.png");
+const keradentIntraoral = require("../assets/static/Keradent_Intraoral.png");
+const keradentIntraoral2 = require("../assets/static/Keradent_Intraoral2.png");
 
 const imageKeradent: Image[] = [
     {
@@ -29,7 +36,7 @@ const imageKeradent: Image[] = [
         id: 1,
         route: keradentPatientList,
         imageTitle: 'Patient List',
-        description: ['See all record patients and search it by name lorem ipcsum value total repon'],
+        description: ['See all record patients and search it by name or doctor name and select to see patient information.'],
         listImage: [{
             id: 0,
             route: keradentPatientList,
@@ -37,8 +44,71 @@ const imageKeradent: Image[] = [
             description: [],
             listImage: []
         },
+        {
+            id: 1,
+            route: keradentPatientList2,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
         ]
-    }
+    },
+    {
+        id: 2,
+        route: keradentPatientInfo,
+        imageTitle: 'Patient Info',
+        description: ['See all patient information and organize your history medical by date and see recent or older expedient.', 'Delete and update patient information at the moment.', 'Create expedient and fill medical forms'],
+        listImage: [{
+            id: 0,
+            route: keradentPatientInfo,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 1,
+            route: keradentPatientInfoDelete,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 2,
+            route: keradentPatientExpedient,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 3,
+            route: keradentPatientExpedient2,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        ]
+    },
+    {
+        id: 3,
+        route: keradentIntraoral,
+        imageTitle: 'Intraoral examination',
+        description: ['Fill form to know additional patient information.', 'Fill form about tissue information, habits, and consult type.'],
+        listImage: [{
+            id: 0,
+            route: keradentIntraoral,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 1,
+            route: keradentIntraoral2,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        ]
+    },
 ]
 
 export default imageKeradent
