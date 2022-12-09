@@ -9,12 +9,21 @@ const keradentPatientExpedient = require("../assets/static/Keradent_Patient_Expe
 const keradentPatientExpedient2 = require("../assets/static/Keradent_Patient_Expedient2.png");
 const keradentIntraoral = require("../assets/static/Keradent_Intraoral.png");
 const keradentIntraoral2 = require("../assets/static/Keradent_Intraoral2.png");
+const keradentIntraoralInfo = require("../assets/static/Keradent_Intraoral_Info.png");
+const keradentIntraoralInfo2 = require("../assets/static/Keradent_Intraoral_Info2.png");
+const keradentIntraoralInfo3 = require("../assets/static/Keradent_Intraoral_Info3.png");
+const keradentIntraoralInfo4 = require("../assets/static/Keradent_Intraoral_Info4.png");
 const keradentPast = require("../assets/static/Keradent_Past.png");
 const keradentPast2 = require("../assets/static/Keradent_Past2.png");
+const keradentPastInfo = require("../assets/static/Keradent_Past_Info.png");
 const keradentOdontogram = require("../assets/static/Keradent_Odontogram.png");
 const keradentOdontogram2 = require("../assets/static/Keradent_Odontogram2.png");
 const keradentOdontogram3 = require("../assets/static/Keradent_Odontogram3.png");
 const keradentOdontogram4 = require("../assets/static/Keradent_Odontogram4.png");
+const keradentOdontogram5 = require("../assets/static/Keradent_Odontogram5.png");
+const keradentTreatmentPlan = require("../assets/static/Keradent_Treatment_Plan.png");
+const keradentTreatmentPlan2 = require("../assets/static/Keradent_Treatment_Plan2.png");
+const keradentTreatmentPlan3 = require("../assets/static/Keradent_Treatment_Plan3.png");
 
 const imageKeradent: Image[] = [
     {
@@ -98,7 +107,7 @@ const imageKeradent: Image[] = [
         id: 3,
         route: keradentIntraoral,
         imageTitle: 'Intraoral examination',
-        description: ['Fill form to know additional patient information.', 'Fill form about tissue information, habits, and consult type.'],
+        description: ['Fill form to know additional patient information and then see you information in the expedient generated before.', 'Also fill form about tissue information, habits, and consult type.'],
         listImage: [{
             id: 0,
             route: keradentIntraoral,
@@ -113,13 +122,41 @@ const imageKeradent: Image[] = [
             description: [],
             listImage: []
         },
+        {
+            id: 2,
+            route: keradentIntraoralInfo,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 3,
+            route: keradentIntraoralInfo2,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 4,
+            route: keradentIntraoralInfo3,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 5,
+            route: keradentIntraoralInfo4,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
         ]
     },
     {
         id: 4,
         route: keradentPast,
         imageTitle: 'Personal history and illnesses',
-        description: ['Select your personal history or illnesses of the patient.', 'Add other illnesses if do not appear in the list. asdfasdfsdfadfaassd'],
+        description: ['Select your personal history or illnesses of the patient with a predeterminate list and after you see information in the expedient generated before.', 'Add other illnesses if do not appear in the list.'],
         listImage: [{
             id: 0,
             route: keradentPast,
@@ -130,6 +167,13 @@ const imageKeradent: Image[] = [
         {
             id: 1,
             route: keradentPast2,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 2,
+            route: keradentPastInfo,
             imageTitle: '',
             description: [],
             listImage: []
@@ -165,6 +209,41 @@ const imageKeradent: Image[] = [
         {
             id: 3,
             route: keradentOdontogram4,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 4,
+            route: keradentOdontogram5,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        ]
+    },
+    {
+        id: 5,
+        route: keradentTreatmentPlan,
+        imageTitle: 'Treatment Plan',
+        description: ['Register the client sig or responsible person, and describe your patient treatment plan.', 'Save total of the consult and see total full of the list of treatments plans.'],
+        listImage: [{
+            id: 0,
+            route: keradentTreatmentPlan,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 1,
+            route: keradentTreatmentPlan2,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 2,
+            route: keradentTreatmentPlan3,
             imageTitle: '',
             description: [],
             listImage: []
