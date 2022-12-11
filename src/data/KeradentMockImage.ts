@@ -21,6 +21,9 @@ const keradentOdontogram2 = require("../assets/static/Keradent_Odontogram2.png")
 const keradentOdontogram3 = require("../assets/static/Keradent_Odontogram3.png");
 const keradentOdontogram4 = require("../assets/static/Keradent_Odontogram4.png");
 const keradentOdontogram5 = require("../assets/static/Keradent_Odontogram5.png");
+const keradentOdontogramInfo = require("../assets/static/Keradent_Odontogram_Info.png");
+const keradentOdontogramInfo2 = require("../assets/static/Keradent_Odontogram_Info2.png");
+const keradentOdontogramInfo3 = require("../assets/static/Keradent_Odontogram_Info3.png");
 const keradentTreatmentPlan = require("../assets/static/Keradent_Treatment_Plan.png");
 const keradentTreatmentPlan2 = require("../assets/static/Keradent_Treatment_Plan2.png");
 const keradentTreatmentPlan3 = require("../assets/static/Keradent_Treatment_Plan3.png");
@@ -184,7 +187,7 @@ const imageKeradent: Image[] = [
         id: 4,
         route: keradentOdontogram,
         imageTitle: 'Odontogram',
-        description: ['Select the odontogram between adult or child.', 'Select patient affected areas, and write some observation.'],
+        description: ['Select the odontogram between adult or child.', 'Select patient affected teeth areas, then choose the thirds areas by tooth area and write some general observation about on his teeth.', 'See information in the expedient section once that register the form.'],
         listImage: [{
             id: 0,
             route: keradentOdontogram,
@@ -216,6 +219,27 @@ const imageKeradent: Image[] = [
         {
             id: 4,
             route: keradentOdontogram5,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 5,
+            route: keradentOdontogramInfo,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 6,
+            route: keradentOdontogramInfo2,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 7,
+            route: keradentOdontogramInfo3,
             imageTitle: '',
             description: [],
             listImage: []
