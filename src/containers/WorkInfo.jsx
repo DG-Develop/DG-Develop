@@ -99,7 +99,7 @@ const WorkInfo = () => {
             className={`description__work-item ${idx % 2 !== 0 && "invert"}`}
             key={image.id}
           >
-            <div className={`work-item__header ${themePrincipal}`}>
+            <div className={`work-item__header ${themePrincipal} ${ work.mediaQuery === "Mobile" && "work-item__header-mobile"}`}>
               <h4>{image.imageTitle}</h4>
               <img src={image.route} alt="image home of proyect GECON" onClick={() => handleOpenModalImage(image.listImage.map(img => img.route))}/>
             </div>

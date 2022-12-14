@@ -26,9 +26,6 @@ const ModalImage = ({ isOpen, OnCloseModal, ListaImagenes }) => {
     }
   }, [isOpen]);
 
-  useEffect(() => {
-    console.log(imageSelect)
-  }, [imageSelect])
 
   const clearState = () => {
     setScrollX(0);

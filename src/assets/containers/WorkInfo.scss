@@ -36,6 +36,16 @@
   }
 }
 
+.info__about.primary {
+  background-color: $primary-80;
+
+  .sticky__header {
+    h1 {
+      color: $primary-10;
+    }
+  }
+}
+
 .sticky__header {
   display: grid;
   gap: 8px;
@@ -237,18 +247,33 @@
   transition: opacity 1s linear, transform 1s linear;
 }
 
+.work-item__header.tertiary.work-item__header-mobile,
 .work-item__header.tertiary {
   h4 {
     color: $tertiary-80;
   }
 }
 
+.work-item__header.secondary.work-item__header-mobile,
 .work-item__header.secondary {
   h4 {
     color: $secondary-80;
   }
 }
 
+.work-item__header.primary.work-item__header-mobile,
+.work-item__header.primary {
+  h4 {
+    color: $primary-80;
+  }
+}
+
+
+.work-item__header.work-item__header-mobile{
+  img {
+    height: 600px;
+  }
+}
 
 .work-item__header {
   width: 100%;

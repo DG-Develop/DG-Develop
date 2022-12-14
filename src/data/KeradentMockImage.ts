@@ -27,6 +27,8 @@ const keradentOdontogramInfo3 = require("../assets/static/Keradent_Odontogram_In
 const keradentTreatmentPlan = require("../assets/static/Keradent_Treatment_Plan.png");
 const keradentTreatmentPlan2 = require("../assets/static/Keradent_Treatment_Plan2.png");
 const keradentTreatmentPlan3 = require("../assets/static/Keradent_Treatment_Plan3.png");
+const keradentTreatmentPlanInfo = require("../assets/static/Keradent_Treatment_Plan_Info.png");
+const keradentTreatmentPlanInfo2 = require("../assets/static/Keradent_Treatment_Plan_Info2.png");
 
 const imageKeradent: Image[] = [
     {
@@ -250,7 +252,7 @@ const imageKeradent: Image[] = [
         id: 5,
         route: keradentTreatmentPlan,
         imageTitle: 'Treatment Plan',
-        description: ['Register the client sig or responsible person, and describe your patient treatment plan.', 'Save total of the consult and see total full of the list of treatments plans.'],
+        description: ['Register the client sig or responsible person, and describe your patient treatment plan.', 'Save total of the consult and look at total full of the list of treatments plans.', 'All treatment plans, it can consult in the expedient generated previously.'],
         listImage: [{
             id: 0,
             route: keradentTreatmentPlan,
@@ -268,6 +270,20 @@ const imageKeradent: Image[] = [
         {
             id: 2,
             route: keradentTreatmentPlan3,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 3,
+            route: keradentTreatmentPlanInfo,
+            imageTitle: '',
+            description: [],
+            listImage: []
+        },
+        {
+            id: 4,
+            route: keradentTreatmentPlanInfo2,
             imageTitle: '',
             description: [],
             listImage: []

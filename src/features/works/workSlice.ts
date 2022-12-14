@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Work } from '../../models'
-import { GeconMockImage, KeradentMockImage } from '../../data/index';
+import { GeconMockImage, KeradentMockImage, BaluarteckMockImage } from '../../data/index';
 const gecon = require("../../assets/static/Gecon.png");
 const keradent = require("../../assets/static/Keradent.png");
-const baluarteck = require("../../assets/static/Baluartteck.jpg");
+const baluarteck = require("../../assets/static/Baluarteck.png");
 const saintscript = require("../../assets/static/Saintscript.jpg");
 
 
@@ -46,9 +46,9 @@ const initialState: WorkState = {
             appDescription: `Mobile App and Web application to check in at work and generate
             report assistance, incidents, schedules and work permits.`,
             imageTitle: baluarteck,
-            listImage: [],
+            listImage: BaluarteckMockImage,
             mediaQuery: 'Mobile',
-            colorTheme: 'Tertiary'
+            colorTheme: 'primary'
         },
         {
             id: 3,
