@@ -271,7 +271,13 @@
 
 .work-item__header.work-item__header-mobile{
   img {
-    height: 600px;
+    height: 500px;
+  }
+
+  @include media(desktopL) {
+    img {
+      height: 600px;
+    }
   }
 }
 

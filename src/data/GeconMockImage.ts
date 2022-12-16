@@ -30,51 +30,59 @@ const imageGecon: Image[] = [{
         route: gecon,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     },
     {
         id: 1,
         route: geconManual,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     },
     {
         id: 2,
         route: geconSemiAnnual,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     },
     {
         id: 3,
         route: geconQuarterly,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     },
     {
         id: 4,
         route: geconMonthly,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     },
     {
         id: 5,
         route: geconBiweekly,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     },
     {
         id: 6,
         route: geconDay,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     }
-]
+    ],
+    media: 'desktop'
 },
 {
     id: 1,
@@ -86,15 +94,18 @@ const imageGecon: Image[] = [{
         route: geconContractList,
         imageTitle: '',
         description: [],
-        listImage: []
+        listImage: [],
+        media: 'desktop'
     },
     {
         id: 1,
         route: geconContractInfo,
         imageTitle: '',
         description: [],
-        listImage: []
-    },]
+        listImage: [],
+        media: 'desktop'
+    },],
+    media: 'desktop'
 },
 {
     id: 2,
@@ -107,23 +118,27 @@ const imageGecon: Image[] = [{
             route: geconEmployeeList,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: geconPersonalInfo,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: geconPersonalAddress,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-    ]
+    ],
+    media: 'desktop'
 },
 {
     id: 3,
@@ -136,23 +151,27 @@ const imageGecon: Image[] = [{
             route: geconGenerateContracts,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: geconGenerateContracts2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: geconGenerateContracts3,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-    ]
+    ],
+    media: 'desktop'
 },
 {
     id: 4,
@@ -165,23 +184,27 @@ const imageGecon: Image[] = [{
             route: geconUpdateContract,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: geconUpdateContractDependencia,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: geconUpdateContractPuesto,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-    ]
+    ],
+    media: 'desktop'
 },
 {
     id: 5,
@@ -194,16 +217,19 @@ const imageGecon: Image[] = [{
             route: geconAddSignature,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: geconAddSignatureSign,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-    ]
+    ],
+    media: 'desktop'
 }
 ]
 

@@ -88,7 +88,7 @@ const WorkInfo = () => {
           <img
             src={work.imageTitle}
             alt="image home of proyect GECON"
-            onClick={() => handleOpenModalImage([work.imageTitle])}
+            onClick={() => handleOpenModalImage(work.listImage)}
           />
         </div>
       </section>
@@ -99,9 +99,9 @@ const WorkInfo = () => {
             className={`description__work-item ${idx % 2 !== 0 && "invert"}`}
             key={image.id}
           >
-            <div className={`work-item__header ${themePrincipal} ${ work.mediaQuery === "Mobile" && "work-item__header-mobile"}`}>
+            <div className={`work-item__header ${themePrincipal} ${ image.media === "mobile" && "work-item__header-mobile"}`}>
               <h4>{image.imageTitle}</h4>
-              <img src={image.route} alt="image home of proyect GECON" onClick={() => handleOpenModalImage(image.listImage.map(img => img.route))}/>
+              <img src={image.route} alt="image home of proyect GECON" onClick={() => handleOpenModalImage(image.listImage)}/>
             </div>
             <div className="work-item__content">
               <p>

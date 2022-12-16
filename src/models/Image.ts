@@ -4,4 +4,5 @@ export interface Image{
     imageTitle: string,
     description: string[],
     listImage: Image[]
+    media: string
 }

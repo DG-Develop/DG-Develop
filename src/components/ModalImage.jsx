@@ -22,7 +22,10 @@ const ModalImage = ({ isOpen, OnCloseModal, ListaImagenes }) => {
           const input = document.querySelector("#imagen-0");
           input.checked = true;
       }
-      setImageSelect(ListaImagenes[0]);
+
+      if(ListaImagenes[0]){
+        setImageSelect(ListaImagenes[0]);
+      }
     }
   }, [isOpen]);
 
@@ -92,12 +95,12 @@ const ModalImage = ({ isOpen, OnCloseModal, ListaImagenes }) => {
             <span className="i_close"></span>
           </label>
 
-          <div className="modal__image-main">
-            <img src={imageSelect} alt="home" />
+          <div className={`modal__image-main ${imageSelect?.media === 'mobile' && "modal__image-main-mobile"}`}>
+            <img src={imageSelect?.route} alt="home" />
           </div>
 
           {ListaImagenes.length > 1 && (
-            <div className="modal__carousel-image">
+            <div className={`modal__carousel-image ${imageSelect?.media === 'mobile' && "modal__carousel-image-mobile"}`}>
               {isOverflow && scrollX !== 0 ? (
                 <div onClick={() => handleScroll(-50)}>
                   <span className="i_return"></span>
@@ -119,7 +122,7 @@ const ModalImage = ({ isOpen, OnCloseModal, ListaImagenes }) => {
                       name="carouselImage"
                       onChange={() => handleChangeImage(idx)}
                     />
-                    <img src={imagen} alt={`iamgen-${idx}`} />
+                    <img src={imagen.route} alt={`iamgen-${idx}`} />
                   </div>
                 ))}
               </div>

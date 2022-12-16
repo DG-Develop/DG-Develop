@@ -41,16 +41,19 @@ const imageKeradent: Image[] = [
             route: keradentFormPersonal,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: keradentFormPersonal2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-        ]
+        ],
+        media: 'desktop'
     },
     {
         id: 1,
@@ -62,16 +65,19 @@ const imageKeradent: Image[] = [
             route: keradentPatientList,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: keradentPatientList2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-        ]
+        ],
+        media: 'desktop'
     },
     {
         id: 2,
@@ -83,30 +89,35 @@ const imageKeradent: Image[] = [
             route: keradentPatientInfo,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: keradentPatientInfoDelete,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: keradentPatientExpedient,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 3,
             route: keradentPatientExpedient2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-        ]
+        ],
+        media: 'desktop'
     },
     {
         id: 3,
@@ -118,44 +129,51 @@ const imageKeradent: Image[] = [
             route: keradentIntraoral,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: keradentIntraoral2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: keradentIntraoralInfo,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 3,
             route: keradentIntraoralInfo2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 4,
             route: keradentIntraoralInfo3,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 5,
             route: keradentIntraoralInfo4,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-        ]
+        ],
+        media: 'desktop'
     },
     {
         id: 4,
@@ -167,23 +185,27 @@ const imageKeradent: Image[] = [
             route: keradentPast,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: keradentPast2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: keradentPastInfo,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-        ]
+        ],
+        media: 'desktop'
     },
     {
         id: 4,
@@ -195,58 +217,67 @@ const imageKeradent: Image[] = [
             route: keradentOdontogram,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: keradentOdontogram2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: keradentOdontogram3,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 3,
             route: keradentOdontogram4,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 4,
             route: keradentOdontogram5,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 5,
             route: keradentOdontogramInfo,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 6,
             route: keradentOdontogramInfo2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 7,
             route: keradentOdontogramInfo3,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-        ]
+        ],
+        media: 'desktop'
     },
     {
         id: 5,
@@ -258,37 +289,43 @@ const imageKeradent: Image[] = [
             route: keradentTreatmentPlan,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 1,
             route: keradentTreatmentPlan2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 2,
             route: keradentTreatmentPlan3,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 3,
             route: keradentTreatmentPlanInfo,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
         {
             id: 4,
             route: keradentTreatmentPlanInfo2,
             imageTitle: '',
             description: [],
-            listImage: []
+            listImage: [],
+            media: 'desktop'
         },
-        ]
+        ],
+        media: 'desktop'
     },
 ]
 
