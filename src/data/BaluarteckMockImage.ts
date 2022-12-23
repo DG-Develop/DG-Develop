@@ -9,6 +9,11 @@ const baluarteckRegister4 = require("../assets/static/Baluarteck_Register4.png")
 const baluarteckManual = require("../assets/static/Baluarteck_Manual.png");
 const baluarteckManual2 = require("../assets/static/Baluarteck_Manual2.png");
 const baluarteckManual3 = require("../assets/static/Baluarteck_Manual3.png");
+const baluarteckConfig = require("../assets/static/Baluarteck_Config.png");
+const baluarteckConfig2 = require("../assets/static/Baluarteck_Config2.png");
+const baluarteckConfig3 = require("../assets/static/Baluarteck_Config3.png");
+const baluarteckConfig4 = require("../assets/static/Baluarteck_Config4.png");
+const baluarteckDesktop = require("../assets/static/Baluarteck_Desktop.png");
 
 
 const imageBaluarteck: Image[] = [{
@@ -117,6 +122,65 @@ const imageBaluarteck: Image[] = [{
         },
     ],
     media: 'mobile'
+},
+{
+    id: 3,
+    route: baluarteckConfig,
+    imageTitle: 'Check in list and update profile',
+    description: ["See a check in list by current month with the entrance hour and exit hour, and look some personal information of the staff.", "Besides you can edit your personal information how your names, job and phone number."],
+    listImage: [
+        {
+            id: 0,
+            route: baluarteckConfig,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'mobile'
+        },
+        {
+            id: 1,
+            route: baluarteckConfig2,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'mobile'
+        },
+        {
+            id: 2,
+            route: baluarteckConfig3,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'mobile'
+        },
+        {
+            id: 2,
+            route: baluarteckConfig4,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'mobile'
+        },
+    ],
+    media: 'mobile'
+},
+
+{
+    id: 4,
+    route: baluarteckDesktop,
+    imageTitle: 'App for Desktop',
+    description: ["In this section you look the app by the admin side and control of the staff check in."],
+    listImage: [
+        {
+            id: 0,
+            route: baluarteckDesktop,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+    ],
+    media: 'desktop'
 },
 ]
 
