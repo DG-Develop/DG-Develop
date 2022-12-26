@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { Work } from '../../models'
-import { GeconMockImage, KeradentMockImage, BaluarteckMockImage } from '../../data/index';
+import { GeconMockImage, KeradentMockImage, BaluarteckMockImage, SaintscriptMockImage } from '../../data/index';
 const gecon = require("../../assets/static/Gecon.png");
 const keradent = require("../../assets/static/Keradent.png");
 const baluarteck = require("../../assets/static/Baluarteck.png");
@@ -57,9 +57,9 @@ const initialState: WorkState = {
             appDescription: `Mobile App to register information by reunion and keep the tithes
             collected, read the bible and see the contribution history`,
             imageTitle: saintscript,
-            listImage: [],
+            listImage: SaintscriptMockImage,
             mediaQuery: 'Mobile',
-            colorTheme: 'Tertiary'
+            colorTheme: 'tertiary'
         }
     ]
 }

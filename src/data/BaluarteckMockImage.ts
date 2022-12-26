@@ -40,6 +40,16 @@ const baluarteckDesktopEmployee9 = require("../assets/static/Baluarteck_Desktop_
 const baluarteckDesktopEmployee10 = require("../assets/static/Baluarteck_Desktop_Employees10.png");
 const baluarteckDesktopEmployee11 = require("../assets/static/Baluarteck_Desktop_Employees11.png");
 const baluarteckDesktopEmployee12 = require("../assets/static/Baluarteck_Desktop_Employees12.png");
+const baluarteckDesktopSchedule = require("../assets/static/Baluarteck_Desktop_Schedule.png");
+const baluarteckDesktopSchedule2 = require("../assets/static/Baluarteck_Desktop_Schedule2.png");
+const baluarteckDesktopSchedule3 = require("../assets/static/Baluarteck_Desktop_Schedule3.png");
+const baluarteckDesktopSchedule4 = require("../assets/static/Baluarteck_Desktop_Schedule4.png");
+const baluarteckDesktopSchedule5 = require("../assets/static/Baluarteck_Desktop_Schedule5.png");
+const baluarteckDesktopSchedule6 = require("../assets/static/Baluarteck_Desktop_Schedule6.png");
+const baluarteckDesktopSchedule7 = require("../assets/static/Baluarteck_Desktop_Schedule7.png");
+const baluarteckDesktopSchedule8 = require("../assets/static/Baluarteck_Desktop_Schedule8.png");
+const baluarteckDesktopSchedule9 = require("../assets/static/Baluarteck_Desktop_Schedule9.png");
+const baluarteckDesktopSchedule10 = require("../assets/static/Baluarteck_Desktop_Schedule10.png");
 
 
 const imageBaluarteck: Image[] = [{
@@ -342,7 +352,7 @@ const imageBaluarteck: Image[] = [{
     id: 6,
     route: baluarteckDesktopEmployee,
     imageTitle: 'Employee Control',
-    description: ["Register, input check-in and look the list of all employees.", "Additionally you can see the information of the employee, update your information, look employee schedule, look employee incidents and look the list of check-in ."],
+    description: ["Register, input check-in and look the list of all employees.", "Additionally you can see the information of the employee, update your information, look employee schedule, look employee incidents and look the list of check-in."],
     listImage: [
         {
             id: 0,
@@ -435,6 +445,95 @@ const imageBaluarteck: Image[] = [{
         {
             id: 11,
             route: baluarteckDesktopEmployee12,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+    ],
+    media: 'desktop'
+},
+{
+    id: 7,
+    route: baluarteckDesktopSchedule,
+    imageTitle: 'Employee Schedule',
+    description: ["Look the list schedule profile and add new profiles, also assign schedule profile to employees and add inhabilities days.", "Create a schedule profile between permanent schedule, variable schedule or rotative schedule."],
+    listImage: [
+        {
+            id: 0,
+            route: baluarteckDesktopSchedule,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 1,
+            route: baluarteckDesktopSchedule2,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 2,
+            route: baluarteckDesktopSchedule3,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 3,
+            route: baluarteckDesktopSchedule4,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 4,
+            route: baluarteckDesktopSchedule5,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 5,
+            route: baluarteckDesktopSchedule6,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 6,
+            route: baluarteckDesktopSchedule7,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 7,
+            route: baluarteckDesktopSchedule8,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 8,
+            route: baluarteckDesktopSchedule9,
+            imageTitle: '',
+            description: [],
+            listImage: [],
+            media: 'desktop'
+        },
+        {
+            id: 9,
+            route: baluarteckDesktopSchedule10,
             imageTitle: '',
             description: [],
             listImage: [],
