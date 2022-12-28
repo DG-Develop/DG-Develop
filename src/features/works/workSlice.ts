@@ -4,7 +4,7 @@ import { GeconMockImage, KeradentMockImage, BaluarteckMockImage, SaintscriptMock
 const gecon = require("../../assets/static/Gecon.png");
 const keradent = require("../../assets/static/Keradent.png");
 const baluarteck = require("../../assets/static/Baluarteck.png");
-const saintscript = require("../../assets/static/Saintscript.jpg");
+const saintscript = require("../../assets/static/Saintscript.png");
 
 
 export interface WorkState {
