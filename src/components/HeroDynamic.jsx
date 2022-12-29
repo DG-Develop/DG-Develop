@@ -1,5 +1,6 @@
 import React from "react";
 import IconAnimated from "./IconAnimated";
+import { Link } from "react-router-dom";
 
 const HeroDynamic = ({ OnNextStack }) => {
 
@@ -24,8 +25,8 @@ const HeroDynamic = ({ OnNextStack }) => {
       </div>
 
       <div className="hero__actions">
-        <button className="button-primary">Go to Work</button>
-        <span className="i_arrow-down" onClick={OnNextStack}></span>
+        <Link to="/work" className="button-primary">Go to Work</Link>
+        <span className="i_arrow-down" onClick={OnNextStack} tabIndex="0"></span>
       </div>
     </section>
   );

@@ -1,41 +1,59 @@
+.modal__menu {
+  padding: 16px;
+  background-color: $background-secondary;
+  display: grid;
+  gap: 16px;
+  animation: fadeInDownBig 1s ease-out;
 
-.modal__menu{
-    padding: 16px;
-    background-color: $background-secondary;
+  .button-circle {
+    margin: 0 auto;
+
+    &:hover,
+    &:active,
+    &:focus{
+        outline: 2px solid $white;
+    }
+  }
+  ul {
     display: grid;
-    gap: 16px;
-    animation: fadeInDownBig 1s ease-out;
+    gap: 8px;
+  }
 
-    .button-circle{
-        margin: 0 auto;
-    }
-    ul{
-        display: grid;
-        gap: 8px;
+  li {
+    list-style: none;
+    overflow: hidden;
+    background: $linear-main;
+
+    border-radius: 112px;
+    width: 100%;
+    font-size: 1.4rem;
+    font-weight: $font-bold;
+
+    &hover,
+    &:active,
+    &:focus-within{
+        outline: 4px solid $white;
     }
 
-    li{
-        list-style: none;
-        padding: 16px 24px;
-        background: $linear-main;
-        
-        border-radius: 112px;
-        width: 100%;
-        font-size: 1.4rem;
-        font-weight: $font-bold;
-        a{
-            text-decoration: none;
-            color: $white;
-        }
+    a {
+      padding: 16px 24px;
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+      text-decoration: none;
+      color: $white;
+      outline: 1px solid white;
+      position: relative;
     }
+  }
 }
 
-.button-circle{
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: $color-accent;
-    padding: 8px;
-    display: grid;
-    place-content: center;
+.button-circle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background-color: $color-accent;
+  padding: 8px;
+  display: grid;
+  place-content: center;
 }

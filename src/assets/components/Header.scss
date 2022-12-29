@@ -3,6 +3,7 @@
   width: 100%;
   min-width: 255px;
   max-width: 1920px;
+  position: relative;
 
   nav {
     display: flex;
@@ -10,19 +11,50 @@
     align-items: center;
 
     a {
+      display: inline-block;
       text-decoration: none;
       color: $white;
+      position: relative;
+      text-align: center;
+
+      &:active::before,
+      &:focus::before,
+      &:hover::before {
+        display: inline-block;
+        content: "";
+        width: calc(100% - 16px);
+        margin: 0 auto;
+        height: 3px;
+        position: absolute;
+        bottom: 0;
+        background-color: $white;
+        border-radius: 4px;
+        left: 8px;
+        right: 8px;
+      }
     }
   }
 
   @include media(desktop) {
     padding: 16px;
     margin: 0 auto;
+
+    nav{
+      a{
+        padding: 8px 16px;
+      }
+    }
   }
 }
 
+#logo.header__logo{
+  padding: 0;
+  
+}
 .hamburguer__menu {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: calc(50% - 53px);
 
   #menu-icon {
     position: absolute;

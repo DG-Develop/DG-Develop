@@ -93,6 +93,10 @@
 
 .signature {
   align-self: end;
+  width: 100%;
+  min-width: 250px;
+  max-width: 1440px;
+  margin: 0 auto;
 
   p {
     font-size: 1.2rem;

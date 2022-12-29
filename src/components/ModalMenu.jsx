@@ -15,10 +15,16 @@ const ModalMenu = ({ OnCloseModal }) => {
     
   };
 
+  const hadleKeyDown = (e) => {
+    if (e.key === "Enter"){
+      handleCloseModalMenu()
+    }
+  }
+
   return (
     <div className="modal">
       <div className="modal__menu" ref={modalMenu}>
-        <div className="button-circle" onClick={handleCloseModalMenu}>
+        <div className="button-circle" onClick={handleCloseModalMenu} tabIndex="0" onKeyDown={hadleKeyDown}>
           <span className="i_close"></span>
         </div>
         <ul>

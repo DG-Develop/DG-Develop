@@ -1,7 +1,7 @@
 .Hero {
   width: 100%;
   min-width: 255px;
-  max-width: 1920px;
+  max-width: 1440px;
   margin: 0 auto;
   height: calc(100vh - 55px);
   padding: 16px;
@@ -59,6 +59,17 @@
       font-size: 2.4rem;
       color: $white;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+  }
+
+  @include media(desktopL){
+    h1{
+      font-size: 5.2rem;
+    }
+
+
+    p{
+      font-size: 2.8rem;
     }
   }
 }
@@ -120,6 +131,22 @@
       height: 300px;
     }
   }
+
+  @include media(desktopL){
+    grid-column: 4/11;
+    align-self: center;
+
+    .decoration__content{
+      .primary-dark {
+        top: 110px;
+      }
+    }
+
+    .decoration {
+      width: 400px;
+      height: 400px;
+    }
+  }
 }
 
 .logo-animated {
@@ -128,12 +155,14 @@
   position: absolute;
   left: calc(50% - 130px);
   top: calc(50% - 80px);
+  
 
   .anim-ear-left {
     position: absolute;
     top: calc(50% - 30px);
     left: calc(50% - 80px);
     animation: earLefttAnim 4s ease-in-out infinite;
+    cursor: default;
   }
 
   .anim-ear-right {
@@ -141,6 +170,7 @@
     top: calc(50% - 30px);
     right: calc(50% - 80px);
     animation: earRightAnim 4s ease-in-out infinite;
+    cursor: default;
   }
 
   .anim-eye-left {
@@ -148,6 +178,7 @@
     top: 28px;
     left: calc(50% - 25px);
     animation: closeEye 4s ease-in-out infinite;
+    cursor: default;
   }
 
   .anim-eye-right {
@@ -155,6 +186,7 @@
     top: 28px;
     right: calc(50% - 25px);
     animation: closeEye 4s ease-in-out infinite;
+    cursor: default;
   }
 
   .anim-eyebrown-left {
@@ -163,6 +195,7 @@
     left: calc(50% - 48px);
     transform: scale(0.6);
     animation: eyeBrownLeftAnim 4s ease-in-out infinite;
+    cursor: default;
   }
 
   .anim-eyebrown-right {
@@ -171,12 +204,14 @@
     right: calc(50% - 50px);
     transform: scale(0.6);
     animation: eyeBrownRightAnim 4s ease-in-out infinite;
+    cursor: default;
   }
 
   .anim-face {
     position: absolute;
     top: 0;
     left: calc(50% - 37px);
+    cursor: default;
   }
 
   .anim-mouth {
@@ -184,12 +219,17 @@
     bottom: 0;
     left: calc(50% - 30px);
     animation: openMouth 4s ease-in-out infinite;
+    cursor: default;
   }
 
   @include media(desktop) {
     transform: scale(1.8);
     left: calc(50% - 130px);
     top: calc(50% - 50px);
+  }
+
+  @include media(desktop) {
+    transform: scale(2.5);
   }
 }
 
@@ -214,6 +254,7 @@
       align-self: flex-end;
       width: 32px;
       height: 42px;
+      margin-bottom: 16px;
     }
   }
 }
@@ -230,9 +271,15 @@
   opacity: 1;
   display: grid;
   place-content: center;
+  text-decoration: none;
 
   &:hover {
     cursor: pointer;
     opacity: 0.9;
+  }
+
+  &:active,
+  &:focus{
+    outline: 2px solid $white;
   }
 }

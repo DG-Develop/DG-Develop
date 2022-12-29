@@ -1,14 +1,12 @@
 import React, { useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
 
 export const Header = () => {
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
   const isDesktop = useMediaQuery({ minWidth: 1024 });
-  const navigate = useNavigate();
 
   const handleOpenModalMenu = () => {
     setOpenMenuMobile(true);
@@ -18,19 +16,22 @@ export const Header = () => {
     setOpenMenuMobile(!openMenuMobile);
   };
 
-  const goToHome = () => {
-    navigate("/");
-  };
+  const hadleKeyDown = (e) => {
+    if (e.key === "Enter"){
+      handleOpenModalMenu()
+    }
+  }
+
 
   return (
     <header className="header">
       <nav>
-        <div>
-          <span className="logo" onClick={goToHome}></span>
-        </div>
+        <Link to="/" className="header__logo" id="logo">
+          <span className="logo"></span>
+        </Link>
 
         {!isDesktop ? (
-          <div className="hamburguer__menu" onClick={handleOpenModalMenu}>
+          <div className="hamburguer__menu" onClick={handleOpenModalMenu} tabIndex="0" onKeyDown={hadleKeyDown}>
             <object data={triangle} type="image/svg+xml"></object>
             <svg
               id="menu-icon"
