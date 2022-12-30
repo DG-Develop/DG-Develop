@@ -106,7 +106,9 @@ const Work = () => {
 
   const HandleNavigateWorkInfo = (work) => {
     dispatch(chooseWork(work))
-    navigate(`/work/${work.title}`);
+    navigate(`/work/${work.title}`, {
+      state: work
+    });
   };
 
   return (
@@ -139,7 +141,7 @@ const Work = () => {
           <Separator />
 
           {works.map((work, idx) => (
-            <div key={work.id}>
+            <div key={work.id} id={work.title}>
               <section
                 className={`work-content--${
                   work.mediaQuery === "Desktop" ? "desktop" : "mobile"

@@ -17,7 +17,7 @@
   }
 
   @include media(desktop) {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 84px);
     padding: 16px 16px 0;
 
     h2 {
@@ -59,6 +59,12 @@
       background-color: $white;
     }
   }
+
+  @include media(desktopL){
+    p{
+      font-size: 1.8rem;
+    }
+  }
 }
 
 .about__image {
@@ -93,6 +99,10 @@
   @include media(desktop) {
     margin-top: 16px;
     margin-bottom: 24px;
+  }
+  
+  @include media(desktopL){
+    margin-top: 4px;
   }
 }
 

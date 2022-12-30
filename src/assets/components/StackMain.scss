@@ -84,6 +84,10 @@
 .stack__content {
   display: grid;
   gap: 40px;
+  width: 100%;
+  min-width: 250px;
+  max-width: 700px;
+  margin: 0 auto;
 
   hr {
     width: 100%;

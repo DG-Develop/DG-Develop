@@ -6,6 +6,12 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
       OnOpenModal(title)
   }
 
+  const hadleKeyDown = (e, title) => {
+    if (e.key === "Enter"){
+      handleOpenModalStack(title)
+    }
+  }
+
   return (
       <section className="stack" ref={Ref}>
         <div className="stack__header">
@@ -34,7 +40,7 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
                 API & <br /> Database
               </p>
             </div>
-            <div className="button-primary" onClick={() => handleOpenModalStack("API & Database")}>
+            <div className="button-primary" onClick={() => handleOpenModalStack("API & Database")} tabIndex="0" onKeyDown={(e) => hadleKeyDown( e, "API & Database")}>
               <span className="database-icon"></span>
               <p>View Stack</p>
             </div>
@@ -48,7 +54,7 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
                 Web <br /> Development
               </p>
             </div>
-            <div className="button-primary" onClick={() => handleOpenModalStack("Web Development")}>
+            <div className="button-primary" onClick={() => handleOpenModalStack("Web Development")} tabIndex="0" onKeyDown={(e) => hadleKeyDown( e, "Web Development")}>
               <span className="desktop-icon"></span>
               <p>View Stack</p>
             </div>
@@ -62,7 +68,7 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
                 Mobile <br /> Development
               </p>
             </div>
-            <div className="button-primary" onClick={() => handleOpenModalStack("Mobile Development")}>
+            <div className="button-primary" onClick={() => handleOpenModalStack("Mobile Development")} tabIndex="0" onKeyDown={(e) => hadleKeyDown( e, "Mobile Development")}>
               <span className="cell-icon"></span>
               <p>View Stack</p>
             </div>

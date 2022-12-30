@@ -125,16 +125,28 @@ const ModalStack = ({ isOpen, title, OnCloseModal }) => {
   useEffect(() => {
     if (title) {
       dispatch({ type: title });
+      const element = document.querySelector(".modal__content-center")
+      element.focus()
     }
   }, [title]);
 
+  const hadleKeyDown = (e, type) => {
+    if (e.key === "Enter" && type === "icon"){
+      OnCloseModal()
+    }
+
+    if(e.key === "Escape" && type === "modal"){
+      OnCloseModal()
+    }
+  }
+
   return (
     <Modal isOpen={isOpen}>
-      <section className="modal__content-center">
+      <section className="modal__content-center" onKeyDown={(e) => hadleKeyDown(e, "modal")} tabIndex="0">
         <div className="card__carousel">
           <div className="carousel__header">
             <h2>{title}</h2>
-            <span className="i_close" onClick={OnCloseModal}></span>
+            <span className="i_close" onClick={OnCloseModal} tabIndex="0" onKeyDown={(e) => hadleKeyDown(e, "icon")}></span>
           </div>
 
           <div className="carousel__animated">

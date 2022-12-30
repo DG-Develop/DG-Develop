@@ -94,7 +94,7 @@ const WorkInfo = () => {
       </section>
 
       <section className="info__description" ref={infoDescrip}>
-        {work.listImage.map((image, idx) => (
+        {work.listImage && work.listImage.map((image, idx) => (
           <div
             className={`description__work-item ${idx % 2 !== 0 && "invert"}`}
             key={image.id}

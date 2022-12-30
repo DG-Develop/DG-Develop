@@ -17,7 +17,7 @@
 
   @include media(desktop) {
     margin: 0 auto;
-    height: calc(100vh - 70px);
+    height: calc(100vh - 84px);
     padding: 16px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);

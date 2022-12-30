@@ -1,13 +1,26 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import workReducer, { WorkState } from '../features/works/workSlice'
+import storage from 'redux-persist/lib/storage'
+import {persistReducer} from 'redux-persist'
+
 export interface AppStore{
     workEstado: WorkState
 }
 
-const store = configureStore<AppStore>({
-    reducer: {
-        workEstado: workReducer,
-    }
+const persistConfig = {
+    key: "root",
+    version: 1,
+    storage
+}
+
+const reducer = combineReducers({
+    workEstado: workReducer,
+})
+
+const persistedReducer = persistReducer(persistConfig, reducer)
+
+const store = configureStore({
+    reducer: persistedReducer
 })
 
 
