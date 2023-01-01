@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import IconAnimated from "../components/IconAnimated";
 import { Header } from "../components/Header";
 import Separator from "../components/Separator";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import useObserver from "../hooks/useObserver";
 import { chooseWork } from "../features/works/workSlice";
@@ -11,6 +11,7 @@ const Work = () => {
   const works = useAppSelector(({ workEstado }) => workEstado.works);
   const dispatch = useAppDispatch()
   const navigate = useNavigate();
+  const [searchParams, _] = useSearchParams()
 
   const [observer, setElements, entries] = useObserver({
     threshold: 0.5,
@@ -19,6 +20,15 @@ const Work = () => {
 
   const srollDynamic = useRef(null);
   const iconContainer = useRef(null);
+
+  useEffect(() => {
+      const title = searchParams.get('title')
+
+      if(title){  
+        const element = document.querySelector(`#${title}`)
+        element.scrollIntoView()
+      }
+  }, [searchParams])
 
   useEffect(() => {
     const targetsDesktop = document.querySelectorAll(".work-content--desktop");
@@ -106,9 +116,7 @@ const Work = () => {
 
   const HandleNavigateWorkInfo = (work) => {
     dispatch(chooseWork(work))
-    navigate(`/work/${work.title}`, {
-      state: work
-    });
+    navigate(`/work/${work.title}`);
   };
 
   return (
@@ -133,7 +141,7 @@ const Work = () => {
 
             <div className="scroll-motion">
               <span className="scroll-icon"></span>
-              <p>Scroll On!</p>
+              <a href="/work/#GeCon">Scroll On!</a>
             </div>
           </div>
 

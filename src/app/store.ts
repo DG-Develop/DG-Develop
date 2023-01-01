@@ -1,9 +1,9 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { configureStore, combineReducers, Reducer, AnyAction } from '@reduxjs/toolkit'
 import workReducer, { WorkState } from '../features/works/workSlice'
 import storage from 'redux-persist/lib/storage'
-import {persistReducer} from 'redux-persist'
+import { persistReducer } from 'redux-persist'
 
-export interface AppStore{
+export interface AppStore {
     workEstado: WorkState
 }
 
@@ -13,14 +13,27 @@ const persistConfig = {
     storage
 }
 
-const reducer = combineReducers({
+const reducer = combineReducers<AppStore>({
     workEstado: workReducer,
 })
 
-const persistedReducer = persistReducer(persistConfig, reducer)
+const rootReducer: Reducer = (state: RootState, action: AnyAction) => {
+    if (action.type === 'works/chooseWork') {
+        // this applies to all keys defined in persistConfig(s)
+        storage.removeItem('persist:root')
+
+        state = {} as RootState
+    }
+    return reducer(state, action)
+}
+
+const persistedReducer = persistReducer<AppStore>(persistConfig, rootReducer)
 
 const store = configureStore({
-    reducer: persistedReducer
+    reducer: persistedReducer,
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false,
+    })
 })
 
 

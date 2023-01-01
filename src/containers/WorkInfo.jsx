@@ -59,7 +59,7 @@ const WorkInfo = () => {
       <section className={`info__about ${themePrincipal}`}>
         <div className="sticky__header">
           <span className="i_back">
-            <Link to="/work"></Link>
+            <Link to={`/work?title=${work.title}`}></Link>
           </span>
           <h1>{work.title}</h1>
         </div>

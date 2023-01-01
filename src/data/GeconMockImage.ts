@@ -111,7 +111,7 @@ const imageGecon: Image[] = [{
     id: 2,
     route: geconEmployeeList,
     imageTitle: 'Employee List',
-    description: [' Control the staff and signatories and see you partial information. Also you can search to employee or signers by name, DNI and number of employee. Control the staff and signatories and see you partial information.', 'Also you can search to employee or signers by name, DNI and number of employee.'],
+    description: ['Control the staff and signatories and see you partial information. Also you can search to employee or signers by name, DNI and number of employee. Control the staff and signatories and see you partial information.'],
     listImage: [
         {
             id: 0,

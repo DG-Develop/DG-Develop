@@ -1,5 +1,4 @@
 .chip{
-    outline: 1px solid lightblue;
     display: inline-block;
     padding: 10px 24px;
     background-color: $gray;
@@ -15,4 +14,9 @@ input[type="radio"]{
 
 input[type="radio"]:checked + .chip{
     background-color: $color-primary-dark;
+}
+
+
+input[type="radio"]:focus + .chip{
+    outline: 3px solid $white;
 }
