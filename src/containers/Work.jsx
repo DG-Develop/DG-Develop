@@ -141,7 +141,7 @@ const Work = () => {
 
             <div className="scroll-motion">
               <span className="scroll-icon"></span>
-              <a href="/work/#GeCon">Scroll On!</a>
+              <p>Scroll On!</p>
             </div>
           </div>
 

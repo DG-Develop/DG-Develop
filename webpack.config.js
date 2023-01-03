@@ -1,6 +1,5 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
@@ -8,8 +7,6 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const Dotenv = require('dotenv-webpack')
 const MediaQueryPlugin = require('media-query-plugin');
 const CompressionPlugin = require('compression-webpack-plugin');
-
-const pathIco = path.resolve(__dirname, 'public')
 
 module.exports = {
     entry: './src/index.jsx',
