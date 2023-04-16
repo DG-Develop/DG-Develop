@@ -18,6 +18,7 @@ const Contact = () => {
 
       if (result.text == "Ok") {
         // TODO: Show modal ok
+        console.log("Correo enviado")
       }
 
       e.target.reset();
