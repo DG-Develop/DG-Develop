@@ -28,7 +28,7 @@ const About = () => {
               color is red and I consider myself a person with capatiblities of
               analyze complex tecnique information.
               <br />
-              Also I'm a Backend Developer with 3 years experience in
+              Also I'm a Backend Developer with 4 years experience in
               development and analytics about APIs and integration and deploy
               application web and mobile.
             </p>

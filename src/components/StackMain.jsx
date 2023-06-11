@@ -22,10 +22,10 @@ const StackMain = ({ Ref, OnNextFooter, OnOpenModal }) => {
           <div>
             <hr />
             <p>
-              I can help you by offering the following services to create your
-              innovative or business idea and grow it exponentially, in addition
-              to handling large amounts of data and helping you decide on the
-              information obtained from it.
+            I can help you by offering the following services to create your 
+            innovative or business idea and grow it exponentially, in addition
+            to handling large amounts of data and help you to generate a critic 
+            opnion about the data obtained.
             </p>
           </div>
         </div>
