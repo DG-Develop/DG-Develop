@@ -1,0 +1,15 @@
+.loading{
+    height: 100vh;
+    // background-color: $background-secondary;
+    >svg{
+        outline: 1px solid white;
+
+        path{
+            outline: 1px solid lightcoral;
+        }
+    }
+}
+
+.loading__container{
+    outline: 1px solid crimson;
+}

@@ -5,8 +5,8 @@ import Waves from './Waves'
 const Loading = ({ isOpen }) => {
   return (
     <Modal isOpen={isOpen}>
-        <section>
-            <div>
+        <section className='loading'>
+            <div className='loading__container'>
                 <span></span><span></span>
 
                 <p>Loading...</p>

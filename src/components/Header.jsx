@@ -3,6 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
+import TansitionsNavbar from "../Animations/TansitionsNavbar";
 
 export const Header = () => {
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
@@ -17,7 +18,7 @@ export const Header = () => {
   };
 
   const hadleKeyDown = (e) => {
-    if (e.key === "Enter"){
+    if (e.key === "Enter") {
       handleOpenModalMenu()
     }
   }
@@ -65,8 +66,12 @@ export const Header = () => {
         ) : (
           <div className="menu">
             <ul>
-              <li><Link to="/">HOME</Link></li>
-              <li><Link to="/about">ABOUT</Link></li>
+              <li>
+                <Link to="/">HOME</Link>
+              </li>
+              <li>
+                <Link to="/about">ABOUT</Link>
+              </li>
             </ul>
             <ul>
               <li><Link to="/work">WORK</Link></li>
