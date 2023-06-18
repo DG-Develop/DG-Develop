@@ -83,6 +83,19 @@
   );
 }
 
+.i_ear-left {
+  @include icon-structure("./static/ear_left.svg", 40px, 68px, $white-filter);
+}
+
+.i-ear-right {
+  @include icon-structure("./static/ear_right.svg", 40px, 68px, $white-filter);
+}
+
+
+.anim-ear-right {
+  @include icon-structure("./static/ear_right.svg", 40px, 68px, $white-filter);
+}
+
 .anim-ear-left {
   @include icon-structure("./static/ear_left.svg", 40px, 68px, $white-filter);
 }

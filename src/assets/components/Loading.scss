@@ -1,15 +1,11 @@
-.loading{
-    height: 100vh;
-    // background-color: $background-secondary;
-    >svg{
-        outline: 1px solid white;
+// .loading{
 
-        path{
-            outline: 1px solid lightcoral;
-        }
-    }
-}
+// }
 
 .loading__container{
-    outline: 1px solid crimson;
+    height: calc(100vh - 450px);
+    background-color: $background-secondary;
+    display: grid;
+    place-content: center;
+
 }

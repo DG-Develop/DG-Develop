@@ -7,7 +7,8 @@ const Loading = ({ isOpen }) => {
     <Modal isOpen={isOpen}>
         <section className='loading'>
             <div className='loading__container'>
-                <span></span><span></span>
+                <span className='i_ear-left'></span>
+                <span className='i-ear-right'></span>
 
                 <p>Loading...</p>
             </div>
