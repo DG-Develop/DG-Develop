@@ -3,6 +3,7 @@ import ChipRadio from "../components/ChipRadio";
 import emailjs from "@emailjs/browser";
 
 import { Header } from "../components/Header";
+import TansitionsNavbar from "../Animations/TansitionsNavbar";
 
 const Contact = () => {
   const handleSubmit = async (e) => {
@@ -58,62 +59,65 @@ const Contact = () => {
   return (
     <>
       <Header />
-      <form method="POST" onSubmit={handleSubmit} className="contact-form">
-        <section className="contact-issue">
-          <div>
-            <p>Contact me</p>
-            <h2>How can I help you?</h2>
-          </div>
-
-          <div>
-            <label htmlFor="issue">I'm interested in...</label>
-            <div className="chips-container">
-              {issues.map((issue, index) => (
-                <ChipRadio
-                  key={index}
-                  Name={issue.name}
-                  Id={issue.id}
-                  Title={issue.title}
-                />
-              ))}
+      <TansitionsNavbar>
+        <form method="POST" onSubmit={handleSubmit} className="contact-form">
+          <section className="contact-issue">
+            <div>
+              <p>Contact me</p>
+              <h2>How can I help you?</h2>
             </div>
-          </div>
-        </section>
 
-        <section className="contact-inputs">
-          <div>
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" id="name" required />
-          </div>
+            <div>
+              <label htmlFor="issue">I'm interested in...</label>
+              <div className="chips-container">
+                {issues.map((issue, index) => (
+                  <ChipRadio
+                    key={index}
+                    Name={issue.name}
+                    Id={issue.id}
+                    Title={issue.title}
+                  />
+                ))}
+              </div>
+            </div>
+          </section>
 
-          <div>
-            <label htmlFor="email">Email</label>
-            <input type="email" name="email" id="email" required />
-          </div>
+          <section className="contact-inputs">
+            <div>
+              <label htmlFor="name">Name</label>
+              <input type="text" name="name" id="name" required />
+            </div>
 
-          <div>
-            <label htmlFor="subject">Subject</label>
-            <input type="text" name="subject" id="subject" required />
-          </div>
+            <div>
+              <label htmlFor="email">Email</label>
+              <input type="email" name="email" id="email" required />
+            </div>
 
-          <div>
-            <label htmlFor="message">Message</label>
-            <textarea
-              name="message"
-              id="message"
-              cols="30"
-              rows="10"
-              required
-            ></textarea>
-          </div>
-        </section>
+            <div>
+              <label htmlFor="subject">Subject</label>
+              <input type="text" name="subject" id="subject" required />
+            </div>
 
-        <section className="contact-action">
-          <div>
-            <input type="submit" value="Sent request" />
-          </div>
-        </section>
-      </form>
+            <div>
+              <label htmlFor="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                required
+              ></textarea>
+            </div>
+          </section>
+
+          <section className="contact-action">
+            <div>
+              <input type="submit" value="Sent request" />
+            </div>
+          </section>
+        </form>
+      </TansitionsNavbar>
+
     </>
   );
 };

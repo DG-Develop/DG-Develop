@@ -1,11 +1,57 @@
-// .loading{
+.loading{
+    transform: translateY(-100vh);
+    transition: transform 1s ease-out;
 
-// }
+    &.active{
+        transform: translateY(0);
+    }
+}
 
 .loading__container{
-    height: calc(100vh - 450px);
+    height: calc(100vh - 100px);
     background-color: $background-secondary;
     display: grid;
     place-content: center;
+    gap: 32px;
 
+    p{
+        font-size: 2rem;
+        font-weight: $font-medium;
+        color: $white;
+        letter-spacing: 0.2rem;
+        text-align: center;
+    }
+
+    @include media(desktop){
+        height: calc(100vh - 400px);
+
+        p{
+            font-size: 4rem;
+        }
+    }
+
+}
+
+.loading-anim{
+    width: 100vw;
+    height: 250px;
+    padding: 16px;
+    // outline: 1px solid crimson;
+    display: grid;
+    place-content: center;
+
+    > .i_ear-left{
+        width: 50px;
+        height: 78px;
+        filter: $color-accent-filter;
+        transform: rotate(90deg);
+        animation: rollRight 1.2s linear infinite;
+    }
+
+    > .i-ear-right{
+        width: 50px;
+        height: 78px;
+        transform: rotate(-90deg);
+        animation: rollLeft 1.2s linear infinite;
+    }
 }

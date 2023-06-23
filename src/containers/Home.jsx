@@ -4,9 +4,10 @@ import { Header } from "../components/Header";
 import StackMain from "../components/StackMain";
 import Footer from "../components/Footer";
 import ModalStack from "../components/ModalStack";
+import TansitionsNavbar from "../Animations/TansitionsNavbar";
 
 const Home = () => {
-  
+
   const [isOpenModalStack, setIsOpenModalStack] = useState(false);
   const [titleStack, setTitleStack] = useState("");
   const stack = useRef(null);
@@ -32,17 +33,19 @@ const Home = () => {
   return (
     <>
       <Header />
-      <main>
-        <HeroDynamic OnNextStack={handleNextStack} />
+      <TansitionsNavbar>
+        <main>
+          <HeroDynamic OnNextStack={handleNextStack} />
 
-        <StackMain
-          Ref={stack}
-          OnNextFooter={handleNextFooter}
-          OnOpenModal={handleOpenModal}
-        />
-      </main>
+          <StackMain
+            Ref={stack}
+            OnNextFooter={handleNextFooter}
+            OnOpenModal={handleOpenModal}
+          />
+        </main>
 
-      <Footer Ref={footer} />
+        <Footer Ref={footer} />
+      </TansitionsNavbar>
 
       <ModalStack
         isOpen={isOpenModalStack}

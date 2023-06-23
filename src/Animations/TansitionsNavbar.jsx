@@ -5,15 +5,14 @@ const TansitionsNavbar = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        // setTimeout(() => {
-        //     setIsLoading(false)
-        // }, 4000)
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 6000)
     }, [isLoading])
 
     return (
         <div>
-            {/* {isLoading ? <Loading isOpen={isLoading} /> : children} */}
-            <Loading isOpen={isLoading} />
+            {isLoading ? <Loading isOpen={isLoading} /> : children}
         </div>
     )
 }

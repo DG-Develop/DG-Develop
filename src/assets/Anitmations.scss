@@ -332,3 +332,24 @@
     }
   }
 }
+
+
+@keyframes rollRight {
+  from{
+    transform: rotate(90deg) translateX(-90px);
+  }
+
+  to{
+    transform: rotate(450deg) translateX(-90px);
+  }
+}
+
+@keyframes rollLeft {
+  from{
+    transform: rotate(450deg) translateX(90px);
+  }
+
+  to{
+    transform: rotate(90deg) translateX(90px);
+  }
+}

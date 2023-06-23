@@ -6,6 +6,7 @@ import { useNavigate, useSearchParams } from "react-router-dom";
 import { useAppSelector, useAppDispatch } from "../app/hooks";
 import useObserver from "../hooks/useObserver";
 import { chooseWork } from "../features/works/workSlice";
+import TansitionsNavbar from "../Animations/TansitionsNavbar";
 
 const Work = () => {
   const works = useAppSelector(({ workEstado }) => workEstado.works);
@@ -22,20 +23,25 @@ const Work = () => {
   const iconContainer = useRef(null);
 
   useEffect(() => {
-      const title = searchParams.get('title')
+    setTimeout(() => {
 
-      if(title){  
+      const title = searchParams.get('title')
+  
+      if (title) {
         const element = document.querySelector(`#${title}`)
         element.scrollIntoView()
       }
+    }, 6200) 
   }, [searchParams])
 
   useEffect(() => {
-    const targetsDesktop = document.querySelectorAll(".work-content--desktop");
-    const targetsMobile = document.querySelectorAll(".work-content--mobile");
-    const scrollContent = document.querySelector(".scroll-content");
+    setTimeout(() => {
+      const targetsDesktop = document.querySelectorAll(".work-content--desktop");
+      const targetsMobile = document.querySelectorAll(".work-content--mobile");
+      const scrollContent = document.querySelector(".scroll-content");
 
-    setElements([...targetsDesktop, ...targetsMobile, scrollContent]);
+      setElements([...targetsDesktop, ...targetsMobile, scrollContent]);
+    }, 7000)
   }, [setElements]);
 
   useEffect(() => {
@@ -69,8 +75,8 @@ const Work = () => {
         element.className.includes("work-right")
           ? element.classList.add("animation-fadeinRight")
           : element.className.includes("work-left")
-          ? element.classList.add("animation-fadeinLeft")
-          : "";
+            ? element.classList.add("animation-fadeinLeft")
+            : "";
       }
     });
   }, [entries, observer]);
@@ -122,63 +128,64 @@ const Work = () => {
   return (
     <>
       <Header />
-
-      <section
-        className="scroll-dynamic"
-        onScroll={handleScroll}
-        ref={srollDynamic}
-      >
-        <div className="icon-container" ref={iconContainer}>
-          <IconAnimated />
-        </div>
-
-        <section className="work-start">
-          <div className="scroll-content">
-            <div>
-              <h1>Welcome to my portfolio works</h1>
-              <p>In this section you can see all my projects that I made it</p>
-            </div>
-
-            <div className="scroll-motion">
-              <span className="scroll-icon"></span>
-              <p>Scroll On!</p>
-            </div>
+      <TansitionsNavbar>
+        <section
+          className="scroll-dynamic"
+          onScroll={handleScroll}
+          ref={srollDynamic}
+        >
+          <div className="icon-container" ref={iconContainer}>
+            <IconAnimated />
           </div>
 
-          <Separator />
-          <Separator />
+          <section className="work-start">
+            <div className="scroll-content">
+              <div>
+                <h1>Welcome to my portfolio works</h1>
+                <p>In this section you can see all my projects that I made it</p>
+              </div>
 
-          {works.map((work, idx) => (
-            <div key={work.id} id={work.title}>
-              <section
-                className={`work-content--${
-                  work.mediaQuery === "Desktop" ? "desktop" : "mobile"
-                } ${idx % 2 === 0 ? "work-right" : "work-left"}`}
-              >
-                <div className="work-title">
-                  <h3>{work.title}</h3>
-                  <p>{work.subtitle}</p>
-                </div>
-
-                <div
-                  className="work-background"
-                  onClick={() => HandleNavigateWorkInfo(work)}
-                >
-                  <div>
-                    <img
-                      src={work.imageTitle}
-                      alt="work image about contract generator"
-                    />
-                  </div>
-                </div>
-              </section>
-
-              <Separator />
-              <Separator />
+              <div className="scroll-motion">
+                <span className="scroll-icon"></span>
+                <p>Scroll On!</p>
+              </div>
             </div>
-          ))}
+
+            <Separator />
+            <Separator />
+
+            {works.map((work, idx) => (
+              <div key={work.id} id={work.title}>
+                <section
+                  className={`work-content--${work.mediaQuery === "Desktop" ? "desktop" : "mobile"
+                    } ${idx % 2 === 0 ? "work-right" : "work-left"}`}
+                >
+                  <div className="work-title">
+                    <h3>{work.title}</h3>
+                    <p>{work.subtitle}</p>
+                  </div>
+
+                  <div
+                    className="work-background"
+                    onClick={() => HandleNavigateWorkInfo(work)}
+                  >
+                    <div>
+                      <img
+                        src={work.imageTitle}
+                        alt="work image about contract generator"
+                      />
+                    </div>
+                  </div>
+                </section>
+
+                <Separator />
+                <Separator />
+              </div>
+            ))}
+          </section>
         </section>
-      </section>
+      </TansitionsNavbar>
+
     </>
   );
 };
