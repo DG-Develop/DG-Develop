@@ -1,32 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
 import ChipRadio from "../components/ChipRadio";
 import emailjs from "@emailjs/browser";
 
 import { Header } from "../components/Header";
 import TansitionsNavbar from "../Animations/TansitionsNavbar";
+import Snackbar from "../components/Snackbar";
 
 const Contact = () => {
+  const [messageSnackbar, setMessageSnackbar] = useState('')
+  const [isOpenSnackbar, setIsOpenSnackbar] = useState(false)
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      const result = await emailjs.sendForm(
-        process.env.YOUR_SERVICE_ID,
-        process.env.YOUR_TEMPLATE_ID,
-        e.target,
-        process.env.YOUR_PUBLIC_KEY
-      );
+      // const result = await emailjs.sendForm(
+      //   process.env.YOUR_SERVICE_ID,
+      //   process.env.YOUR_TEMPLATE_ID,
+      //   e.target,
+      //   process.env.YOUR_PUBLIC_KEY
+      // );
 
-      if (result.text == "Ok") {
-        // TODO: Show modal ok
-        console.log("Correo enviado")
-      }
+      // if (result.text == "Ok") {
+      //   setMessageSnackbar('Correo enviado.')
+      //   setIsOpenSnackbar(true)
+      // }
+
+      setMessageSnackbar('Correo enviado.')
+      setIsOpenSnackbar(true)
 
       e.target.reset();
     } catch (error) {
       console.error(error);
     }
   };
+
+  const handleCloseSnackbar = () => {
+    setIsOpenSnackbar(false)
+  }
 
   const issues = [
     {
@@ -118,6 +129,7 @@ const Contact = () => {
         </form>
       </TansitionsNavbar>
 
+      <Snackbar isOpen={isOpenSnackbar} message={messageSnackbar} onClose={handleCloseSnackbar} />
     </>
   );
 };

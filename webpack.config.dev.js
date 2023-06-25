@@ -69,6 +69,7 @@ module.exports = {
             <body>
                 <main id="app"></main>
                 <div id="modal"></div>
+                <div id="snackbar-portal"></div>
             </body>
             
             </html>`,

@@ -353,3 +353,47 @@
     transform: rotate(90deg) translateX(90px);
   }
 }
+
+@keyframes snack-animation {
+  0% {
+    opacity: 0;
+    visibility: visible;
+    transform: translateY(40px);
+  }
+
+  10%, 90% {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 0;
+    visibility: collapse;
+    transform: translateY(0);
+  }
+}
+
+@keyframes snack-close{
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    visibility: collapse;
+    transform: translateY(0);
+  }
+}
+
+@keyframes snack-timeout {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 0%;
+  }
+}
