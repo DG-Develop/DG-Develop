@@ -14,20 +14,20 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      // const result = await emailjs.sendForm(
-      //   process.env.YOUR_SERVICE_ID,
-      //   process.env.YOUR_TEMPLATE_ID,
-      //   e.target,
-      //   process.env.YOUR_PUBLIC_KEY
-      // );
+      const result = await emailjs.sendForm(
+        process.env.YOUR_SERVICE_ID,
+        process.env.YOUR_TEMPLATE_ID,
+        e.target,
+        process.env.YOUR_PUBLIC_KEY
+      );
 
-      // if (result.text == "Ok") {
-      //   setMessageSnackbar('Correo enviado.')
-      //   setIsOpenSnackbar(true)
-      // }
+      if (result.text == "Ok") {
+        setMessageSnackbar('Correo enviado.')
+        setIsOpenSnackbar(true)
+      }
 
       setMessageSnackbar('Correo enviado.')
-      setIsOpenSnackbar(true)
+        setIsOpenSnackbar(true)
 
       e.target.reset();
     } catch (error) {

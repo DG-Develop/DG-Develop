@@ -12,7 +12,7 @@ const Loading = ({ isOpen }) => {
 
     setTimeout(() => {
       setClassDinamic('loading')
-    }, 5500)
+    }, 3500)
   }, [classDinamic])
 
   return (
