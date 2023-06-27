@@ -26,9 +26,6 @@ const Contact = () => {
         setIsOpenSnackbar(true)
       }
 
-      setMessageSnackbar('Correo enviado.')
-        setIsOpenSnackbar(true)
-
       e.target.reset();
     } catch (error) {
       console.error(error);
