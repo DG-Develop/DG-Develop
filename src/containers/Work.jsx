@@ -31,7 +31,7 @@ const Work = () => {
         const element = document.querySelector(`#${title}`)
         element.scrollIntoView()
       }
-    }, 4001) 
+    }, 3100) 
   }, [searchParams])
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const Work = () => {
       const scrollContent = document.querySelector(".scroll-content");
 
       setElements([...targetsDesktop, ...targetsMobile, scrollContent]);
-    }, 4001)
+    }, 3100)
   }, [setElements]);
 
   useEffect(() => {

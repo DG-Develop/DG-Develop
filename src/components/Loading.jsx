@@ -6,14 +6,19 @@ const Loading = ({ isOpen }) => {
   const [classDinamic, setClassDinamic] = useState('loading') 
 
   useEffect(() => {
-    setTimeout(() => {
+    const timerInicial = setTimeout(() => {
       setClassDinamic('loading active')
     }, 365)
 
-    setTimeout(() => {
+    const timerFinal = setTimeout(() => {
       setClassDinamic('loading')
-    }, 3500)
-  }, [classDinamic])
+    }, 2100)
+
+    return () =>{
+      clearTimeout(timerInicial)
+      clearTimeout(timerFinal)
+    }
+  }, [])
 
   return (
     <Modal isOpen={isOpen}>

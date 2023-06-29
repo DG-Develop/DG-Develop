@@ -36,12 +36,11 @@
     width: 100vw;
     height: 250px;
     padding: 16px;
-    // outline: 1px solid crimson;
     display: grid;
     place-content: center;
 
     > .i_ear-left{
-        width: 50px;
+        width: 45px;
         height: 78px;
         filter: $color-accent-filter;
         transform: rotate(90deg);
@@ -49,7 +48,7 @@
     }
 
     > .i-ear-right{
-        width: 50px;
+        width: 45px;
         height: 78px;
         transform: rotate(-90deg);
         animation: rollLeft 1.2s linear infinite;

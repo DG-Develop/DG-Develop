@@ -5,9 +5,11 @@ const TansitionsNavbar = ({ children }) => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(() => {
-        setTimeout(() => {
+        const timer = setTimeout(() => {
             setIsLoading(false)
-        }, 4000)
+        }, 3000)
+
+        return () => clearTimeout(timer)
     }, [isLoading])
 
     return (
