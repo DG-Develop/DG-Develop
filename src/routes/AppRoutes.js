@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React from "react";
 import About from "../containers/About";
 import Home from '../containers/Home'
 import Work from '../containers/Work'

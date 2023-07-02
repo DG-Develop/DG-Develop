@@ -3,7 +3,6 @@ import { useMediaQuery } from "react-responsive";
 import { Link } from "react-router-dom";
 import triangle from "../assets/static/rectangle_header.svg";
 import ModalMenu from "./ModalMenu";
-import TansitionsNavbar from "../Animations/TansitionsNavbar";
 
 export const Header = () => {
   const [openMenuMobile, setOpenMenuMobile] = useState(false);
