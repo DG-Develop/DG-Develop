@@ -101,7 +101,7 @@ const WorkInfo = () => {
           >
             <div className={`work-item__header ${themePrincipal} ${ image.media === "mobile" && "work-item__header-mobile"}`}>
               <h4>{image.imageTitle}</h4>
-              <img src={image.route} alt="image home of proyect GECON" onClick={() => handleOpenModalImage(image.listImage)}/>
+              <img src={image.route} alt="image home of proyect GECON" onClick={() => handleOpenModalImage(image.listImage)} loading="lazy" />
             </div>
             <div className="work-item__content">
               <p>

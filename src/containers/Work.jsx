@@ -173,6 +173,7 @@ const Work = () => {
                       <img
                         src={work.imageTitle}
                         alt="work image about contract generator"
+                        loading="lazy"
                       />
                     </div>
                   </div>

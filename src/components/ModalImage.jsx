@@ -120,9 +120,9 @@ const ModalImage = ({ isOpen, OnCloseModal, ListaImagenes }) => {
                       type="radio"
                       id={`imagen-${idx}`}
                       name="carouselImage"
-                      onChange={() => handleChangeImage(idx)}
+                      onChange={() => handleChangeImage(idx)}                      
                     />
-                    <img src={imagen.route} alt={`iamgen-${idx}`} />
+                    <img src={imagen.route} alt={`iamgen-${idx}`} loading="lazy"/>
                   </div>
                 ))}
               </div>
